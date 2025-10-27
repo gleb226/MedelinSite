@@ -334,6 +334,7 @@ javascript locations.forEach(location => { const marker = L.marker(location.coor
 **Зроблено з ❤️ та ☕ в Ужгороді**
 
 [↑ Нагору](#-medellin-coffee--офіційний-сайт-кавярні)
-
+#
 </div>
+
 ```
