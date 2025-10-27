@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 <header class="header">
@@ -174,13 +175,7 @@
                     </div>
                 </div>
 
-                <iframe
-                        class="contact__map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21471.154707577084!2d22.280537!3d48.621025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47389479a1e4e1ab%3A0x3a1e3e1e3e1e3e1e!2sUzhhorod%2C%20Zakarpattia%20Oblast%2C%20Ukraine!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                <div id="map" class="contact__map"></div>
             </div>
 
             <div class="booking-form">
@@ -285,5 +280,430 @@
         <p class="footer__copyright">Сайт створено <strong>Глєбом</strong> — веброзробником з Ужгорода.</p>
     </div>
 </footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    const map = L.map('map').setView([48.621, 22.285], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap',
+        maxZoom: 19
+    }).addTo(map);
+
+    const coffeeIcon = L.icon({
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/924/924514.png',
+        iconSize: [38, 38],
+        iconAnchor: [19, 38],
+        popupAnchor: [0, -38]
+    });
+
+    const locations = [
+        {
+            name: 'Medelin на Корятовича',
+            address: 'вул. Корятовича, 5а',
+            phone: '+38 (050) 377-59-06',
+            hours: '08:00 - 20:00',
+            coords: [48.624301, 22.298038]
+        },
+        {
+            name: 'Medelin на Гойди',
+            address: 'вул. Гойди, 10',
+            phone: '+38 (050) 377-59-06',
+            hours: '07:00 - 19:00',
+            coords: [48.627364, 22.290670]
+        },
+        {
+            name: 'Medelin на Закарпатській',
+            address: 'вул. Закарпатська, 44',
+            phone: '+38 (050) 377-59-06',
+            hours: '08:00 - 20:00',
+            coords: [48.624740, 22.282960]
+        },
+        {
+            name: 'Medelin на Анатолія Тегзи',
+            address: 'вул. Анатолія Тегзи, 41',
+            phone: '+38 (050) 377-59-06',
+            hours: '08:00 - 20:00',
+            coords: [48.617980, 22.263830]
+        },
+        {
+            name: 'Medelin на Проспекті Свободи',
+            address: 'просп. Свободи, 55',
+            phone: '+38 (050) 537-29-16',
+            hours: '08:00 - 20:00',
+            coords: [48.611940, 22.295610]
+        }
+    ];
+
+    locations.forEach(location => {
+        const marker = L.marker(location.coords, { icon: coffeeIcon }).addTo(map);
+
+        const popupContent = `
+            <div style="font-family: Montserrat, sans-serif; min-width: 200px;">
+                <h3 style="margin: 0 0 10px 0; color: #8b5e3c; font-size: 16px;">☕ ${location.name}</h3>
+                <p style="margin: 5px 0; font-size: 13px;">📍 ${location.address}</p>
+                <p style="margin: 5px 0; font-size: 13px;">📞 <a href="tel:${location.phone.replace(/\s/g, '')}" style="color: #8b5e3c;">${location.phone}</a></p>
+                <p style="margin: 5px 0; font-size: 13px;">⏰ ${location.hours}</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=${location.coords[0]},${location.coords[1]}" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 15px; background: #8b5e3c; color: white; text-decoration: none; border-radius: 5px; font-size: 12px;">🗺️ Маршрут</a>
+            </div>
+        `;
+
+        marker.bindPopup(popupContent);
+    });
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Medelin Coffee</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50BUE2d30GBASKRdrCoBgrFBfvjFTiAKCYA&s" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+<header class="header">
+    <div class="header__container">
+        <a href="../../index.html" class="header__logo">Medelin</a>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../../index.html" class="nav__link">Головна</a></li>
+                <li class="nav__item"><a href="../menu/menu.html" class="nav__link">Меню</a></li>
+                <li class="nav__item"><a href="../about/about.html" class="nav__link">Про нас</a></li>
+                <li class="nav__item"><a href="../gallery/gallery.html" class="nav__link">Галерея</a></li>
+                <li class="nav__item"><a href="../events/events.html" class="nav__link">Події</a></li>
+                <li class="nav__item"><a href="../blog/blog.html" class="nav__link">Блог</a></li>
+                <li class="nav__item"><a href="contact.html" class="nav__link">Контакти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="contact">
+        <h1 class="section-title">Контакти</h1>
+
+        <div class="contact__container">
+            <div class="contact__info">
+                <h3 class="contact__info-title">Наші заклади</h3>
+
+                <div class="contact__location">
+                    <h4 class="contact__location-name">Medelin на Корятовича</h4>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📍</span>
+                        <div>
+                            <p>вул. Корятовича, 5а, Ужгород</p>
+                            <p>88000, Закарпатська область</p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📞</span>
+                        <div>
+                            <p><a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">⏰</span>
+                        <div>
+                            <p>Понеділок-Неділя: 08:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__location">
+                    <h4 class="contact__location-name">Medelin на Гойди</h4>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📍</span>
+                        <div>
+                            <p>вул. Гойди, 10, Ужгород</p>
+                            <p>88000, Закарпатська область</p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📞</span>
+                        <div>
+                            <p><a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">⏰</span>
+                        <div>
+                            <p>Понеділок-Неділя: 07:00 - 19:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__location">
+                    <h4 class="contact__location-name">Medelin на Закарпатській</h4>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📍</span>
+                        <div>
+                            <p>вул. Закарпатська, 44, Ужгород</p>
+                            <p>88000, Закарпатська область</p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📞</span>
+                        <div>
+                            <p><a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">⏰</span>
+                        <div>
+                            <p>Понеділок-Неділя: 08:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__location">
+                    <h4 class="contact__location-name">Medelin на Анатолія Тегзи</h4>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📍</span>
+                        <div>
+                            <p>вул. Анатолія Тегзи, 41, Ужгород</p>
+                            <p>88000, Закарпатська область</p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📞</span>
+                        <div>
+                            <p><a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">⏰</span>
+                        <div>
+                            <p>Понеділок-Неділя: 08:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__location">
+                    <h4 class="contact__location-name">Medelin на Проспекті Свободи</h4>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📍</span>
+                        <div>
+                            <p>вул. Просп. Свободи, 55, Ужгород</p>
+                            <p>88000, Закарпатська область</p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📞</span>
+                        <div>
+                            <p><a href="tel:+380505372916">+38 (050) 537-29-16</a></p>
+                        </div>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">⏰</span>
+                        <div>
+                            <p>Понеділок-Неділя: 08:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__social">
+                    <h4 class="contact__location-name">Соціальні мережі</h4>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📱</span>
+                        <div>
+                            <p><a href="https://www.instagram.com/medelin_com/" target="_blank">Instagram (main): @medelin_com</a></p>
+                            <p><a href="https://www.instagram.com/medelin_uzh/" target="_blank">Instagram (uzh): @medelin_uzh</a></p>
+                            <p><a href="https://www.instagram.com/medelincoffee.bozdosh/" target="_blank">Instagram (bozdosh): @medelincoffee.bozdosh</a></p>
+                            <p><a href="https://www.instagram.com/kabinet.by.medelin/" target="_blank">Instagram (kabinet): @kabinet.by.medelin</a></p>
+                            <p><a href="https://www.facebook.com/medelin.uzh/" target="_blank">Facebook (main)</a></p>
+                            <p><a href="https://www.facebook.com/medelinco/" target="_blank">Facebook (coffee)</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__item">
+                    <span class="contact__item-icon">✉️</span>
+                    <div>
+                        <p>Email: <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div id="map" class="contact__map"></div>
+            </div>
+
+            <div class="booking-form">
+                <h3 class="booking-form__title">Забронювати столик</h3>
+                <form>
+                    <div class="form-group">
+                        <label class="form-group__label" for="name">Ім'я</label>
+                        <input class="form-group__input" type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group__label" for="phone">Телефон</label>
+                        <input class="form-group__input" type="tel" id="phone" name="phone" placeholder="+380 (XX) XXX-XX-XX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group__label" for="email">Email</label>
+                        <input class="form-group__input" type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group__label" for="location">Оберіть заклад</label>
+                        <select class="form-group__select" id="location" name="location" required>
+                            <option value="">Оберіть локацію</option>
+                            <option value="koryatovycha">Medelin на Корятовича</option>
+                            <option value="goydy">Medelin на Гойди</option>
+                            <option value="zakarpatska">Medelin на Закарпатській</option>
+                            <option value="tegzy">Medelin на Анатолія Тегзи</option>
+                            <option value="svobody">Medelin на Проспекті Свободи</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group__label" for="date">Дата</label>
+                        <input class="form-group__input" type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group__label" for="time">Час</label>
+                        <input class="form-group__input" type="time" id="time" name="time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group__label" for="guests">Кількість гостей</label>
+                        <select class="form-group__select" id="guests" name="guests" required>
+                            <option value="">Оберіть кількість</option>
+                            <option value="1">1 гість</option>
+                            <option value="2">2 гостя</option>
+                            <option value="3">3 гостя</option>
+                            <option value="4">4 гостя</option>
+                            <option value="5">5 гостей</option>
+                            <option value="6">6 гостей</option>
+                            <option value="7+">7+ гостей</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group__label" for="message">Додаткова інформація</label>
+                        <textarea class="form-group__textarea" id="message" name="message" placeholder="Особливі побажання, алергії тощо..."></textarea>
+                    </div>
+
+                    <button class="form-group__submit" type="submit">Забронювати</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__content">
+        <div class="footer__section">
+            <h3 class="footer__title">Medelin Coffee</h3>
+            <p class="footer__text">Найкраща кава в Ужгороді</p>
+            <p class="footer__text">Смак, якість, атмосфера</p>
+        </div>
+
+        <div class="footer__section">
+            <h3 class="footer__title">Контакти</h3>
+            <p class="footer__text">📞 +38 (050) 377-59-06</p>
+            <p class="footer__text">✉️ medelin.social@gmail.com</p>
+        </div>
+
+        <div class="footer__section">
+            <h3 class="footer__title">Години роботи</h3>
+            <p class="footer__text">Понеділок-Неділя</p>
+            <p class="footer__text">08:00 - 20:00</p>
+        </div>
+
+        <div class="footer__section">
+            <h3 class="footer__title">Соцмережі</h3>
+            <a href="https://www.instagram.com/medelin_com/" target="_blank" class="footer__link">Instagram(main)</a>
+            <a href="https://www.instagram.com/medelin_uzh/" target="_blank" class="footer__link">Instagram(uzh)</a>
+            <a href="https://www.instagram.com/medelincoffee.bozdosh/" target="_blank" class="footer__link">Instagram(bozdosh)</a>
+            <a href="https://www.instagram.com/kabinet.by.medelin/" target="_blank" class="footer__link">Instagram(kabinet)</a>
+            <a href="https://www.facebook.com/medelin.uzh/" target="_blank" class="footer__link">Facebook(main)</a>
+            <a href="https://www.facebook.com/medelinco/" target="_blank" class="footer__link">Facebook(coffe)</a>
+        </div>
+    </div>
+
+    <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Medelin Coffee. Усі права захищені.</p>
+        <p class="footer__copyright">Сайт створено <strong>Глєбом</strong> — веброзробником з Ужгорода.</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    const map = L.map('map').setView([48.621, 22.285], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap',
+        maxZoom: 19
+    }).addTo(map);
+
+    const coffeeIcon = L.icon({
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/924/924514.png',
+        iconSize: [38, 38],
+        iconAnchor: [19, 38],
+        popupAnchor: [0, -38]
+    });
+
+    const locations = [
+        {
+            name: 'Medelin на Корятовича',
+            address: 'вул. Корятовича, 5а',
+            phone: '+38 (050) 377-59-06',
+            hours: '08:00 - 20:00',
+            coords: [48.624301, 22.298038]
+        },
+        {
+            name: 'Medelin на Гойди',
+            address: 'вул. Гойди, 10',
+            phone: '+38 (050) 377-59-06',
+            hours: '07:00 - 19:00',
+            coords: [48.627364, 22.290670]
+        },
+        {
+            name: 'Medelin на Закарпатській',
+            address: 'вул. Закарпатська, 44',
+            phone: '+38 (050) 377-59-06',
+            hours: '08:00 - 20:00',
+            coords: [48.624740, 22.282960]
+        },
+        {
+            name: 'Medelin на Анатолія Тегзи',
+            address: 'вул. Анатолія Тегзи, 41',
+            phone: '+38 (050) 377-59-06',
+            hours: '08:00 - 20:00',
+            coords: [48.617980, 22.263830]
+        },
+        {
+            name: 'Medelin на Проспекті Свободи',
+            address: 'просп. Свободи, 55',
+            phone: '+38 (050) 537-29-16',
+            hours: '08:00 - 20:00',
+            coords: [48.611940, 22.295610]
+        }
+    ];
+
+    locations.forEach(location => {
+        const marker = L.marker(location.coords, { icon: coffeeIcon }).addTo(map);
+
+        const popupContent = `
+            <div style="font-family: Montserrat, sans-serif; min-width: 200px;">
+                <h3 style="margin: 0 0 10px 0; color: #8b5e3c; font-size: 16px;">☕ ${location.name}</h3>
+                <p style="margin: 5px 0; font-size: 13px;">📍 ${location.address}</p>
+                <p style="margin: 5px 0; font-size: 13px;">📞 <a href="tel:${location.phone.replace(/\s/g, '')}" style="color: #8b5e3c;">${location.phone}</a></p>
+                <p style="margin: 5px 0; font-size: 13px;">⏰ ${location.hours}</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=${location.coords[0]},${location.coords[1]}" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 15px; background: #8b5e3c; color: white; text-decoration: none; border-radius: 5px; font-size: 12px;">🗺️ Маршрут</a>
+            </div>
+        `;
+
+        marker.bindPopup(popupContent);
+    });
+</script>
 </body>
 </html>
