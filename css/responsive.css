@@ -32,9 +32,6 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
     .blog,
     .contact {
         max-width: var(--container-max);
