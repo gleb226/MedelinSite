@@ -31,8 +31,6 @@
     .info-blocks,
     .locations,
     .menu,
-    .about,
-    .blog,
     .contact {
         max-width: var(--container-max);
         margin-inline: auto;
@@ -48,22 +46,11 @@
         gap: 4rem;
     }
 
-    .locations__grid,
-    .events__grid,
-    .blog__grid {
+    .locations__grid {
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         gap: 4rem;
     }
 
-    .gallery__grid {
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        gap: 3rem;
-    }
-
-    .team__grid {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 4rem;
-    }
 }
 
 @media (min-width: 2560px) and (max-width: 3839px) {
@@ -77,11 +64,6 @@
     .info-blocks,
     .locations,
     .menu,
-    .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         max-width: var(--container-max);
         margin-inline: auto;
@@ -97,17 +79,11 @@
         gap: 3.5rem;
     }
 
-    .locations__grid,
-    .events__grid,
-    .blog__grid {
+    .locations__grid {
         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
         gap: 3.5rem;
     }
 
-    .gallery__grid {
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        gap: 2.5rem;
-    }
 }
 
 @media (min-width: 1920px) and (max-width: 2559px) {
@@ -122,10 +98,6 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         max-width: var(--container-max);
         margin-inline: auto;
@@ -137,10 +109,6 @@
         gap: 3rem;
     }
 
-    .gallery__grid {
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-        gap: 2rem;
-    }
 }
 
 @media (min-width: 1400px) and (max-width: 1919px) {
@@ -150,10 +118,6 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         padding-inline: 3rem;
     }
@@ -176,10 +140,6 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         padding-inline: var(--spacing-lg);
     }
@@ -202,10 +162,6 @@
         gap: var(--spacing-xl);
     }
 
-    .gallery__grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: var(--spacing-md);
-    }
 }
 
 @media (max-width: 1023px) {
@@ -228,10 +184,6 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         padding-block: var(--spacing-xl);
         padding-inline: var(--spacing-md);
@@ -300,10 +252,6 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         padding-block: var(--spacing-lg);
         padding-inline: var(--spacing-sm);
@@ -316,24 +264,18 @@
 
     .products__grid,
     .info-blocks__grid,
-    .locations__grid,
-    .events__grid,
-    .blog__grid {
+    .locations__grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
 
     .product-card__image,
-    .location-card__image,
-    .event-card__image,
-    .blog-card__image {
+    .location-card__image {
         height: clamp(200px, 40vw, 280px);
     }
 
     .product-card__content,
-    .location-card__content,
-    .event-card__content,
-    .blog-card__content {
+    .location-card__content {
         padding: var(--spacing-md);
     }
 
@@ -371,24 +313,11 @@
         height: clamp(300px, 50vw, 400px);
     }
 
-    .team__grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--spacing-md);
-    }
-
     .team-member__photo {
         width: clamp(140px, 30vw, 180px);
         height: clamp(140px, 30vw, 180px);
     }
 
-    .gallery__grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: var(--spacing-md);
-    }
-
-    .gallery-item {
-        height: clamp(280px, 50vw, 350px);
-    }
 
     .contact__location {
         margin-bottom: var(--spacing-lg);
@@ -413,32 +342,14 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         padding-block: var(--spacing-lg);
         padding-inline: var(--spacing-sm);
     }
 
     .product-card__image,
-    .location-card__image,
-    .event-card__image,
-    .blog-card__image {
+    .location-card__image {
         height: clamp(180px, 40vw, 220px);
-    }
-
-    .team__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        height: clamp(260px, 60vw, 320px);
     }
 
     .contact__map {
@@ -482,10 +393,6 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         padding-block: var(--spacing-md);
         padding-inline: var(--spacing-sm);
@@ -498,16 +405,12 @@
     }
 
     .product-card__image,
-    .location-card__image,
-    .event-card__image,
-    .blog-card__image {
+    .location-card__image {
         height: clamp(160px, 45vw, 200px);
     }
 
     .product-card__content,
-    .location-card__content,
-    .event-card__content,
-    .blog-card__content {
+    .location-card__content {
         padding: var(--spacing-sm);
     }
 
@@ -535,19 +438,6 @@
         height: clamp(280px, 55vw, 340px);
     }
 
-    .team-member {
-        padding: var(--spacing-md);
-    }
-
-    .team-member__photo {
-        width: clamp(120px, 28vw, 150px);
-        height: clamp(120px, 28vw, 150px);
-        border-width: clamp(3px, 1vw, 5px);
-    }
-
-    .gallery-item {
-        height: clamp(240px, 60vw, 300px);
-    }
 
     .contact__map {
         height: clamp(260px, 60vw, 320px);
@@ -587,10 +477,6 @@
     .locations,
     .menu,
     .about,
-    .team,
-    .gallery,
-    .events,
-    .blog,
     .contact {
         padding-block: var(--spacing-md);
         padding-inline: clamp(0.75rem, 2vw, 1rem);
@@ -602,9 +488,7 @@
     }
 
     .product-card__image,
-    .location-card__image,
-    .event-card__image,
-    .blog-card__image {
+    .location-card__image {
         height: clamp(150px, 45vw, 180px);
     }
 
@@ -616,14 +500,6 @@
         height: clamp(260px, 55vw, 300px);
     }
 
-    .team-member__photo {
-        width: clamp(110px, 30vw, 130px);
-        height: clamp(110px, 30vw, 130px);
-    }
-
-    .gallery-item {
-        height: clamp(220px, 60vw, 270px);
-    }
 
     .contact__map {
         height: clamp(240px, 60vw, 280px);
@@ -640,9 +516,7 @@
     }
 
     .product-card__image,
-    .location-card__image,
-    .event-card__image,
-    .blog-card__image {
+    .location-card__image {
         height: clamp(140px, 45vw, 170px);
     }
 
@@ -654,9 +528,6 @@
         height: clamp(240px, 55vw, 280px);
     }
 
-    .gallery-item {
-        height: clamp(200px, 60vw, 250px);
-    }
 
     .contact__map {
         height: clamp(220px, 60vw, 260px);
