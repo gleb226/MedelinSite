@@ -5,104 +5,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наша кава - Medelin Coffee</title>
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50BUE2d30GBASKRdrCoBgrFBfvjFTiAKCYA&s" type="image/png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/responsive.css">
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg sticky-top custom-navbar">
-    <div class="container">
-        <a class="navbar-brand header__logo" href="../../index.html">Medelin</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link nav__link" href="../../index.html">Головна</a></li>
-                <li class="nav-item"><a class="nav-link nav__link" href="../menu/menu.html">Меню</a></li>
-                <li class="nav-item"><a class="nav-link nav__link active" href="coffee.html">Наша кава</a></li>
-                <li class="nav-item"><a class="nav-link nav__link" href="../contact/contact.html">Контакти</a></li>
+<header class="header">
+    <div class="header__container">
+        <a href="../../index.html" class="header__logo">Medelin</a>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../../index.html" class="nav__link">Головна</a></li>
+                <li class="nav__item"><a href="../menu/menu.html" class="nav__link">Меню</a></li>
+                <li class="nav__item"><a href="coffee.html" class="nav__link">Наша кава</a></li>
+                <li class="nav__item"><a href="../contact/contact.html" class="nav__link">Контакти</a></li>
             </ul>
-        </div>
+        </nav>
     </div>
-</nav>
+</header>
 
-<main class="py-5">
-    <section class="container coffee">
+<main class="main">
+    <section class="menu">
         <h1 class="section-title text-center mb-5">Кава в зернах</h1>
-        
-        <div class="row g-4">
-            <div class="col-12 col-sm-6 col-lg-4">
-                <article class="product-card h-100" onclick="openPopup('grain1')">
-                    <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&q=80');"></div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Індія Плантейшн</h3>
-                        <p class="product-card__price">245 грн / 250г</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <article class="product-card h-100" onclick="openPopup('grain2')">
-                    <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=400&q=80');"></div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Монсун Малабар</h3>
-                        <p class="product-card__price">280 грн / 250г</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <article class="product-card h-100">
-                    <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=400&q=80');"></div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Бленд «Італьяно»</h3>
-                        <p class="product-card__price">220 грн / 250г</p>
-                    </div>
-                </article>
-            </div>
+        <div class="products__grid">
+            <article class="product-card" onclick="openPopup('c1')">
+                <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&q=80');"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Індія Плантейшн</h3>
+                    <p class="product-card__price">245 грн / 250г</p>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('c2')">
+                <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=400&q=80');"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Монсун Малабар</h3>
+                    <p class="product-card__price">280 грн / 250г</p>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('c3')">
+                <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=400&q=80');"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Бленд «Італьяно»</h3>
+                    <p class="product-card__price">220 грн / 250г</p>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('c4')">
+                <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80');"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Колумбія Супремо</h3>
+                    <p class="product-card__price">275 грн / 250г</p>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('c5')">
+                <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1551030173-122aabc4489c?w=400&q=80');"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Ефіопія Джимма</h3>
+                    <p class="product-card__price">255 грн / 250г</p>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('c6')">
+                <div class="product-card__image" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&q=80');"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Закарпатське обсмажування</h3>
+                    <p class="product-card__price">260 грн / 250г</p>
+                </div>
+            </article>
         </div>
     </section>
 </main>
 
-<footer class="footer py-5">
-    <div class="container">
-        <div class="row g-4 footer__content">
-            <div class="col-md-3">
-                <h3 class="footer__title">Medelin Coffee</h3>
-                <p class="footer__text">Найкраща кава в Ужгороді</p>
-            </div>
-            <div class="col-md-3">
-                <h3 class="footer__title">Контакти</h3>
-                <p class="footer__text">📞 +38 (050) 377-59-06</p>
-            </div>
-            <div class="col-md-3">
-                <h3 class="footer__title">Години роботи</h3>
-                <p class="footer__text">Понеділок-Неділя</p>
-            </div>
-            <div class="col-md-3">
-                <h3 class="footer__title">Соцмережі</h3>
-                <a href="https://www.instagram.com/medelin_com/" target="_blank" class="footer__link">Instagram</a>
-                <a href="https://www.facebook.com/medelin.uzh/" target="_blank" class="footer__link">Facebook</a>
-            </div>
+<div class="popup" id="c1">
+    <div class="popup__overlay" onclick="closePopup('c1')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('c1')">✕</button>
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Індія Плантейшн</h3>
+        <p class="popup__price">245 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Країна:</strong> Індія (регіон Карнатака)</p>
+            <p><strong>Сорт:</strong> 100% Арабіка (Grade AA)</p>
+            <p><strong>Обсмажування:</strong> Середнє (City Roast)</p>
+            <p><strong>Обробка:</strong> Мита (Washed)</p>
+            <p><strong>Смакові нотки:</strong> Гіркий шоколад, фундук, прянощі.</p>
+            <p><strong>Рекомендовано для:</strong> Еспресо, гейзерна кавоварка (Мока).</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="c2">
+    <div class="popup__overlay" onclick="closePopup('c2')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('c2')">✕</button>
+        <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Монсун Малабар</h3>
+        <p class="popup__price">280 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Країна:</strong> Індія (Малабарське узбережжя)</p>
+            <p><strong>Сорт:</strong> 100% Арабіка (Monsooned Malabar AA)</p>
+            <p><strong>Обсмажування:</strong> Темне (Full City)</p>
+            <p><strong>Обробка:</strong> Мусонована (Monsooned)</p>
+            <p><strong>Смакові нотки:</strong> Землисті відтінки, мускатний горіх, тютюн.</p>
+            <p><strong>Особливість:</strong> Нульова кислотність, дуже щільне тіло.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="c3">
+    <div class="popup__overlay" onclick="closePopup('c3')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('c3')">✕</button>
+        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Бленд «Італьяно»</h3>
+        <p class="popup__price">220 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Склад:</strong> Арабіка 80% (Бразилія), Робуста 20% (В'єтнам)</p>
+            <p><strong>Обсмажування:</strong> Темне (Dark Roast)</p>
+            <p><strong>Смакові нотки:</strong> Смажений горіх, карамель, житній хліб.</p>
+            <p><strong>Тіло:</strong> Висока щільність, стійка пінка (crema).</p>
+            <p><strong>Рекомендовано для:</strong> Міцного еспресо та молочних напоїв.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="c4">
+    <div class="popup__overlay" onclick="closePopup('c4')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('c4')">✕</button>
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Колумбія Супремо</h3>
+        <p class="popup__price">275 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Країна:</strong> Колумбія (високогір'я Анд)</p>
+            <p><strong>Висота:</strong> 1200 - 2000 м</p>
+            <p><strong>Обсмажування:</strong> Середнє</p>
+            <p><strong>Смакові нотки:</strong> Червоне яблуко, карамель, тростинний цукор.</p>
+            <p><strong>Кислотність:</strong> Виражена цитрусова.</p>
+            <p><strong>Рекомендовано для:</strong> V60, Chemex, френч-прес.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="c5">
+    <div class="popup__overlay" onclick="closePopup('c5')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('c5')">✕</button>
+        <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Ефіопія Джимма</h3>
+        <p class="popup__price">255 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Країна:</strong> Ефіопія (батьківщина кави)</p>
+            <p><strong>Сорт:</strong> Дикоросла Арабіка (Heirloom)</p>
+            <p><strong>Обробка:</strong> Натуральна (суха)</p>
+            <p><strong>Смакові нотки:</strong> Лісові ягоди, абрикос, чорний чай.</p>
+            <p><strong>Аромат:</strong> Яскравий квітковий.</p>
+            <p><strong>Тіло:</strong> Легке, чайне.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="c6">
+    <div class="popup__overlay" onclick="closePopup('c6')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('c6')">✕</button>
+        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Закарпатське обсмажування</h3>
+        <p class="popup__price">260 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Склад:</strong> Авторський купаж Medellin</p>
+            <p><strong>Обсмажування:</strong> Авторське (Double Roast)</p>
+            <p><strong>Смакові нотки:</strong> Темний шоколад, підсмажений тост, волоський горіх.</p>
+            <p><strong>Історія:</strong> Створено за рецептурою ужгородських кавових майстрів.</p>
+            <p><strong>Характер:</strong> Дуже міцна, насичена, ідеальна для ранку.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer__content">
+        <div class="footer__section">
+            <h3 class="footer__title">Medelin Coffee</h3>
+            <p class="footer__text">Найкраща кава в Ужгороді</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Контакти</h3>
+            <p class="footer__text">📞 +38 (050) 377-59-06</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Години роботи</h3>
+            <p class="footer__text">Понеділок-Неділя</p>
+            <p class="footer__text">08:00 - 20:00</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Соцмережі</h3>
+            <a href="https://www.instagram.com/medelin_com/" target="_blank" class="footer__link">Instagram</a>
+            <a href="https://www.facebook.com/medelin.uzh/" target="_blank" class="footer__link">Facebook</a>
         </div>
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function openPopup(id) {
-        if(document.getElementById(id)) {
-            document.getElementById(id).classList.add('popup--active');
+        const popup = document.getElementById(id);
+        if(popup) {
+            popup.classList.add('popup--active');
             document.body.style.overflow = 'hidden';
         }
     }
     function closePopup(id) {
-        if(document.getElementById(id)) {
-            document.getElementById(id).classList.remove('popup--active');
+        const popup = document.getElementById(id);
+        if(popup) {
+            popup.classList.remove('popup--active');
             document.body.style.overflow = '';
         }
     }
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            const activePopup = document.querySelector('.popup--active');
+            if (activePopup) {
+                activePopup.classList.remove('popup--active');
+                document.body.style.overflow = '';
+            }
+        }
+    });
 </script>
 </body>
 </html>
