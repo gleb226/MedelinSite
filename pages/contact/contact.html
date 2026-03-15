@@ -15,12 +15,17 @@
 <header class="header">
     <div class="header__container">
         <a href="../../index.html" class="header__logo">Medelin</a>
-        <nav class="nav">
+        <button class="header__burger" id="burger-btn" aria-label="Відкрити меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item"><a href="../../index.html" class="nav__link">Головна</a></li>
                 <li class="nav__item"><a href="../menu/menu.html" class="nav__link">Меню</a></li>
                 <li class="nav__item"><a href="../coffee/coffee.html" class="nav__link">Наша кава</a></li>
-                <li class="nav__item"><a href="contact.html" class="nav__link">Контакти</a></li>
+                <li class="nav__item"><a href="contact.html" class="nav__link active">Контакти</a></li>
             </ul>
         </nav>
     </div>
@@ -36,7 +41,7 @@
     </section>
 
     <section class="contact">
-        <h1 class="section-title">Наші локації</h1>
+        <h1 class="section-title text-center mb-5">Наші локації</h1>
         <div class="locations__grid">
             <article class="location-card" onclick="openPopup('loc1')">
                 <div class="location-card__image" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80');"></div>
@@ -108,7 +113,7 @@
     <div class="popup__overlay" onclick="closePopup('loc1')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('loc1')">✕</button>
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Medelin на Корятовича" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image">
         <h3 class="popup__title">Medelin на Корятовича</h3>
         <div class="popup__location-details">
             <p><strong>📍 Адреса:</strong> вул. Корятовича, 5, Ужгород</p>
@@ -125,7 +130,7 @@
     <div class="popup__overlay" onclick="closePopup('loc2')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('loc2')">✕</button>
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" alt="Medelin на Закарпатській" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" class="popup__image">
         <h3 class="popup__title">Medelin на Закарпатській</h3>
         <div class="popup__location-details">
             <p><strong>📍 Адреса:</strong> вул. Закарпатська, 44, Ужгород</p>
@@ -138,80 +143,11 @@
     </div>
 </div>
 
-<div class="popup" id="loc3">
-    <div class="popup__overlay" onclick="closePopup('loc3')"></div>
-    <div class="popup__content">
-        <button class="popup__close" onclick="closePopup('loc3')">✕</button>
-        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" alt="Medelin на Свободи" class="popup__image">
-        <h3 class="popup__title">Medelin на Проспекті Свободи</h3>
-        <div class="popup__location-details">
-            <p><strong>📍 Адреса:</strong> просп. Свободи, 55, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн-Нд: 08:00 - 20:00</p>
-            <p><strong>☕ Особливості:</strong> Зручне розташування біля вокзалу.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Uzhhorod+Svobody+55" target="_blank" class="btn" style="width: 100%;">Побудувати маршрут</a>
-        </div>
-    </div>
-</div>
-
-<div class="popup" id="loc4">
-    <div class="popup__overlay" onclick="closePopup('loc4')"></div>
-    <div class="popup__content">
-        <button class="popup__close" onclick="closePopup('loc4')">✕</button>
-        <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80" alt="Medelin Bozdosh" class="popup__image">
-        <h3 class="popup__title">Medelin Bozdosh</h3>
-        <div class="popup__location-details">
-            <p><strong>📍 Адреса:</strong> Слов'янська набережна, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн-Нд: 09:00 - 21:00</p>
-            <p><strong>☕ Особливості:</strong> Вид на річку, район Боздош.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Bozdosh+Uzhhorod" target="_blank" class="btn" style="width: 100%;">Побудувати маршрут</a>
-        </div>
-    </div>
-</div>
-
-<div class="popup" id="loc5">
-    <div class="popup__overlay" onclick="closePopup('loc5')"></div>
-    <div class="popup__content">
-        <button class="popup__close" onclick="closePopup('loc5')">✕</button>
-        <img src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80" alt="Medelin на Гойди" class="popup__image">
-        <h3 class="popup__title">Medelin на Гойди</h3>
-        <div class="popup__location-details">
-            <p><strong>📍 Адреса:</strong> вул. Гойди, 10, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн-Пт: 08:00 - 19:00, Сб-Нд: 09:00 - 18:00</p>
-            <p><strong>☕ Особливості:</strong> Атмосферний інтер'єр, центр.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Hoidy+Uzhhorod" target="_blank" class="btn" style="width: 100%;">Побудувати маршрут</a>
-        </div>
-    </div>
-</div>
-
-<div class="popup" id="loc6">
-    <div class="popup__overlay" onclick="closePopup('loc6')"></div>
-    <div class="popup__content">
-        <button class="popup__close" onclick="closePopup('loc6')">✕</button>
-        <img src="https://images.unsplash.com/photo-1669295987842-53270c972055?w=800&q=80" alt="Medelin на Тегзи" class="popup__image">
-        <h3 class="popup__title">Medelin на Анатолія Тегзи</h3>
-        <div class="popup__location-details">
-            <p><strong>📍 Адреса:</strong> вул. Анатолія Тегзи, 41, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн-Нд: 08:00 - 20:00</p>
-            <p><strong>☕ Особливості:</strong> Тихий район, ідеально для відпочинку.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Tegzi+Uzhhorod" target="_blank" class="btn" style="width: 100%;">Побудувати маршрут</a>
-        </div>
-    </div>
-</div>
-
 <footer class="footer">
     <div class="footer__content">
         <div class="footer__section">
             <h3 class="footer__title">Medelin Coffee</h3>
             <p class="footer__text">Найкраща кава в Ужгороді</p>
-            <p class="footer__text">Смак, якість, атмосфера</p>
         </div>
         <div class="footer__section">
             <h3 class="footer__title">Контакти</h3>
@@ -236,16 +172,29 @@
 </footer>
 
 <script>
+    const burgerBtn = document.getElementById('burger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    burgerBtn.addEventListener('click', () => {
+        burgerBtn.classList.toggle('header__burger--active');
+        navMenu.classList.toggle('nav--active');
+        document.body.classList.toggle('no-scroll');
+    });
+
     function openPopup(id) {
-        if(document.getElementById(id)) {
-            document.getElementById(id).classList.add('popup--active');
+        const popup = document.getElementById(id);
+        if(popup) {
+            popup.classList.add('popup--active');
             document.body.style.overflow = 'hidden';
         }
     }
     function closePopup(id) {
-        if(document.getElementById(id)) {
-            document.getElementById(id).classList.remove('popup--active');
-            document.body.style.overflow = '';
+        const popup = document.getElementById(id);
+        if(popup) {
+            popup.classList.remove('popup--active');
+            if(!navMenu.classList.contains('nav--active')) {
+                document.body.style.overflow = '';
+            }
         }
     }
     document.addEventListener('keydown', function (e) {

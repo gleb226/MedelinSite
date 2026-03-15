@@ -15,9 +15,14 @@
 <header class="header">
     <div class="header__container">
         <a href="index.html" class="header__logo">Medelin</a>
-        <nav class="nav">
+        <button class="header__burger" id="burger-btn" aria-label="Відкрити меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item"><a href="index.html" class="nav__link">Головна</a></li>
+                <li class="nav__item"><a href="index.html" class="nav__link active">Головна</a></li>
                 <li class="nav__item"><a href="pages/menu/menu.html" class="nav__link">Меню</a></li>
                 <li class="nav__item"><a href="pages/coffee/coffee.html" class="nav__link">Наша кава</a></li>
                 <li class="nav__item"><a href="pages/contact/contact.html" class="nav__link">Контакти</a></li>
@@ -107,16 +112,29 @@
 </footer>
 
 <script>
+    const burgerBtn = document.getElementById('burger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    burgerBtn.addEventListener('click', () => {
+        burgerBtn.classList.toggle('header__burger--active');
+        navMenu.classList.toggle('nav--active');
+        document.body.classList.toggle('no-scroll');
+    });
+
     function openPopup(id) {
-        if(document.getElementById(id)) {
-            document.getElementById(id).classList.add('popup--active');
+        const popup = document.getElementById(id);
+        if(popup) {
+            popup.classList.add('popup--active');
             document.body.style.overflow = 'hidden';
         }
     }
     function closePopup(id) {
-        if(document.getElementById(id)) {
-            document.getElementById(id).classList.remove('popup--active');
-            document.body.style.overflow = '';
+        const popup = document.getElementById(id);
+        if(popup) {
+            popup.classList.remove('popup--active');
+            if(!navMenu.classList.contains('nav--active')) {
+                document.body.style.overflow = '';
+            }
         }
     }
     document.addEventListener('keydown', function (e) {
