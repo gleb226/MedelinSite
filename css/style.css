@@ -96,6 +96,45 @@ a {
     transform: translateY(-1px);
 }
 
+.header__burger {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    padding: 0;
+    z-index: 1010;
+}
+
+.header__burger span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--cream);
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.header__burger span:nth-child(1) { top: 0; }
+.header__burger span:nth-child(2) { top: 9px; }
+.header__burger span:nth-child(3) { bottom: 0; }
+
+.header__burger--active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 9px;
+}
+
+.header__burger--active span:nth-child(2) {
+    opacity: 0;
+}
+
+.header__burger--active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 9px;
+}
+
 .nav__list {
     list-style: none;
     display: flex;

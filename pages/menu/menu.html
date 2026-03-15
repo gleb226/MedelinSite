@@ -15,7 +15,12 @@
 <header class="header">
     <div class="header__container">
         <a href="../../index.html" class="header__logo">Medelin</a>
-        <nav class="nav">
+        <button class="header__burger" id="burger-btn" aria-label="Відкрити меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item"><a href="../../index.html" class="nav__link">Головна</a></li>
                 <li class="nav__item"><a href="menu.html" class="nav__link">Меню</a></li>
@@ -307,6 +312,96 @@
     </div>
 </div>
 
+<div class="popup" id="m8">
+    <div class="popup__overlay" onclick="closePopup('m8')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m8')">✕</button>
+        <img src="https://images.unsplash.com/photo-1597916375255-940b3ae6a016?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Чай в асортименті</h3>
+        <p class="popup__price">70 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Об'єм:</strong> 400 мл</p>
+            <p><strong>Види:</strong> зелений, чорний, трав'яний, фруктовий</p>
+            <p><strong>Склад:</strong> відбірний листовий чай.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m9">
+    <div class="popup__overlay" onclick="closePopup('m9')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m9')">✕</button>
+        <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Масала чай</h3>
+        <p class="popup__price">85 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Об'єм:</strong> 300 мл</p>
+            <p><strong>Калорійність:</strong> 120 ккал</p>
+            <p><strong>Склад:</strong> чорний чай, молоко, мед, прянощі (кориця, кардамон, гвоздика, імбир).</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m10">
+    <div class="popup__overlay" onclick="closePopup('m10')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m10')">✕</button>
+        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Обліпиховий чай</h3>
+        <p class="popup__price">80 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Об'єм:</strong> 400 мл</p>
+            <p><strong>Калорійність:</strong> 150 ккал</p>
+            <p><strong>Склад:</strong> свіжоморожена обліпиха, мед, лимон, апельсин, бадьян.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m11">
+    <div class="popup__overlay" onclick="closePopup('m11')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m11')">✕</button>
+        <img src="https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Імбирний чай</h3>
+        <p class="popup__price">80 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Об'єм:</strong> 400 мл</p>
+            <p><strong>Калорійність:</strong> 90 ккал</p>
+            <p><strong>Склад:</strong> свіжий імбир, мед, лимон, м'ята, вода.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m12">
+    <div class="popup__overlay" onclick="closePopup('m12')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m12')">✕</button>
+        <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Свіжовижатий фреш</h3>
+        <p class="popup__price">95 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Об'єм:</strong> 250 мл</p>
+            <p><strong>Види:</strong> апельсиновий, грейпфрутовий, яблучний</p>
+            <p><strong>Склад:</strong> 100% натуральний сік.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m13">
+    <div class="popup__overlay" onclick="closePopup('m13')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m13')">✕</button>
+        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Домашній лимонад</h3>
+        <p class="popup__price">75 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Об'єм:</strong> 350 мл</p>
+            <p><strong>Калорійність:</strong> 110 ккал</p>
+            <p><strong>Склад:</strong> лимонний фреш, м'ята, сироп, газована вода, лід.</p>
+        </div>
+    </div>
+</div>
+
 <div class="popup" id="m14">
     <div class="popup__overlay" onclick="closePopup('m14')"></div>
     <div class="popup__content">
@@ -318,6 +413,81 @@
             <p><strong>Вага:</strong> 180 г</p>
             <p><strong>Калорійність:</strong> 380 ккал</p>
             <p><strong>Склад:</strong> пісочне тісто, куряче філе, печериці, вершкова заливка, сир.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m15">
+    <div class="popup__overlay" onclick="closePopup('m15')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m15')">✕</button>
+        <img src="https://images.unsplash.com/photo-1621213176330-6205e0453f58?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Кіш зі шпинатом</h3>
+        <p class="popup__price">110 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Вага:</strong> 180 г</p>
+            <p><strong>Калорійність:</strong> 350 ккал</p>
+            <p><strong>Склад:</strong> пісочне тісто, шпинат, сир фета, вершкова заливка.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m16">
+    <div class="popup__overlay" onclick="closePopup('m16')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m16')">✕</button>
+        <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Чізкейк Класичний</h3>
+        <p class="popup__price">95 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Вага:</strong> 150 г</p>
+            <p><strong>Калорійність:</strong> 320 ккал</p>
+            <p><strong>Склад:</strong> вершковий сир, печиво, вершкове масло, яйця, ваніль.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m17">
+    <div class="popup__overlay" onclick="closePopup('m17')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m17')">✕</button>
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Круасан з шоколадом</h3>
+        <p class="popup__price">65 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Вага:</strong> 100 г</p>
+            <p><strong>Калорійність:</strong> 410 ккал</p>
+            <p><strong>Склад:</strong> листкове тісто, шоколадна начинка.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m18">
+    <div class="popup__overlay" onclick="closePopup('m18')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m18')">✕</button>
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Круасан з мигдалем</h3>
+        <p class="popup__price">85 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Вага:</strong> 130 г</p>
+            <p><strong>Калорійність:</strong> 480 ккал</p>
+            <p><strong>Склад:</strong> листкове тісто, мигдальний крем, мигдальні пластівці.</p>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="m19">
+    <div class="popup__overlay" onclick="closePopup('m19')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('m19')">✕</button>
+        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800&q=80" class="popup__image">
+        <h3 class="popup__title">Вівсяне печиво</h3>
+        <p class="popup__price">35 грн</p>
+        <div class="popup__location-details">
+            <p><strong>Вага:</strong> 50 г</p>
+            <p><strong>Калорійність:</strong> 220 ккал</p>
+            <p><strong>Склад:</strong> вівсяні пластівці, масло, цукор, яйце, родзинки (за бажанням).</p>
         </div>
     </div>
 </div>
@@ -346,6 +516,15 @@
 </footer>
 
 <script>
+    const burgerBtn = document.getElementById('burger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    burgerBtn.addEventListener('click', () => {
+        burgerBtn.classList.toggle('header__burger--active');
+        navMenu.classList.toggle('nav--active');
+        document.body.classList.toggle('no-scroll');
+    });
+
     function openPopup(id) {
         const popup = document.getElementById(id);
         if(popup) {
@@ -357,7 +536,9 @@
         const popup = document.getElementById(id);
         if(popup) {
             popup.classList.remove('popup--active');
-            document.body.style.overflow = '';
+            if(!navMenu.classList.contains('nav--active')) {
+                document.body.style.overflow = '';
+            }
         }
     }
     document.addEventListener('keydown', function (e) {

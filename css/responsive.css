@@ -4,107 +4,112 @@
 }
 
 @media (max-width: 1024px) {
-    .header__container,
-    .menu,
-    .contact,
-    .footer__content {
+    .header__container, .menu, .contact, .footer__content {
         padding-left: 2rem;
         padding-right: 2rem;
     }
-
-    .hero__title {
-        font-size: clamp(2.6rem, 6vw, 4rem);
-    }
-
-    .section-title {
-        font-size: clamp(2rem, 4vw, 2.6rem);
-    }
-
-    .menu,
-    .contact {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-
-    .products__grid,
-    .locations__grid {
+    .hero__title { font-size: clamp(2.6rem, 6vw, 4rem); }
+    .section-title { font-size: clamp(2rem, 4vw, 2.6rem); }
+    .menu, .contact { padding-top: 4rem; padding-bottom: 4rem; }
+    .products__grid, .locations__grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 2rem;
     }
-
-    .menu-promo__card,
-    .contact-promo__card,
-    .coffee-promo__card {
-        grid-template-columns: 1fr;
-    }
-
-    .menu-promo__image,
-    .contact-promo__image,
-    .coffee-promo__image {
-        height: 320px;
-    }
+    .menu-promo__card, .contact-promo__card, .coffee-promo__card { grid-template-columns: 1fr; }
+    .menu-promo__image, .contact-promo__image, .coffee-promo__image { height: 320px; }
+    .menu__categories { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 }
 
 @media (max-width: 768px) {
-    .header__container {
-        flex-direction: column;
-        padding: 1.5rem var(--m-pad);
+    .header {
+        background-color: transparent;
+        box-shadow: none;
+        position: absolute;
+        width: 100%;
+        padding: 0;
+        pointer-events: none; 
     }
-
-    .nav__list {
-        gap: 1rem;
-        justify-content: center;
+    .header__logo { display: none; }
+    .header__container { flex-direction: column; padding: 0; position: static; }
+    .header__burger {
+        display: flex; align-items: center; justify-content: center;
+        position: fixed; top: 1.5rem; right: 1.5rem;
+        background-color: var(--dark-brown); width: 45px; height: 45px;
+        border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1010; pointer-events: auto; 
     }
+    .header__burger span { width: 20px; left: auto; }
+    .header__burger span:nth-child(1) { top: 14px; }
+    .header__burger span:nth-child(2) { top: 21px; }
+    .header__burger span:nth-child(3) { top: 28px; }
+    .header__burger--active span:nth-child(1) { transform: rotate(45deg); top: 21px; }
+    .header__burger--active span:nth-child(2) { opacity: 0; }
+    .header__burger--active span:nth-child(3) { transform: rotate(-45deg); top: 21px; }
 
-    .hero {
-        height: 500px;
+    .nav {
+        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+        background-color: rgba(60, 47, 47, 0.95); backdrop-filter: blur(10px);
+        margin-top: 0; z-index: 1000; pointer-events: auto; align-items: center; justify-content: center;
     }
+    .nav--active { display: flex; }
+    .nav__list { flex-direction: column; gap: 2.5rem; justify-content: center; width: 100%; text-align: center; }
+    .nav__link { font-size: 1.6rem; }
 
-    .hero__title {
-        font-size: 2.8rem;
-    }
+    .hero { height: auto; min-height: 500px; padding: 100px 0 80px; }
+    .hero__title { font-size: 2.8rem; padding-top: 2rem;}
+    .hero__subtitle { font-size: 1.3rem; }
+    
+    .menu, .contact, .products { padding: 3rem var(--m-pad); }
 
-    .menu,
-    .contact {
-        padding: 3rem var(--m-pad);
-    }
+    .products__grid, .locations__grid { grid-template-columns: 1fr; gap: 1.5rem; }
 
-    .products__grid,
-    .locations__grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .menu-promo__content,
-    .contact-promo__content,
-    .coffee-promo__content {
-        padding: 2.5rem 1.5rem;
-        text-align: center;
-        align-items: center;
-    }
-
+    .menu-promo__content, .contact-promo__content, .coffee-promo__content { padding: 2.5rem 1.5rem; text-align: center; align-items: center; }
     .contact-promo__content { order: 2; }
     .contact-promo__image { order: 1; }
+    .menu-promo__title, .contact-promo__title, .coffee-promo__title { font-size: 2rem; }
+    .menu-promo__title::after, .contact-promo__title::after, .coffee-promo__title::after { margin-inline: auto; }
 
+    .menu__categories { grid-template-columns: 1fr; gap: 2rem; }
+    .category { padding: 1.5rem; }
+    .category__title { font-size: 1.8rem; }
+    
     .menu-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: row; align-items: flex-start; text-align: left; gap: 1rem; padding: 0.8rem;
     }
+    .menu-item__image { width: 80px; height: 80px; border-radius: 12px; }
+    .menu-item__title { font-size: 1.2rem; }
+    .menu-item__price { font-size: 1.1rem; }
 
-    .footer__content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+    .footer__content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+    .footer { padding: 3rem 1.5rem 1.5rem; }
+
+    .about-summary { padding: 3rem var(--m-pad); }
+    .about-summary__text { font-size: 1.05rem; padding: 0 1rem; }
+
+    .booking-hero { padding: 3rem var(--m-pad); }
+    .booking-hero__card { padding: 2rem 1.5rem; }
+    .booking-hero__title { font-size: 1.8rem; }
+
+    .contact__social { padding: 1.5rem; }
+    .contact__item { font-size: 1rem; }
+
+    .popup__content { width: 95vw; }
+    .popup__image { height: 200px; }
+    .popup__title { font-size: 1.6rem; margin: 1.2rem 1.2rem 0.5rem; }
+    .popup__price { font-size: 1.4rem; margin: 0 1.2rem 1rem; }
+    .popup__description { margin: 0 1.2rem 1.2rem; }
+    .popup__location-details { margin: 0 1.2rem 1.2rem; padding: 1rem; }
+    div[style*="padding: 0 2rem 2rem"] { padding: 0 1.2rem 1.2rem !important; }
 }
 
 @media (max-width: 480px) {
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 1rem;
-    }
+    .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; }
+    .btn { width: 100%; padding: 1rem; justify-content: center; }
+    .hero__title { font-size: 2.2rem; }
+    
+    .menu-item { gap: 0.8rem; }
+    .menu-item__image { width: 70px; height: 70px; }
+    .menu-item__title { font-size: 1.1rem; margin-bottom: 0.2rem; }
+    .menu-item__description { font-size: 0.85rem; }
+    .popup__image { height: 160px; }
 }
