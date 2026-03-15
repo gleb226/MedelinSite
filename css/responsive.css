@@ -76,6 +76,28 @@
     .contact__container {
         max-width: 900px;
     }
+
+    .menu-promo,
+    .contact-promo {
+        padding: 2.5rem 2.5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .menu-promo__card,
+    .contact-promo__card {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-promo__image,
+    .contact-promo__image {
+        height: 300px;
+    }
+
+    .menu-promo__title,
+    .contact-promo__title {
+        font-size: 2.4rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -85,6 +107,57 @@
         gap: 0.9rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
+    }
+
+    .menu-promo,
+    .contact-promo {
+        padding: 2rem 0;
+        margin: 2rem var(--m-pad);
+    }
+
+    .menu-promo__card,
+    .contact-promo__card {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-promo__image,
+    .contact-promo__image {
+        height: 250px;
+    }
+
+    .menu-promo__content,
+    .contact-promo__content {
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-promo__content {
+        order: 2; /* Текст знизу */
+    }
+
+    .contact-promo__image {
+        order: 1; /* Фото зверху */
+    }
+
+    .menu-promo__title,
+    .contact-promo__title {
+        font-size: 2.2rem;
+    }
+
+    .menu-promo__title::after,
+    .contact-promo__title::after {
+        margin: 0.8rem auto 0;
+    }
+
+    .menu-promo__text,
+    .contact-promo__text {
+        font-size: 1rem;
+    }
+
+    .menu-promo .btn,
+    .contact-promo .btn {
+        width: 100%;
     }
 
     .nav {

@@ -22,7 +22,7 @@
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.html" class="nav__link">Головна</a></li>
                 <li class="nav__item"><a href="pages/menu/menu.html" class="nav__link">Меню</a></li>
-                <li class="nav__item"><a href="pages/about/about.html" class="nav__link">Про нас</a></li>
+                <li class="nav__item"><a href="pages/coffee/coffee.html" class="nav__link">Наша кава</a></li>
                 <li class="nav__item"><a href="pages/contact/contact.html" class="nav__link">Контакти</a></li>
             </ul>
         </nav>
@@ -38,78 +38,31 @@
         </div>
     </section>
 
-    <section class="products">
-        <!-- ... existing code ... -->
-        <div class="menu-cta">
-            <a class="menu-cta__card" href="pages/menu/menu.html">
-                <img
-                        class="menu-cta__image"
-                        src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=240&h=240&fit=crop&crop=center&auto=format&q=80"
-                        alt="Меню Medelin Coffee"
-                        width="56"
-                        height="56"
-                        loading="lazy"
-                        decoding="async"
-                />
-
-                <div class="menu-cta__text">
-                    <h3 class="menu-cta__title">Відкрити меню</h3>
-                    <p class="menu-cta__subtitle">Кава • чай • десерти</p>
-                </div>
-
-                <span class="menu-cta__pill">Перейти →</span>
-            </a>
+    <section class="menu-promo">
+        <div class="menu-promo__card">
+            <div class="menu-promo__image"></div>
+            <div class="menu-promo__content">
+                <h2 class="menu-promo__title">Відкрийте наше меню</h2>
+                <p class="menu-promo__text">Від вишуканої арабіки до ніжних авторських десертів. Кожна позиція в нашому меню створена, щоб дарувати вам справжнє задоволення від смаку та аромату.</p>
+                <a href="pages/menu/menu.html" class="btn">Переглянути меню →</a>
+            </div>
         </div>
-        <!-- ... existing code ... -->
     </section>
 
-    <section class="locations">
-        <h2 class="section-title">Наші заклади</h2>
-        <div class="locations__grid">
-            <article class="location-card" onclick="openPopup('location1')">
-                <div class="location-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Корятовича</h3>
-                    <p class="location-card__address">📍 вул. Корятовича, 5а</p>
-                </div>
-            </article>
-
-            <article class="location-card" onclick="openPopup('location2')">
-                <div class="location-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Гойди</h3>
-                    <p class="location-card__address">📍 вул. Гойди, 10</p>
-                </div>
-            </article>
-
-            <article class="location-card" onclick="openPopup('location3')">
-                <div class="location-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1567880905822-56f8e06fe630?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FmZSUyMGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Закарпатський</h3>
-                    <p class="location-card__address">📍 вул. Закарпатська, 44</p>
-                </div>
-            </article>
-
-            <article class="location-card" onclick="openPopup('location4')">
-                <div class="location-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1669295987842-53270c972055?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhZmUlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Анатолія Тегзи</h3>
-                    <p class="location-card__address">📍 вул. Анатолія Тегзи, 41</p>
-                </div>
-            </article>
-
-            <article class="location-card" onclick="openPopup('location5')">
-                <div class="location-card__image"
-                     style="background-image: url('https://plus.unsplash.com/premium_photo-1663932464937-e677ddfc1d55?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhZmUlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Проспекті Свободи</h3>
-                    <p class="location-card__address">📍 вул. Просп. Свободи,55</p>
-                </div>
-            </article>
+    <section class="contact-promo">
+        <div class="contact-promo__card">
+            <div class="contact-promo__content">
+                <h2 class="contact-promo__title">Завітайте до нас</h2>
+                <p class="contact-promo__text">Ми завжди раді бачити вас у наших затишних кав'ярнях по всьому Ужгороду. Знайдіть найближчу локацію, перегляньте графік роботи або забронюйте столик онлайн.</p>
+                <a href="pages/contact/contact.html" class="btn">Наші заклади →</a>
+            </div>
+            <div class="contact-promo__image"></div>
+        </div>
+    <section class="about-summary">
+        <div class="about-summary__container">
+            <p class="about-summary__text">
+                Medelin Coffee — це більше, ніж просто кав'ярня, це осередок кавової культури в самому серці Ужгорода. З 2015 року ми щодня працюємо над тим, щоб кожен наш гість міг відчути справжню магію свіжообсмажених зерен. Наша історія розпочалася з мрії про ідеальну чашку еспресо, і сьогодні ми з гордістю поєднуємо багаторічні традиції з сучасними методами приготування. Ми ретельно відбираємо найкращу арабіку та створюємо авторські десерти, щоб ваш кожен візит був наповнений теплом, затишком та неперевершеним смаком. Дякуємо, що дозволяєте нам бути частиною ваших особливих моментів.
+            </p>
         </div>
     </section>
 
