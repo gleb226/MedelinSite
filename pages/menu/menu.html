@@ -12,178 +12,15 @@
           rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/responsive.css">
-    <style>
-        .menu-subnav {
-            background: rgba(28, 18, 10, 0.95);
-            border-bottom: 1px solid rgba(201, 169, 110, 0.2);
-            padding: 0.6rem 0;
-            width: 100%;
-            position: sticky;
-            top: 82px; /* Fixed overlap with main header */
-            z-index: 500;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-        }
-
-        .menu-subnav__list {
-            display: flex;
-            gap: 0.6rem;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -webkit-overflow-scrolling: touch;
-            padding: 0 1.5rem;
-            margin: 0;
-            list-style: none;
-            max-width: var(--container);
-            margin: 0 auto;
-        }
-
-        .menu-subnav__list::-webkit-scrollbar {
-            display: none;
-        }
-
-        .menu-subnav__link {
-            display: inline-block;
-            padding: 0.5rem 1.1rem;
-            font-family: Montserrat, sans-serif;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            color: rgba(240, 230, 211, 0.7);
-            text-decoration: none;
-            white-space: nowrap;
-            border-radius: 50px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .menu-subnav__link:hover {
-            color: #fff;
-            background: rgba(201, 169, 110, 0.1);
-        }
-
-        .menu-subnav__link.is-active {
-            color: #fff;
-            background: var(--coffee);
-            border-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 1024px) {
-            .menu-subnav {
-                top: 0;
-                padding: 0.5rem 0;
-            }
-
-            .header {
-                position: static;
-            }
-
-            /* On mobile, only the category bar sticks */
-        }
-
-        @media (max-width: 768px) {
-            .menu-subnav__list {
-                padding-right: 70px;
-            }
-
-            /* Prevent overlap with burger button */
-        }
-
-        @media (max-width: 600px) {
-            .menu-subnav__link {
-                padding: 0.45rem 0.85rem;
-                font-size: 0.7rem;
-            }
-        }
-
-        .category {
-            scroll-margin-top: 160px;
-        }
-
-        @media (max-width: 1024px) {
-            .category {
-                scroll-margin-top: 80px;
-            }
-        }
-
-        .menu__categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 3rem;
-        }
-
-        @media (max-width: 768px) {
-            .menu__categories {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        .menu-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-list__item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.65rem 1rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            font-family: Montserrat, sans-serif;
-            font-size: 0.9rem;
-        }
-
-        .menu-list__name {
-            color: var(--text);
-        }
-
-        .menu-list__price {
-            color: var(--coffee);
-            font-weight: 600;
-            white-space: nowrap;
-            margin-left: 1rem;
-        }
-
-        .popup__description {
-            margin: 1.5rem 2rem 1rem;
-            line-height: 1.7;
-            color: var(--muted);
-            font-size: 1.05rem;
-        }
-
-        .popup__details {
-            background: rgba(247, 243, 233, 0.6);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin: 0 2rem 2rem;
-            border-left: 5px solid var(--coffee);
-        }
-
-        .popup__details p {
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-            color: var(--dark-brown);
-        }
-
-        .popup__details p:last-child {
-            margin-bottom: 0;
-        }
-
-        .popup__details strong {
-            color: var(--coffee);
-            margin-right: 0.5rem;
-        }
-    </style>
 </head>
 <body>
 <header class="header">
     <div class="header__container">
         <a href="../../index.html" class="header__logo">Medelin</a>
         <button class="header__burger" id="burger-btn" aria-label="Відкрити меню">
-            <span></span><span></span><span></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
         </button>
         <nav class="nav" id="nav-menu">
             <ul class="nav__list">
@@ -201,7 +38,7 @@
         <ul class="menu-subnav__list" id="subnav-list"></ul>
     </nav>
     <section class="menu">
-        <h1 class="section-title text-center mb-5">Карта напоїв та страв</h1>
+        <h1 class="section-title section-title--mb-5">Карта напоїв та страв</h1>
         <div id="menu-root" class="menu__categories"></div>
     </section>
 </main>
@@ -249,16 +86,16 @@
 <script>
     const IMG = {
         esp: 'https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=640&q=80',
-        ame: 'https://images.unsplash.com/photo-1551030173-122aabc4489c?w=640&q=80',
+        ame: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=640&q=80',
         cap: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=640&q=80',
         lat: 'https://images.unsplash.com/photo-1561882468-9110e03e0f78?w=640&q=80',
-        mac: 'https://images.unsplash.com/photo-1579265898841-79c7890d69cf?w=640&q=80',
-        cor: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=640&q=80',
-        dop: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=640&q=80',
+        mac: 'https://images.unsplash.com/photo-1545665277-5937489579f2?w=640&q=80',
+        cor: 'https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=640&q=80',
+        dop: 'https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=640&q=80',
         ice: 'https://images.unsplash.com/photo-1553909489-cd47e0907980?w=640&q=80',
         ton: 'https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=640&q=80',
         fil: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=640&q=80',
-        fw: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=640&q=80',
+        fw: 'https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=640&q=80',
         raf: 'https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?w=640&q=80',
         mtch: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=640&q=80',
         tea: 'https://images.unsplash.com/photo-1583566916016-5c4e38ffca98?w=640&q=80',
@@ -267,9 +104,8 @@
         jus: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?w=640&q=80',
         lem: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=640&q=80',
         mas: 'https://images.unsplash.com/photo-1596568892428-4a77bed5f14a?w=640&q=80',
-        bns: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=640&q=80',
-        ecl: 'https://images.unsplash.com/photo-1604413191066-4dd20bedf486?w=640&q=80',
         chz: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=640&q=80',
+        ecl: 'https://images.unsplash.com/photo-1604413191066-4dd20bedf486?w=640&q=80',
         brw: 'https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=640&q=80',
         nap: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=640&q=80',
         mac2: 'https://images.unsplash.com/photo-1558326567-98ae2405596b?w=640&q=80',
@@ -279,6 +115,35 @@
         veg: 'https://images.unsplash.com/photo-1548907040-4baa42d10919?w=640&q=80',
         decaf: 'https://images.unsplash.com/photo-1521017432531-fbd92d744264?w=640&q=80',
         alt: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=640&q=80',
+        babyccino: 'https://images.unsplash.com/photo-1576092764958-c94025a17277?w=640&q=80',
+        bumble: 'https://images.unsplash.com/photo-1629203923616-248318854457?w=640&q=80',
+        blueberry_tea: 'https://images.unsplash.com/photo-1564858882894-67252cb78086?w=640&q=80',
+        strawberry_shake: 'https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?w=640&q=80',
+        chocolate_shake: 'https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?w=640&q=80',
+        banana_shake: 'https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?w=640&q=80',
+        frappe: 'https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?w=640&q=80',
+        orange_juice: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?w=640&q=80',
+        apple_juice: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?w=640&q=80',
+        carrot_juice: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?w=640&q=80',
+        herbal_tea: 'https://images.unsplash.com/photo-1583566916016-5c4e38ffca98?w=640&q=80',
+        fruit_tea: 'https://images.unsplash.com/photo-1583566916016-5c4e38ffca98?w=640&q=80',
+        black_tea: 'https://images.unsplash.com/photo-1583566916016-c5c4e38ffca98?w=640&q=80',
+        green_tea: 'https://images.unsplash.com/photo-1583566916016-c5c4e38ffca98?w=640&q=80',
+        water_lemon: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=640&q=80',
+        mineral_water: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=640&q=80',
+        lemonade: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=640&q=80',
+        masala_tea: 'https://images.unsplash.com/photo-1596568892428-4a77bed5f14a?w=640&q=80',
+        matcha_latte: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=640&q=80',
+        cocoa: 'https://images.unsplash.com/photo-1542990253-a781e04e7ef5?w=640&q=80',
+        macarons: 'https://images.unsplash.com/photo-1558326567-98ae2405596b?w=640&q=80',
+        canele: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=640&q=80',
+        brownie: 'https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=640&q=80',
+        eclair: 'https://images.unsplash.com/photo-1604413191066-4dd20bedf486?w=640&q=80',
+        cheesecake: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=640&q=80',
+        napoleon: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=640&q=80',
+        nut_bar: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=640&q=80',
+        vegan_dessert: 'https://images.unsplash.com/photo-1548907040-4baa42d10919?w=640&q=80',
+        potato_cake: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=640&q=80',
     };
 
     const MENU = [
@@ -289,125 +154,125 @@
                     name: 'Американо',
                     price: '43 ₴',
                     img: IMG.ame,
-                    desc: 'Класична чорна кава на основі еспресо з додаванням гарячої води.',
-                    vol: '120 мл',
-                    ing: 'Еспресо, вода',
+                    desc: 'Класична чорна кава на основі еспресо з додаванням гарячої води. Має м\'який смак та помірну міцність.',
+                    vol: '150 мл',
+                    ing: '100% Арабіка, вода',
                     energy: '2 ккал'
                 },
                 {
-                    name: 'Глясе м.',
+                    name: 'Глясе М.',
                     price: '73 ₴',
                     img: IMG.ice,
-                    desc: 'Еспресо з кулькою ніжного ванільного морозива.',
-                    vol: '150 мл',
-                    ing: 'Еспресо, ванільне морозиво',
-                    energy: '150 ккал'
+                    desc: 'Вишуканий десертний напій: порція гарячого еспресо з кулькою ніжного ванільного морозива. Ідеальне поєднання температур.',
+                    vol: '180 мл',
+                    ing: 'Еспресо, ванільне морозиво (50г)',
+                    energy: '160 ккал'
                 },
                 {
                     name: 'Допіо',
                     price: '84 ₴',
                     img: IMG.dop,
-                    desc: 'Подвійна порція класичного еспресо.',
+                    desc: 'Подвійна порція класичного еспресо для справжніх поціновувачів міцного смаку. Вдвічі більше кофеїну та аромату.',
                     vol: '60 мл',
-                    ing: '100% Арабіка',
-                    energy: '2 ккал'
+                    ing: '100% Арабіка (подвійна закладка)',
+                    energy: '4 ккал'
                 },
                 {
                     name: 'Еспресо',
                     price: '42 ₴',
                     img: IMG.esp,
-                    desc: 'Концентрований кавовий напій з густою крема.',
+                    desc: 'Серце нашої кав\'ярні. Концентрований напій з щільним тілом, горіховими нотками та золотистою пінкою (крема).',
                     vol: '30 мл',
-                    ing: '100% Арабіка',
-                    energy: '1 ккал'
+                    ing: '100% Арабіка свіжого обсмаження',
+                    energy: '2 ккал'
                 },
                 {
                     name: 'Еспресо Макіато',
                     price: '45 ₴',
                     img: IMG.mac,
-                    desc: 'Еспресо з невеликою кількістю молочної піни зверху.',
+                    desc: 'Порція еспресо "помічена" невеликою кількістю ніжної молочної піни. Пом\'якшує гірчинку, зберігаючи міцність.',
                     vol: '50 мл',
                     ing: 'Еспресо, молочна піна',
-                    energy: '10 ккал'
+                    energy: '12 ккал'
                 },
                 {
-                    name: 'еспресо тонік',
+                    name: 'Еспресо Тонік',
                     price: '85 ₴',
                     img: IMG.ton,
-                    desc: 'Освіжаючий літній мікс еспресо та тоніка з льодом.',
+                    desc: 'Хіт літнього сезону! Освіжаючий мікс еспресо, крафтового тоніка та льоду. Легка цитрусова кислинка та бадьорість.',
                     vol: '250 мл',
                     ing: 'Еспресо, тонік, лід, лимон',
-                    energy: '60 ккал'
+                    energy: '75 ккал'
                 },
                 {
-                    name: 'Капучіно на подвійному',
+                    name: 'Капучіно На Подвійному',
                     price: '75 ₴',
                     img: IMG.cap,
-                    desc: 'Класичний капучино з більш вираженим смаком кави.',
-                    vol: '180 мл',
-                    ing: 'Подвійний еспресо, молоко',
-                    energy: '80 ккал'
+                    desc: 'Для тих, хто любить баланс молока, але хоче відчувати виражений смак кави. Подвійна порція еспресо у класичному капучіно.',
+                    vol: '220 мл',
+                    ing: 'Подвійний еспресо, збите молоко',
+                    energy: '95 ккал'
                 },
                 {
-                    name: 'Капучино',
+                    name: 'Капучіно',
                     price: '57 ₴',
                     img: IMG.cap,
-                    desc: 'Ідеальний баланс еспресо та ніжного збитого молока.',
+                    desc: 'Ідеальна гармонія: порція добірного еспресо з додаванням ніжного спіненого молока. Класика, що ніколи не вийде з моди.',
                     vol: '180 мл',
-                    ing: 'Еспресо, молоко',
-                    energy: '75 ккал'
+                    ing: 'Еспресо, незбиране молоко',
+                    energy: '85 ккал'
                 },
                 {
                     name: 'Кортадо',
                     price: '52 ₴',
                     img: IMG.cor,
-                    desc: 'Порція еспресо змішана з рівною кількістю теплого молока.',
+                    desc: 'Традиційний іспанський напій. Порція еспресо змішується з рівною кількістю теплого молока (без густої піни).',
                     vol: '90 мл',
-                    ing: 'Еспресо, молоко',
-                    energy: '40 ккал'
+                    ing: 'Еспресо, тепле молоко',
+                    energy: '45 ккал'
                 },
                 {
-                    name: 'лате',
+                    name: 'Лате',
                     price: '63 ₴',
                     img: IMG.lat,
-                    desc: 'Кавовий напій з переважаючим вмістом молока.',
+                    desc: 'Найніжніший напій у меню. Багато гарячого молока з додаванням однієї порції еспресо. Має м\'який вершковий смак.',
                     vol: '250 мл',
-                    ing: 'Еспресо, молоко',
-                    energy: '110 ккал'
+                    ing: 'Молоко, еспресо, легка піна',
+                    energy: '120 ккал'
                 },
                 {
-                    name: 'Лате на подвійному',
+                    name: 'Лате На Подвійному',
                     price: '85 ₴',
                     img: IMG.lat,
-                    desc: 'Великий лате з подвійною порцією еспресо.',
-                    vol: '250 мл',
-                    ing: 'Подвійний еспресо, молоко',
-                    energy: '115 ккал'
+                    desc: 'Великий об\'єм ніжних вершкових лате з посиленим кавовим профілем завдяки подвійному еспресо.',
+                    vol: '340 мл',
+                    ing: 'Молоко, подвійний еспресо',
+                    energy: '140 ккал'
                 },
                 {
                     name: 'Раф',
                     price: '76 ₴',
                     img: IMG.raf,
-                    desc: 'Десертний напій на основі еспресо та вершків із ваніллю.',
-                    vol: '200 мл',
-                    ing: 'Еспресо, вершки, ванільний цукор',
-                    energy: '190 ккал'
+                    desc: 'Десертна кава, де еспресо збивається разом із вершками та ванільним цукром. Має консистенцію рідкого морозива.',
+                    vol: '250 мл',
+                    ing: 'Еспресо, вершки 10%, ванільний цукор',
+                    energy: '210 ккал'
                 },
                 {
                     name: 'Фільтр',
                     price: '60 ₴',
                     img: IMG.fil,
-                    desc: 'Чиста кава, заварена крапельним методом.',
+                    desc: 'Кава, заварена методом проливу. Чистий, зрозумілий смак, де найкраще розкриваються особливості сорту зерна.',
                     vol: '200 мл',
-                    ing: 'Мелена кава, вода',
+                    ing: 'Арабіка Light обсмаження, вода',
                     energy: '2 ккал'
                 },
                 {
-                    name: 'Флет вайт',
+                    name: 'Флет Вайт',
                     price: '94 ₴',
                     img: IMG.fw,
-                    desc: 'Насичений кавовий напій з тонким шаром молочної піни.',
-                    vol: '160 мл',
+                    desc: 'Австралійська класика. Насичений смак подвійного еспресо з дуже тонким шаром молочної піни. Міцніше за капучіно.',
+                    vol: '180 мл',
                     ing: 'Подвійний еспресо, молоко',
                     energy: '90 ккал'
                 },
@@ -415,563 +280,560 @@
                     name: 'Рістрето',
                     price: '42 ₴',
                     img: IMG.esp,
-                    desc: 'Дуже концентрований еспресо меншого об\'єму.',
+                    desc: 'Найбільш концентрована та ароматна частина еспресо. Менший об\'єм, менше гіркоти, максимум ефірних олій.',
                     vol: '20 мл',
-                    ing: '100% Арабіка',
+                    ing: '100% Арабіка свіжого обсмаження',
                     energy: '1 ккал'
                 },
                 {
-                    name: 'айс лате',
+                    name: 'Айс Лате',
                     price: '63 ₴',
                     img: IMG.ice,
-                    desc: 'Охолоджений лате з льодом.',
+                    desc: 'Класичний лате, поданий з кубиками льоду. Чудово втамовує спрагу та бадьорість у спеку.',
                     vol: '250 мл',
-                    ing: 'Еспресо, молоко, лід',
-                    energy: '100 ккал'
+                    ing: 'Еспресо, холодне молоко, лід',
+                    energy: '110 ккал'
                 },
             ]
         },
         {
-            cat: '➕ До кави',
+            cat: '➕ До Кави',
             simple: true,
             items: [
                 {name: 'Молоко 70мл', price: '10 ₴'},
                 {name: 'Вершки 70мл', price: '10 ₴'},
                 {name: 'Мед', price: '10 ₴'},
-                {name: 'молоко альтернативне', price: '25 ₴'},
-                {name: 'згущене молоко', price: '15 ₴'},
-                {name: 'карамель', price: '15 ₴'},
-                {name: 'Вершки порційні', price: '10 ₴'},
+                {name: 'Молоко Альтернативне', price: '25 ₴'},
+                {name: 'Згущене Молоко', price: '15 ₴'},
+                {name: 'Карамель', price: '15 ₴'},
+                {name: 'Вершки Порційні', price: '10 ₴'},
             ]
         },
         {
-            cat: '🍃 декаф',
+            cat: '🍃 Декаф',
             simple: true,
             items: [
-                {name: 'Американо декаф', price: '43 ₴'},
-                {name: 'Бананове лате б/к', price: '105 ₴'},
-                {name: 'Банановий капучино б/к', price: '80 ₴'},
-                {name: 'Банановий кортадо б/к', price: '70 ₴'},
-                {name: 'Банановий флет б/к', price: '120 ₴'},
-                {name: 'Безлактозний капучино б/к', price: '62 ₴'},
-                {name: 'Безлактозний кортадо б/к', price: '57 ₴'},
-                {name: 'Безлактозний лате б/к', price: '70 ₴'},
-                {name: 'Безлактозний флет б/к', price: '100 ₴'},
-                {name: 'декаф капуч ванільний', price: '82 ₴'},
-                {name: 'Допіо б/к', price: '84 ₴'},
-                {name: 'Еспресо б/к', price: '42 ₴'},
-                {name: 'Капучино б/к', price: '57 ₴'},
-                {name: 'Кокосове кортадо б/к', price: '70 ₴'},
-                {name: 'Кокосове лате б/к', price: '100 ₴'},
-                {name: 'Кокосовий капучино б/к', price: '80 ₴'},
-                {name: 'Кокосовий флет б/к', price: '115 ₴'},
-                {name: 'Кортадо б/к', price: '52 ₴'},
-                {name: 'Лате б/к', price: '63 ₴'},
-                {name: 'Макіято декаф', price: '45 ₴'},
-                {name: 'Мигдалеве капучино б/к', price: '80 ₴'},
-                {name: 'Мигдалеве кортадо б/к', price: '80 ₴'},
-                {name: 'Мигдалеве лате б/к', price: '90 ₴'},
-                {name: 'Мигдалевий флет б/к', price: '120 ₴'},
-                {name: 'РАФ декаф', price: '76 ₴'},
-                {name: 'Флет вайт б/к', price: '94 ₴'},
-                {name: 'глясе б\к', price: '73 ₴'},
+                {name: 'Американо Декаф', price: '43 ₴'},
+                {name: 'Бананове Лате Б/К', price: '105 ₴'},
+                {name: 'Банановий Капучино Б/К', price: '80 ₴'},
+                {name: 'Банановий Кортадо Б/К', price: '70 ₴'},
+                {name: 'Банановий Флет Б/К', price: '120 ₴'},
+                {name: 'Безлактозний Капучино Б/К', price: '62 ₴'},
+                {name: 'Безлактозний Кортадо Б/К', price: '57 ₴'},
+                {name: 'Безлактозний Лате Б/К', price: '70 ₴'},
+                {name: 'Безлактозний Флет Б/К', price: '100 ₴'},
+                {name: 'Декаф Капучино Ванільний', price: '82 ₴'},
+                {name: 'Допіо Б/К', price: '84 ₴'},
+                {name: 'Еспресо Б/К', price: '42 ₴'},
+                {name: 'Капучино Б/К', price: '57 ₴'},
+                {name: 'Кокосове Кортадо Б/К', price: '70 ₴'},
+                {name: 'Кокосове Лате Б/К', price: '100 ₴'},
+                {name: 'Кокосовий Капучино Б/К', price: '80 ₴'},
+                {name: 'Кокосовий Флет Б/К', price: '115 ₴'},
+                {name: 'Кортадо Б/К', price: '52 ₴'},
+                {name: 'Лате Б/К', price: '63 ₴'},
+                {name: 'Макіято Декаф', price: '45 ₴'},
+                {name: 'Мигдалеве Капучино Б/К', price: '80 ₴'},
+                {name: 'Мигдалеве Кортадо Б/К', price: '80 ₴'},
+                {name: 'Мигдалеве Лате Б/К', price: '90 ₴'},
+                {name: 'Мигдалевий Флет Б/К', price: '120 ₴'},
+                {name: 'РАФ Декаф', price: '76 ₴'},
+                {name: 'Флет Вайт Б/К', price: '94 ₴'},
+                {name: 'Глясе Б/К', price: '73 ₴'},
             ]
         },
         {
-            cat: '🥛 кава на альтернативному',
+            cat: '🥛 Кава На Альтернативному',
             simple: true,
             items: [
-                {name: 'Бананове кортадо', price: '80 ₴'},
-                {name: 'Бананове лате', price: '105 ₴'},
-                {name: 'Банановий капуч', price: '90 ₴'},
+                {name: 'Бананове Кортадо', price: '80 ₴'},
+                {name: 'Бананове Лате', price: '105 ₴'},
+                {name: 'Банановий Капучино', price: '90 ₴'},
                 {name: 'Банановий Макіято', price: '70 ₴'},
-                {name: 'Банановий флет', price: '120 ₴'},
-                {name: 'Безлактозне кортадо', price: '57 ₴'},
-                {name: 'Безлактозне лате', price: '70 ₴'},
+                {name: 'Банановий Флет', price: '120 ₴'},
+                {name: 'Безлактозне Кортадо', price: '57 ₴'},
+                {name: 'Безлактозне Лате', price: '70 ₴'},
                 {name: 'Безлактозне Макіято', price: '50 ₴'},
-                {name: 'Безлактозний капуч', price: '62 ₴'},
-                {name: 'Безлактозний флет', price: '100 ₴'},
-                {name: 'Ванільне кортадо', price: '70 ₴'},
-                {name: 'Ванільне лате', price: '95 ₴'},
-                {name: 'Ванільний капуч', price: '70 ₴'},
-                {name: 'Ванільний макіято', price: '70 ₴'},
-                {name: 'Ванільний флет', price: '115 ₴'},
-                {name: 'Кокосове кортадо', price: '70 ₴'},
-                {name: 'Кокосове лате', price: '95 ₴'},
-                {name: 'Кокосовий капуч', price: '80 ₴'},
-                {name: 'Кокосовий макіято', price: '70 ₴'},
-                {name: 'Кокосовий флет', price: '115 ₴'},
-                {name: 'Мигдалеве капучино', price: '85 ₴'},
-                {name: 'Мигдалеве кортадо', price: '77 ₴'},
-                {name: 'Мигдалеве лате', price: '90 ₴'},
-                {name: 'Мигдалеве макіято', price: '70 ₴'},
-                {name: 'Мигдалевий флет', price: '115 ₴'},
-                {name: 'подвійний безлактозний лате', price: '85 ₴'},
-                {name: 'капучино на подвійному безлактозний', price: '80 ₴'},
+                {name: 'Безлактозний Капучино', price: '62 ₴'},
+                {name: 'Безлактозний Флет', price: '100 ₴'},
+                {name: 'Ванільне Кортадо', price: '70 ₴'},
+                {name: 'Ванільне Лате', price: '95 ₴'},
+                {name: 'Ванільний Капучино', price: '70 ₴'},
+                {name: 'Ванільний Макіято', price: '70 ₴'},
+                {name: 'Ванільний Флет', price: '115 ₴'},
+                {name: 'Кокосове Кортадо', price: '70 ₴'},
+                {name: 'Кокосове Лате', price: '95 ₴'},
+                {name: 'Кокосовий Капучино', price: '80 ₴'},
+                {name: 'Кокосовий Макіято', price: '70 ₴'},
+                {name: 'Кокосовий Флет', price: '115 ₴'},
+                {name: 'Мигдалеве Капучино', price: '85 ₴'},
+                {name: 'Мигдалеве Кортадо', price: '77 ₴'},
+                {name: 'Мигдалеве Лате', price: '90 ₴'},
+                {name: 'Мигдалеве Макіято', price: '70 ₴'},
+                {name: 'Мигдалевий Флет', price: '115 ₴'},
+                {name: 'Подвійний Безлактозний Лате', price: '85 ₴'},
+                {name: 'Капучино На Подвійному Безлактозний', price: '80 ₴'},
             ]
         },
         {
-            cat: '🍰 десерти',
+            cat: '🍰 Десерти',
             items: [
                 {
-                    name: 'Вишневий чіз',
+                    name: 'Вишневий Чіз',
                     price: '110 ₴',
-                    img: IMG.chz,
-                    desc: 'Ніжний чізкейк із соковитою вишневою начинкою.',
+                    img: IMG.cheesecake,
+                    desc: 'Ніжний запечений чізкейк на основі вершкового сиру з додаванням цілих ягід вишні. Ідеальний баланс солодкості та кислинки.',
                     vol: '150 г',
-                    ing: 'Сир вершковий, вишня',
+                    ing: 'Вершковий сир, вишня, пісочна основа, цукор',
                     energy: '340 ккал'
                 },
                 {
-                    name: 'Горіх-лате чіз',
+                    name: 'Горіх-Лате Чіз',
                     price: '110 ₴',
-                    img: IMG.chz,
-                    desc: 'Чізкейк з вираженим горіховим та кавовим смаком.',
+                    img: IMG.cheesecake,
+                    desc: 'Авторський чізкейк з вираженим смаком фундука та легкою кавовою ноткою. Сподобається поціновувачам насичених смаків.',
                     vol: '150 г',
-                    ing: 'Сир вершковий, фундук, кава',
-                    energy: '360 ккал'
+                    ing: 'Сир вершковий, фундукова паста, еспресо, горіхи',
+                    energy: '380 ккал'
                 },
                 {
                     name: 'Горішки',
                     price: '30 ₴',
-                    img: IMG.bar,
-                    desc: 'Хрустке печиво зі згущеним молоком.',
-                    vol: '50 г',
-                    ing: 'Тісто, згущене молоко',
-                    energy: '190 ккал'
+                    img: IMG.nut_bar,
+                    desc: 'Смак дитинства: хрустке пісочне печиво у формі горішків, наповнене вареним згущеним молоком.',
+                    vol: '50 г (2 шт)',
+                    ing: 'Борошно, масло вершкове, варене згущене молоко',
+                    energy: '210 ккал'
                 },
                 {
-                    name: 'десерт в асортименті',
+                    name: 'Десерт В Асортименті',
                     price: '110 ₴',
-                    img: IMG.chz,
-                    desc: 'Свіжі сезонні десерти на вибір.',
+                    img: IMG.cheesecake,
+                    desc: 'Щодня ми готуємо свіжі сезонні десерти. Запитайте у бариста про сьогоднішні новинки на вітрині!',
                     vol: '-'
                 },
                 {
-                    name: 'Еклер карамель',
+                    name: 'Еклер Карамель',
                     price: '80 ₴',
-                    img: IMG.ecl,
-                    desc: 'Еклер з домашньою солоною карамеллю.',
+                    img: IMG.eclair,
+                    desc: 'Легке заварне тісто, наповнене ніжним кремом з додаванням нашої фірмової солоної карамелі.',
                     vol: '100 г',
-                    ing: 'Заварне тісто, карамель',
+                    ing: 'Заварне тісто, вершковий крем, солона карамель',
                     energy: '310 ккал'
                 },
                 {
-                    name: 'шу малиновий',
+                    name: 'Шу Малиновий',
                     price: '95 ₴',
-                    img: IMG.ecl,
-                    desc: 'Французьке тістечко шу з малиновою крем-начинкою.',
+                    img: IMG.eclair,
+                    desc: 'Французьке тістечко з хрустким кракеліном та соковитою малиновою начинкою. Легкий та витончений десерт.',
                     vol: '90 г',
-                    ing: 'Тісто, малина',
+                    ing: 'Заварне тісто, малиновий конфітюр, вершки',
                     energy: '280 ккал'
                 },
                 {
                     name: 'Брауні',
                     price: '65 ₴',
-                    img: IMG.brw,
-                    desc: 'Насичено-шоколадний вологий десерт.',
+                    img: IMG.brownie,
+                    desc: 'Класичний американський десерт: дуже шоколадний, вологий всередині, з насиченим смаком темного какао.',
                     vol: '80 г',
-                    ing: 'Чорний шоколад, какао',
-                    energy: '290 ккал'
-                },
-                {
-                    name: 'Веган малиновий байт',
-                    price: '125 ₴',
-                    img: IMG.veg,
-                    desc: 'Корисний веганський десерт із малиною.',
-                    vol: '100 г',
-                    ing: 'Ягоди, горіхи, фініки',
-                    energy: '210 ккал'
-                },
-                {
-                    name: 'Веган тарт снікерс',
-                    price: '125 ₴',
-                    img: IMG.veg,
-                    desc: 'Веганський тарт зі смаком популярного батончика.',
-                    vol: '120 г',
-                    ing: 'Арахіс, карамель, кокос',
-                    energy: '240 ккал'
-                },
-                {
-                    name: 'Еклер фісташка',
-                    price: '80 ₴',
-                    img: IMG.ecl,
-                    desc: 'Еклер із насиченою фісташковою начинкою.',
-                    vol: '100 г',
-                    ing: 'Заварне тісто, фісташка',
+                    ing: 'Чорний шоколад 70%, вершкове масло, какао, яйця',
                     energy: '320 ккал'
                 },
                 {
-                    name: 'Кремова картопля',
+                    name: 'Веган Малиновий Байт',
+                    price: '125 ₴',
+                    img: IMG.vegan_dessert,
+                    desc: 'Корисний веганський десерт без цукру та борошна. Складається з горіхів, фініків та сублімованої малини.',
+                    vol: '100 г',
+                    ing: 'Кеш\'ю, фініки, кокосова олія, малина',
+                    energy: '210 ккал'
+                },
+                {
+                    name: 'Веган Тарт Снікерс',
+                    price: '125 ₴',
+                    img: IMG.vegan_dessert,
+                    desc: 'Здорова альтернатива відомому батончику. Пісочна основа з фініків, шар домашньої карамелі та багато смаженого арахісу.',
+                    vol: '120 г',
+                    ing: 'Арахіс, фініки, кокосове молоко, темний шоколад',
+                    energy: '260 ккал'
+                },
+                {
+                    name: 'Еклер Фісташка',
+                    price: '80 ₴',
+                    img: IMG.eclair,
+                    desc: 'Еклер для справжніх гурманів: насичений фісташковий крем та декор з подрібнених горіхів фісташки.',
+                    vol: '100 г',
+                    ing: 'Заварне тісто, натуральна фісташкова паста, вершки',
+                    energy: '330 ккал'
+                },
+                {
+                    name: 'Кремова Картопля',
                     price: '75 ₴',
-                    img: IMG.kart,
-                    desc: 'Класична картопля за нашим особливим рецептом.',
+                    img: IMG.potato_cake,
+                    desc: 'Улюблений десерт у новому виконанні: дуже ніжна консистенція, насичений шоколадний смак та дрібка коньяку для аромату.',
                     vol: '80 г',
-                    ing: 'Бісквіт, какао, крем',
-                    energy: '270 ккал'
+                    ing: 'Бісквітна крихта, какао, вершкове масло, згущене молоко',
+                    energy: '290 ккал'
                 },
                 {
                     name: 'Макаронс',
                     price: '70 ₴',
-                    img: IMG.mac2,
-                    desc: 'Мигдальне тістечко з різноманітними смаками.',
+                    img: IMG.macarons,
+                    desc: 'Витончене мигдальне печиво. Смаки в асортименті: від класичної ванілі до екзотичних поєднань. Уточнюйте наявність.',
                     vol: '2 шт',
-                    ing: 'Мигдальне борошно, ганаш',
+                    ing: 'Мигдальне борошно, білок, ганаш на основі шоколаду',
                     energy: '180 ккал'
                 },
                 {
                     name: 'Наполеон',
                     price: '110 ₴',
-                    img: IMG.nap,
-                    desc: 'Тонкі коржі та багато заварного крему.',
+                    img: IMG.napoleon,
+                    desc: 'Багатошаровий торт з найтонших коржів, щедро просочених справжнім заварним кремом "Пломбір".',
                     vol: '160 г',
-                    ing: 'Листкове тісто, молоко, ваніль',
-                    energy: '410 ккал'
+                    ing: 'Листкове тісто, молоко, вершкове масло, ваніль',
+                    energy: '420 ккал'
                 },
                 {
-                    name: 'Чізкейк бакський',
+                    name: 'Чізкейк Бакський',
                     price: '110 ₴',
-                    img: IMG.chz,
-                    desc: 'Ніжний запечений чізкейк з карамельною скоринкою.',
+                    img: IMG.cheesecake,
+                    desc: 'Знаменитий "палений" чізкейк з Сан-Себастьяну. Має карамелізовану скоринку та неймовірно ніжну, майже рідку серцевину.',
                     vol: '150 г',
-                    ing: 'Сир вершковий, яйця, вершки',
-                    energy: '350 ккал'
+                    ing: 'Вершковий сир, вершки 33%, яйця, цукор',
+                    energy: '360 ккал'
                 },
                 {
-                    name: 'трубочка фісташкова',
+                    name: 'Трубочка Фісташкова',
                     price: '78 ₴',
-                    img: IMG.ecl,
-                    desc: 'Листкова трубочка з фісташковим кремом.',
+                    img: IMG.eclair,
+                    desc: 'Хрустка трубочка з листкового тіста, наповнена густим кремом із натуральної фісташки.',
                     vol: '80 г',
-                    ing: 'Тісто, фісташка',
-                    energy: '300 ккал'
+                    ing: 'Листкове тісто, фісташковий крем',
+                    energy: '310 ккал'
                 },
                 {
-                    name: 'цукерки веган',
+                    name: 'Цукерки Веган',
                     price: '52 ₴',
-                    img: IMG.veg,
-                    desc: 'Натуральні цукерки без додавання цукру.',
+                    img: IMG.vegan_dessert,
+                    desc: 'Набір корисних цукерок ручної роботи. Виготовлені виключно з натуральних інгредієнтів без додавання цукру.',
                     vol: '3 шт',
-                    ing: 'Фініки, горіхи, какао',
-                    energy: '180 ккал'
+                    ing: 'Сухофрукти, горіхи, кероб/какао',
+                    energy: '190 ккал'
                 },
                 {
-                    name: 'батончик фундук кава',
+                    name: 'Батончик Фундук Кава',
                     price: '90 ₴',
-                    img: IMG.bar,
-                    desc: 'Енергетичний батончик для бадьорого дня.',
+                    img: IMG.nut_bar,
+                    desc: 'Поживний батончик для перекусу. Поєднання енергії фундука та бадьорості нашої кави.',
                     vol: '80 г',
-                    ing: 'Фундук, кава, мед',
-                    energy: '220 ккал'
+                    ing: 'Фундук, мелена кава, мед, пластівці',
+                    energy: '240 ккал'
                 },
                 {
                     name: 'Канелє',
                     price: '45 ₴',
-                    img: IMG.kan,
-                    desc: 'Французький десерт із ароматом рому та ванілі.',
+                    img: IMG.canele,
+                    desc: 'Французький десерт з Бордо з хрусткою карамельною скоринкою та м\'яким серцевиною з ароматом рому та ванілі.',
                     vol: '60 г',
-                    ing: 'Молоко, ром, ваніль',
-                    energy: '160 ккал'
+                    ing: 'Молоко, борошно, ром, стручкова ваніль',
+                    energy: '170 ккал'
                 },
             ]
         },
         {
-            cat: '🥤 напої',
+            cat: '🥤 Напої',
             items: [
                 {
                     name: 'Бейбічіно',
                     price: '30 ₴',
-                    img: IMG.cap,
-                    desc: 'Дитячий напій на основі збитого молока.',
-                    vol: '100 мл',
-                    ing: 'Молоко, какао-порошок'
+                    img: IMG.babyccino,
+                    desc: 'Спеціальний напій для найменших гостей: густа молочна піна, посипана какао або шоколадом. Без кави.',
+                    vol: '120 мл',
+                    ing: 'Збите молоко, какао-порошок'
                 },
                 {
-                    name: 'Бейбічино рослинне',
+                    name: 'Бейбічино Рослинне',
                     price: '55 ₴',
-                    img: IMG.cap,
-                    desc: 'Бейбічіно на основі рослинного молока.',
-                    vol: '100 мл'
+                    img: IMG.babyccino,
+                    desc: 'Дитячий напій на основі рослинного молока (бананове або кокосове на вибір). Гіпоалергенно та смачно.',
+                    vol: '120 мл',
+                    ing: 'Рослинне молоко, какао'
                 },
                 {
-                    name: 'Вода з лимоном',
+                    name: 'Вода З Лимоном',
                     price: '15 ₴',
-                    img: IMG.lem,
-                    desc: 'Склянка чистої питної води з часточкою лимона.',
+                    img: IMG.water_lemon,
+                    desc: 'Чиста негазована вода з додаванням свіжої часточки лимона для бадьорості.',
                     vol: '200 мл'
                 },
                 {
                     name: 'Джміль',
                     price: '105 ₴',
-                    img: IMG.lem,
-                    desc: 'Освіжаючий багатошаровий напій з кавою та соком.',
+                    img: IMG.bumble,
+                    desc: 'Ефектний шаруватий напій: поєднання еспресо, апельсинового соку та карамельного сиропу. Освіжає та заряджає.',
                     vol: '250 мл',
-                    ing: 'Еспресо, апельсиновий сік, карамель',
-                    energy: '120 ккал'
+                    ing: 'Еспресо, апельсиновий сік, карамельний сироп, лід',
+                    energy: '125 ккал'
                 },
                 {
-                    name: 'Лимонад м.',
+                    name: 'Лимонад М.',
                     price: '90 ₴',
-                    img: IMG.lem,
-                    desc: 'Класичний домашній лимонад із цитрусових.',
+                    img: IMG.lemonade,
+                    desc: 'Домашній лимонад власного приготування на основі цитрусових та натуральних сиропів.',
                     vol: '300 мл',
-                    ing: 'Цитрусові, сироп, газована вода',
-                    energy: '90 ккал'
+                    ing: 'Лимон, лайм, м\'ята, сироп, газована вода',
+                    energy: '95 ккал'
                 },
                 {
-                    name: 'Сік коник',
+                    name: 'Сік Коник',
                     price: '60 ₴',
                     img: IMG.jus,
-                    desc: 'Натуральний сік місцевого виробництва.',
+                    desc: 'Натуральні закарпатські соки прямого віджиму. Смаки в асортименті.',
                     vol: '250 мл',
                     ing: '100% натуральний сік'
                 },
                 {
-                    name: 'сік березовий',
+                    name: 'Сік Березовий',
                     price: '60 ₴',
                     img: IMG.jus,
-                    desc: 'Натуральний корисний березовий сік.',
+                    desc: 'Класичний березовий сік — чистий смак весни та здоров\'я.',
                     vol: '250 мл'
                 },
                 {
-                    name: 'деренівська газ',
+                    name: 'Деренівська Газ',
                     price: '60 ₴',
-                    img: IMG.lem,
-                    desc: 'Місцева мінеральна вода з газом.',
+                    img: IMG.mineral_water,
+                    desc: 'Природна мінеральна вода "Деренівська Купіль" з газом у скляній пляшці.',
                     vol: '330 мл'
                 },
                 {
-                    name: 'деренівська не газ',
+                    name: 'Деренівська Не Газ',
                     price: '60 ₴',
-                    img: IMG.lem,
-                    desc: 'Місцева мінеральна вода без газу.',
+                    img: IMG.mineral_water,
+                    desc: 'Природна мінеральна вода "Деренівська Купіль" негазована у скляній пляшці.',
                     vol: '330 мл'
                 },
                 {
-                    name: 'вода з лимоном 0,5л',
+                    name: 'Вода З Лимоном 0,5л',
                     price: '30 ₴',
-                    img: IMG.lem,
-                    desc: 'Пляшка води з лимоном.',
+                    img: IMG.water_lemon,
+                    desc: 'Велика порція чистої води з лимоном — ідеально для тривалого відпочинку.',
                     vol: '500 мл'
                 },
                 {
-                    name: 'Бейбічіно безлактозне',
+                    name: 'Бейбічіно Безлактозне',
                     price: '35 ₴',
-                    img: IMG.cap,
-                    desc: 'Бейбічіно на безлактозному молоці.',
-                    vol: '100 мл'
+                    img: IMG.babyccino,
+                    desc: 'Ніжна пінка на основі безлактозного молока для маленьких гурманів.',
+                    vol: '120 мл'
                 },
             ]
         },
         {
-            cat: '☕ масала',
+            cat: '☕ Масала',
             items: [
                 {
                     name: 'Масала',
                     price: '90 ₴',
-                    img: IMG.mas,
-                    desc: 'Пряний напій на основі чорного чаю та молока зі спеціями.',
+                    img: IMG.masala_tea,
+                    desc: 'Традиційний індійський зігріваючий напій на основі міцного чорного чаю, молока та букету спецій.',
                     vol: '250 мл',
-                    ing: 'Чорний чай, спеції, молоко',
-                    energy: '130 ккал'
-                },
-                {
-                    name: 'Масала на альтернативному',
-                    price: '115 ₴',
-                    img: IMG.mas,
-                    desc: 'Масала на основі рослинного молока.',
-                    vol: '250 мл',
-                    ing: 'Чорний чай, спеції, рослинне молоко',
-                    energy: '140 ккал'
-                },
-                {
-                    name: 'Масала на безлактозному',
-                    price: '105 ₴',
-                    img: IMG.mas,
-                    desc: 'Масала на основі безлактозного молока.',
-                    vol: '250 мл',
-                    ing: 'Чорний чай, спеції, безлактозне молоко',
+                    ing: 'Чорний чай, молоко, кориця, кардамон, імбир, гвоздика',
                     energy: '135 ккал'
                 },
-            ]
-        },
-        {
-            cat: '🍊 фреш',
-            items: [
                 {
-                    name: 'Апельсиновий фреш',
-                    price: '100 ₴',
-                    img: IMG.jus,
-                    desc: 'Свіжовичавлений апельсиновий сік.',
+                    name: 'Масала На Альтернативному',
+                    price: '115 ₴',
+                    img: IMG.masala_tea,
+                    desc: 'Пряна масала, приготована на рослинному молоці. Рекомендуємо з вівсяним або мигдалевим.',
                     vol: '250 мл',
-                    ing: '100% апельсин',
-                    energy: '90 ккал'
+                    ing: 'Чорний чай, рослинне молоко, суміш спецій',
+                    energy: '145 ккал'
                 },
                 {
-                    name: 'Апельсиново-грейпфрутовий фреш',
-                    price: '100 ₴',
-                    img: IMG.jus,
-                    desc: 'Вітамінний мікс апельсина та грейпфрута.',
+                    name: 'Масала На Безлактозному',
+                    price: '105 ₴',
+                    img: IMG.masala_tea,
+                    desc: 'Варіант улюбленого пряного напою для тих, хто обирає безлактозні продукти.',
                     vol: '250 мл',
-                    ing: 'Апельсин, грейпфрут',
-                    energy: '85 ккал'
-                },
-                {
-                    name: 'Яблучний фреш',
-                    price: '70 ₴',
-                    img: IMG.jus,
-                    desc: 'Свіжовичавлений сік із соковитих яблук.',
-                    vol: '250 мл',
-                    ing: '100% яблуко',
-                    energy: '100 ккал'
-                },
-                {
-                    name: 'Яблучно-морквяний фреш',
-                    price: '70 ₴',
-                    img: IMG.jus,
-                    desc: 'Корисне поєднання соку яблука та моркви.',
-                    vol: '250 мл',
-                    ing: 'Яблуко, морква',
-                    energy: '95 ккал'
+                    ing: 'Чорний чай, безлактозне молоко, спеції',
+                    energy: '138 ккал'
                 },
             ]
         },
         {
-            cat: '🍵 чай',
+            cat: '🍊 Фреш',
             items: [
                 {
-                    name: 'Зелений чай',
-                    price: '70 ₴',
-                    img: IMG.tea,
-                    desc: 'Добірний листовий зелений чай.',
-                    vol: '400 мл',
-                    ing: 'Зелений листовий чай'
+                    name: 'Апельсиновий Фреш',
+                    price: '100 ₴',
+                    img: IMG.orange_juice,
+                    desc: 'Свіжовичавлений сік із соковитих апельсинів. Максимум вітаміну С.',
+                    vol: '250 мл',
+                    ing: '100% апельсин'
                 },
                 {
-                    name: 'Трав\'яний чай',
-                    price: '70 ₴',
-                    img: IMG.tea,
-                    desc: 'Ароматний збір корисних трав.',
-                    vol: '400 мл',
-                    ing: 'Трав\'яний збір'
+                    name: 'Апельсиново-Грейпфрутовий Фреш',
+                    price: '100 ₴',
+                    img: IMG.orange_juice,
+                    desc: 'Мікс для тих, хто любить благородну гірчинку грейпфрута та солодкість апельсина.',
+                    vol: '250 мл',
+                    ing: 'Апельсин, грейпфрут'
                 },
                 {
-                    name: 'фруктовий чай',
+                    name: 'Яблучний Фреш',
                     price: '70 ₴',
-                    img: IMG.tea,
-                    desc: 'Смачний чай зі шматочками фруктів.',
-                    vol: '400 мл',
-                    ing: 'Фруктовий збір'
+                    img: IMG.apple_juice,
+                    desc: 'Класичний сік із місцевих закарпатських яблук. Освіжає та тонізує.',
+                    vol: '250 мл',
+                    ing: '100% яблуко'
                 },
                 {
-                    name: 'чай лохина',
+                    name: 'Яблучно-Морквяний Фреш',
                     price: '70 ₴',
-                    img: IMG.tea,
-                    desc: 'Фірмовий чай із додаванням ягід лохини.',
-                    vol: '400 мл',
-                    ing: 'Чай, лохина'
+                    img: IMG.carrot_juice,
+                    desc: 'Найкорисніше поєднання. Рекомендуємо додавати краплю вершків для кращого засвоєння вітамінів.',
+                    vol: '250 мл',
+                    ing: 'Яблуко, морква'
+                },
+            ]
+        },
+        {
+            cat: '🍵 Чай',
+            items: [
+                {
+                    name: 'Зелений Чай',
+                    price: '70 ₴',
+                    img: IMG.green_tea,
+                    desc: 'Високогірний листовий зелений чай з ніжним ароматом та тривалим післясмаком.',
+                    vol: '450 мл',
+                    ing: 'Зелений чай преміум якості'
                 },
                 {
-                    name: 'Чорний чай',
+                    name: 'Трав\'яний Чай',
                     price: '70 ₴',
-                    img: IMG.tea,
-                    desc: 'Класичний насичений чорний чай.',
-                    vol: '400 мл',
+                    img: IMG.herbal_tea,
+                    desc: 'Запашний збір карпатських трав: чебрець, м\'ята, меліса. Заспокоює та дарує затишок.',
+                    vol: '450 мл',
+                    ing: 'Суміш сушених трав Карпат'
+                },
+                {
+                    name: 'Фруктовий Чай',
+                    price: '70 ₴',
+                    img: IMG.fruit_tea,
+                    desc: 'Натуральний чай на основі сушених ягід та шматочків фруктів. Без барвників.',
+                    vol: '450 мл',
+                    ing: 'Шматочки яблук, ягід, шипшини'
+                },
+                {
+                    name: 'Чай Лохина',
+                    price: '70 ₴',
+                    img: IMG.blueberry_tea,
+                    desc: 'Наш фірмовий ягідний чай з додаванням цілих ягід лохини. Насичений колір та смак.',
+                    vol: '450 мл',
+                    ing: 'Чай, свіжоморожена лохина, натуральний сироп'
+                },
+                {
+                    name: 'Чорний Чай',
+                    price: '70 ₴',
+                    img: IMG.black_tea,
+                    desc: 'Класичний чорний чай сорту Цейлон. Міцний, ароматний, бадьорий.',
+                    vol: '450 мл',
                     ing: 'Чорний листовий чай'
                 },
             ]
         },
         {
-            cat: '🥛 мілк',
+            cat: '🥛 Мілк',
             items: [
                 {
-                    name: 'Банановий мілкшейк',
+                    name: 'Банановий Мілкшейк',
                     price: '85 ₴',
-                    img: IMG.mlk,
-                    desc: 'Густий молочний коктейль із банановим смаком.',
-                    vol: '300 мл',
+                    img: IMG.banana_shake,
+                    desc: 'Густий холодний коктейль на основі молока та морозива з додаванням стиглого банана.',
+                    vol: '350 мл',
                     ing: 'Молоко, морозиво, банан',
-                    energy: '240 ккал'
+                    energy: '250 ккал'
                 },
                 {
-                    name: 'Класичний мілкшейк',
+                    name: 'Класичний Мілкшейк',
                     price: '80 ₴',
                     img: IMG.mlk,
-                    desc: 'Прохолодний молочний коктейль із морозивом.',
-                    vol: '300 мл',
+                    desc: 'Традиційне поєднання молока та великої порції ванільного морозива. Смак дитинства.',
+                    vol: '350 мл',
                     ing: 'Молоко, ванільне морозиво',
-                    energy: '220 ккал'
-                },
-                {
-                    name: 'Полуничний мілкшейк',
-                    price: '85 ₴',
-                    img: IMG.mlk,
-                    desc: 'Яскравий мілкшейк зі смаком полуниці.',
-                    vol: '300 мл',
-                    ing: 'Молоко, морозиво, полуниця',
                     energy: '230 ккал'
                 },
                 {
-                    name: 'Шоколадний мілкшейк',
+                    name: 'Полуничний Мілкшейк',
                     price: '85 ₴',
-                    img: IMG.mlk,
-                    desc: 'Насичений шоколадний молочний коктейль.',
-                    vol: '300 мл',
+                    img: IMG.strawberry_shake,
+                    desc: 'Яскравий коктейль з додаванням полуничного конфітюру або свіжих ягід (за сезоном).',
+                    vol: '350 мл',
+                    ing: 'Молоко, морозиво, полуниця',
+                    energy: '240 ккал'
+                },
+                {
+                    name: 'Шоколадний Мілкшейк',
+                    price: '85 ₴',
+                    img: IMG.chocolate_shake,
+                    desc: 'Для справжніх шокоголіків: молоко, морозиво та насичений шоколадний топпінг.',
+                    vol: '350 мл',
                     ing: 'Молоко, морозиво, шоколад',
-                    energy: '250 ккал'
+                    energy: '260 ккал'
                 },
                 {
                     name: 'Фрапе',
                     price: '93 ₴',
-                    img: IMG.mlk,
-                    desc: 'Холодна кава, збита в густу піну.',
-                    vol: '250 мл',
-                    ing: 'Еспресо, молоко, лід',
-                    energy: '110 ккал'
+                    img: IMG.frappe,
+                    desc: 'Холодний кавовий напій, збитий до стану густої стійкої піни. Ідеальний вибір для спекотного дня.',
+                    vol: '300 мл',
+                    ing: 'Еспресо, молоко, лід, цукровий сироп',
+                    energy: '115 ккал'
                 },
                 {
-                    name: 'Фрапе декаф',
+                    name: 'Фрапе Декаф',
                     price: '93 ₴',
-                    img: IMG.mlk,
-                    desc: 'Варіант фрапе без вмісту кофеїну.',
-                    vol: '250 мл'
+                    img: IMG.frappe,
+                    desc: 'Варіант класичного фрапе на основі кави без кофеїну. Весь смак без зайвої енергії.',
+                    vol: '300 мл'
                 },
             ]
         },
         {
-            cat: '🍵 матча',
+            cat: '🍵 Матча',
             items: [
                 {
-                    name: 'Бананова матча лате',
+                    name: 'Бананова Матча Лате',
                     price: '120 ₴',
-                    img: IMG.mtch,
-                    desc: 'Матча з молоком та банановим смаком.',
+                    img: IMG.matcha_latte,
+                    desc: 'Японський чай матча у поєднанні з солодким банановим молоком. Незвичайний та м\'який смак.',
                     vol: '250 мл',
-                    ing: 'Матча, бананове молоко',
+                    ing: 'Чай матча (церемоніальний), бананове молоко',
                     energy: '110 ккал'
                 },
                 {
-                    name: 'Безлактозна матча лате',
+                    name: 'Безлактозна Матча Лате',
                     price: '95 ₴',
-                    img: IMG.mtch,
-                    desc: 'Матча лате на безлактозному молоці.',
+                    img: IMG.matcha_latte,
+                    desc: 'Корисна матча на основі безлактозного молока. Зберігає всі антиоксидантні властивості.',
                     vol: '250 мл',
                     ing: 'Матча, безлактозне молоко'
                 },
                 {
-                    name: 'Ванільна матча',
+                    name: 'Ванільна Матча',
                     price: '115 ₴',
-                    img: IMG.mtch,
-                    desc: 'Матча лате з ніжним ароматом ванілі.',
+                    img: IMG.matcha_latte,
+                    desc: 'Матча лате з додаванням натурального ванільного екстракту для ніжного аромату.',
                     vol: '250 мл',
                     ing: 'Матча, молоко, ваніль',
                     energy: '105 ккал'
                 },
                 {
-                    name: 'Кокосова матча лате',
+                    name: 'Кокосова Матча Лате',
                     price: '110 ₴',
-                    img: IMG.mtch,
-                    desc: 'Матча на кокосовому молоці.',
+                    img: IMG.matcha_latte,
+                    desc: 'Екзотичне поєднання матчі та кокосового молока. Має виражений тропічний профіль.',
                     vol: '250 мл',
                     ing: 'Матча, кокосове молоко',
                     energy: '115 ккал'
@@ -979,26 +841,26 @@
                 {
                     name: 'Матча Лате',
                     price: '90 ₴',
-                    img: IMG.mtch,
-                    desc: 'Традиційний японський чай матча з молоком.',
+                    img: IMG.matcha_latte,
+                    desc: 'Класичне поєднання: збитий церемоніальний чай матча та делікатне гаряче молоко.',
                     vol: '250 мл',
                     ing: 'Матча, молоко',
                     energy: '85 ккал'
                 },
                 {
-                    name: 'Матча тонік',
+                    name: 'Матча Тонік',
                     price: '100 ₴',
-                    img: IMG.mtch,
-                    desc: 'Освіжаючий коктейль із матчі та тоніка.',
-                    vol: '250 мл',
-                    ing: 'Матча, тонік, лід',
+                    img: IMG.matcha_latte,
+                    desc: 'Ультра-освіжаючий мікс: матча, тонік, лід та часточка лайма. Бадьорість без кави.',
+                    vol: '300 мл',
+                    ing: 'Матча, тонік, лід, лайм',
                     energy: '65 ккал'
                 },
                 {
-                    name: 'Мигдалева матча',
+                    name: 'Мигдалева Матча',
                     price: '115 ₴',
-                    img: IMG.mtch,
-                    desc: 'Матча лате на мигдалевому молоці.',
+                    img: IMG.matcha_latte,
+                    desc: 'Вишуканий варіант на мигдалевому молоці, що підкреслює горіхові нотки чаю матча.',
                     vol: '250 мл',
                     ing: 'Матча, мигдалеве молоко',
                     energy: '100 ккал'
@@ -1006,73 +868,72 @@
             ]
         },
         {
-            cat: '🍫 какао',
+            cat: '🍫 Какао',
             items: [
                 {
-                    name: 'Бананове какао',
+                    name: 'Бананове Какао',
                     price: '80 ₴',
-                    img: IMG.coc,
-                    desc: 'Тепле какао з банановим смаком.',
-                    vol: '200 мл',
-                    ing: 'Какао, молоко, банан',
-                    energy: '160 ккал'
+                    img: IMG.cocoa,
+                    desc: 'Зігріваюче какао з солодким банановим післясмаком. Смак затишку.',
+                    vol: '250 мл',
+                    ing: 'Какао-порошок, бананове молоко',
+                    energy: '165 ккал'
                 },
                 {
-                    name: 'Безлактозне какао',
+                    name: 'Безлактозне Какао',
                     price: '57 ₴',
-                    img: IMG.coc,
-                    desc: 'Какао на основі безлактозного молока.',
-                    vol: '200 мл',
+                    img: IMG.cocoa,
+                    desc: 'Класичне какао на основі безлактозного молока. Підійде кожному.',
+                    vol: '250 мл',
                     ing: 'Какао, безлактозне молоко'
                 },
                 {
-                    name: 'Ванільне какао',
+                    name: 'Ванільне Какао',
                     price: '80 ₴',
-                    img: IMG.coc,
-                    desc: 'Ароматне какао з ванільним відтінком.',
-                    vol: '200 мл',
+                    img: IMG.cocoa,
+                    desc: 'Ароматне какао з ноткою натуральної ванілі. Подається з легкою пінкою.',
+                    vol: '250 мл',
                     ing: 'Какао, молоко, ваніль',
                     energy: '155 ккал'
                 },
                 {
                     name: 'Какао',
                     price: '52 ₴',
-                    img: IMG.coc,
-                    desc: 'Класичне зігріваюче какао.',
-                    vol: '200 мл',
-                    ing: 'Какао-порошок, молоко',
-                    energy: '140 ккал'
+                    img: IMG.cocoa,
+                    desc: 'Наше фірмове какао: насичений шоколадний смак та ідеальна температура подачі.',
+                    vol: '250 мл',
+                    ing: 'Натуральне какао, молоко, дрібка цукру',
+                    energy: '145 ккал'
                 },
                 {
-                    name: 'Кокосове какао',
+                    name: 'Кокосове Какао',
                     price: '90 ₴',
-                    img: IMG.coc,
-                    desc: 'Екзотичне какао на кокосовому молоці.',
-                    vol: '200 мл',
+                    img: IMG.cocoa,
+                    desc: 'Густе какао на кокосовому молоці. Справжня насолода для любителів кокоса.',
+                    vol: '250 мл',
                     ing: 'Какао, кокосове молоко',
-                    energy: '170 ккал'
+                    energy: '175 ккал'
                 },
                 {
-                    name: 'Мигдалеве какао',
+                    name: 'Мигдалеве Какао',
                     price: '75 ₴',
-                    img: IMG.coc,
-                    desc: 'Какао на основі мигдалевого молока.',
-                    vol: '200 мл',
+                    img: IMG.cocoa,
+                    desc: 'Какао на мигдалевому молоці — легкий горіховий присмак та ніжна текстура.',
+                    vol: '250 мл',
                     ing: 'Какао, мигдалеве молоко',
-                    energy: '130 ккал'
+                    energy: '135 ккал'
                 },
             ]
         },
     ];
 
-    // Image thumbnails (card-size)
     const THUMB = {};
     Object.keys(IMG).forEach(k => {
         THUMB[k] = IMG[k].replace('w=640', 'w=400');
     });
 
     const CAT_LABELS = [
-        '☕ Кава', '➕ До кави', '🍃 Декаф', '🥛 Альт.молоко',
+        '☕ Кава', '➕ До Кави', '🍃 Декаф', '🥛 Альт.Молоко',
         '🍰 Десерти', '🥤 Напої', '☕ Масала', '🍊 Фреш',
         '🍵 Чай', '🥛 Мілк', '🍵 Матча', '🍫 Какао'
     ];
@@ -1085,7 +946,7 @@
             a.href = '#cat-' + i;
             a.className = 'menu-subnav__link';
             a.textContent = CAT_LABELS[i] || section.cat;
-            a.dataset.idx = i;
+            a.dataset.idx = String(i);
             a.addEventListener('click', e => {
                 e.preventDefault();
                 const target = document.getElementById('cat-' + i);
@@ -1148,9 +1009,9 @@
 
         if (item.vol || item.ing || item.energy) {
             html += `<div class="popup__details">`;
-            if (item.vol) html += `<p><strong>📏 Об'єм/Вага:</strong> ${item.vol}</p>`;
-            if (item.ing) html += `<p><strong>🌿 Склад:</strong> ${item.ing}</p>`;
-            if (item.energy) html += `<p><strong>🔥 Енергетична цінність:</strong> ${item.energy}</p>`;
+            if (item.vol) html += `<p class="popup__details-text"><strong>📏 Об'єм/Вага:</strong> ${item.vol}</p>`;
+            if (item.ing) html += `<p class="popup__details-text"><strong>🌿 Склад:</strong> ${item.ing}</p>`;
+            if (item.energy) html += `<p class="popup__details-text"><strong>🔥 Енергетична цінність:</strong> ${item.energy}</p>`;
             html += `</div>`;
         }
 
@@ -1168,7 +1029,6 @@
     buildMenu();
     buildSubnav();
 
-    const navLinks = () => document.querySelectorAll('.menu-subnav__link');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1178,8 +1038,8 @@
                 const active = document.querySelector(`.menu-subnav__link[data-idx="${idx}"]`);
 
                 if (active && subnavList) {
-                    allLinks.forEach(a => a.classList.remove('is-active'));
-                    active.classList.add('is-active');
+                    allLinks.forEach(a => a.classList.remove('menu-subnav__link--active'));
+                    active.classList.add('menu-subnav__link--active');
 
                     const offset = active.offsetLeft - (subnavList.clientWidth / 2) + (active.clientWidth / 2);
                     subnavList.scrollTo({left: offset, behavior: 'smooth'});

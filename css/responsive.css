@@ -1,8 +1,3 @@
-:root {
-    --m-pad: 1.25rem;
-    --m-pad-sm: 1rem;
-}
-
 @media (max-width: 1024px) {
     .header__container, .menu, .contact, .footer__content {
         padding-left: 2rem;
@@ -22,16 +17,16 @@
         padding-bottom: 4rem;
     }
 
-    .products__grid, .locations__grid {
+    .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 2rem;
     }
 
-    .menu-promo__card, .contact-promo__card, .coffee-promo__card {
+    .promo-card {
         grid-template-columns: 1fr;
     }
 
-    .menu-promo__image, .contact-promo__image, .coffee-promo__image {
+    .promo-card__image {
         height: 320px;
     }
 
@@ -67,7 +62,7 @@
         position: fixed;
         top: 1.5rem;
         right: 1.5rem;
-        background-color: var(--dark-brown);
+        background-color: var(--color-dark-brown);
         width: 45px;
         height: 45px;
         border-radius: 50%;
@@ -76,33 +71,33 @@
         pointer-events: auto;
     }
 
-    .header__burger span {
+    .header__burger-line {
         width: 20px;
         left: auto;
     }
 
-    .header__burger span:nth-child(1) {
+    .header__burger-line:nth-child(1) {
         top: 14px;
     }
 
-    .header__burger span:nth-child(2) {
+    .header__burger-line:nth-child(2) {
         top: 21px;
     }
 
-    .header__burger span:nth-child(3) {
+    .header__burger-line:nth-child(3) {
         top: 28px;
     }
 
-    .header__burger--active span:nth-child(1) {
+    .header__burger--active .header__burger-line:nth-child(1) {
         transform: rotate(45deg);
         top: 21px;
     }
 
-    .header__burger--active span:nth-child(2) {
+    .header__burger--active .header__burger-line:nth-child(2) {
         opacity: 0;
     }
 
-    .header__burger--active span:nth-child(3) {
+    .header__burger--active .header__burger-line:nth-child(3) {
         transform: rotate(-45deg);
         top: 21px;
     }
@@ -110,13 +105,9 @@
     .nav {
         display: none;
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
+        inset: 0;
         background-color: rgba(60, 47, 47, 0.95);
         backdrop-filter: blur(10px);
-        margin-top: 0;
         z-index: 1000;
         pointer-events: auto;
         align-items: center;
@@ -155,33 +146,25 @@
     }
 
     .menu, .contact, .products {
-        padding: 3rem var(--m-pad);
+        padding: 3rem 1.25rem;
     }
 
-    .products__grid, .locations__grid {
+    .products-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    .menu-promo__content, .contact-promo__content, .coffee-promo__content {
+    .promo-card__content {
         padding: 2.5rem 1.5rem;
         text-align: center;
         align-items: center;
     }
 
-    .contact-promo__content {
-        order: 2;
-    }
-
-    .contact-promo__image {
-        order: 1;
-    }
-
-    .menu-promo__title, .contact-promo__title, .coffee-promo__title {
+    .promo-card__title {
         font-size: 2rem;
     }
 
-    .menu-promo__title::after, .contact-promo__title::after, .coffee-promo__title::after {
+    .promo-card__title::after {
         margin-inline: auto;
     }
 
@@ -231,7 +214,7 @@
     }
 
     .about-summary {
-        padding: 3rem var(--m-pad);
+        padding: 3rem 1.25rem;
     }
 
     .about-summary__text {
@@ -240,7 +223,7 @@
     }
 
     .booking-hero {
-        padding: 3rem var(--m-pad);
+        padding: 3rem 1.25rem;
     }
 
     .booking-hero__card {
@@ -281,13 +264,9 @@
         margin: 0 1.2rem 1.2rem;
     }
 
-    .popup__info {
+    .popup__info, .popup__details {
         margin: 0 1.2rem 1.2rem;
         padding: 1rem;
-    }
-
-    div[style*="padding: 0 2rem 2rem"] {
-        padding: 0 1.2rem 1.2rem !important;
     }
 }
 
@@ -319,10 +298,6 @@
     .menu-item__title {
         font-size: 1.1rem;
         margin-bottom: 0.2rem;
-    }
-
-    .menu-item__description {
-        font-size: 0.85rem;
     }
 
     .popup__image {

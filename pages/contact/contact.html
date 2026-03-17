@@ -18,9 +18,9 @@
     <div class="header__container">
         <a href="../../index.html" class="header__logo">Medelin</a>
         <button class="header__burger" id="burger-btn" aria-label="Відкрити меню">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
         </button>
         <nav class="nav" id="nav-menu">
             <ul class="nav__list">
@@ -44,53 +44,53 @@
     </section>
 
     <section class="contact">
-        <h1 class="section-title text-center mb-5">Наші локації</h1>
-        <div class="locations__grid">
-            <article class="location-card" onclick="openPopup('loc1')">
-                <div class="location-card__image"
+        <h1 class="section-title section-title--mb-5">Наші локації</h1>
+        <div class="products-grid">
+            <article class="product-card" onclick="openPopup('loc1')">
+                <div class="product-card__image"
                      style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Корятовича</h3>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Корятовича</h3>
                 </div>
             </article>
-            <article class="location-card" onclick="openPopup('loc2')">
-                <div class="location-card__image"
+            <article class="product-card" onclick="openPopup('loc2')">
+                <div class="product-card__image"
                      style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Закарпатській</h3>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Закарпатській</h3>
                 </div>
             </article>
-            <article class="location-card" onclick="openPopup('loc3')">
-                <div class="location-card__image"
+            <article class="product-card" onclick="openPopup('loc3')">
+                <div class="product-card__image"
                      style="background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Проспекті Свободи</h3>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Проспекті Свободи</h3>
                 </div>
             </article>
-            <article class="location-card" onclick="openPopup('loc4')">
-                <div class="location-card__image"
+            <article class="product-card" onclick="openPopup('loc4')">
+                <div class="product-card__image"
                      style="background-image: url('https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin Bozdosh</h3>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin Bozdosh</h3>
                 </div>
             </article>
-            <article class="location-card" onclick="openPopup('loc5')">
-                <div class="location-card__image"
+            <article class="product-card" onclick="openPopup('loc5')">
+                <div class="product-card__image"
                      style="background-image: url('https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Гойди</h3>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Гойди</h3>
                 </div>
             </article>
-            <article class="location-card" onclick="openPopup('loc6')">
-                <div class="location-card__image"
+            <article class="product-card" onclick="openPopup('loc6')">
+                <div class="product-card__image"
                      style="background-image: url('https://images.unsplash.com/photo-1669295987842-53270c972055?w=800&q=80');"></div>
-                <div class="location-card__content">
-                    <h3 class="location-card__title">Medelin на Анатолія Тегзи</h3>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Анатолія Тегзи</h3>
                 </div>
             </article>
         </div>
 
-        <div class="contact__container" style="margin-top: 4rem;">
+        <div class="contact__container contact__container--mt-large">
             <div class="contact__social">
                 <h4 class="contact__location-name">Зв'яжіться з нами</h4>
                 <div class="contact__item">
@@ -126,18 +126,14 @@
         <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image">
         <h3 class="popup__title">Medelin на Корятовича</h3>
         <div class="popup__info">
-            <p><strong>📍 Адреса:</strong> вул. Корятовича, 5, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
-            <p><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
-            <p><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
-            <p><strong>🚗 Парковка:</strong> Є вільна парковка поруч.</p>
-            <p><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
-            <p><strong>☕ Особливості:</strong> Центр міста, затишна тераса, авторські напої.</p>
-            <p><strong>🐾 Pet-friendly:</strong> Так, вітаємо тварин.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Uzhhorod+Koryatovycha+5" target="_blank"
-               class="btn" style="width: 100%;">📍 Побудувати маршрут</a>
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Корятовича, 5, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <p class="popup__info-text"><strong>🚗 Парковка:</strong> Є вільна парковка поруч.</p>
+            <p class="popup__info-text"><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
+            <p class="popup__info-text"><strong>☕ Особливості:</strong> Центр міста, затишна тераса, авторські напої.</p>
+            <p class="popup__info-text"><strong>🐾 Pet-friendly:</strong> Так, вітаємо тварин.</p>
         </div>
     </div>
 </div>
@@ -149,18 +145,14 @@
         <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" class="popup__image">
         <h3 class="popup__title">Medelin на Закарпатській</h3>
         <div class="popup__info">
-            <p><strong>📍 Адреса:</strong> вул. Закарпатська, 44, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
-            <p><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
-            <p><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
-            <p><strong>🌿 Ростерія:</strong> Тут знаходиться наш власний ростер. Купити каву в зернах можна тут!</p>
-            <p><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
-            <p><strong>☕ Особливості:</strong> Спостерігайте за процесом обсмажування кави наживо.</p>
-            <p><strong>🚗 Парковка:</strong> Вул. Закарпатська, вільні місця біля закладу.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Uzhhorod+Zakarpatska+44" target="_blank"
-               class="btn" style="width: 100%;">📍 Побудувати маршрут</a>
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Закарпатська, 44, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <p class="popup__info-text"><strong>🌿 Ростерія:</strong> Тут знаходиться наш власний ростер. Купити каву в зернах можна тут!</p>
+            <p class="popup__info-text"><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
+            <p class="popup__info-text"><strong>☕ Особливості:</strong> Спостерігайте за процесом обсмажування кави наживо.</p>
+            <p class="popup__info-text"><strong>🚗 Парковка:</strong> Вул. Закарпатська, вільні місця біля закладу.</p>
         </div>
     </div>
 </div>
@@ -172,17 +164,13 @@
         <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80" class="popup__image">
         <h3 class="popup__title">Medelin на Проспекті Свободи</h3>
         <div class="popup__info">
-            <p><strong>📍 Адреса:</strong> просп. Свободи, 54, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
-            <p><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
-            <p><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
-            <p><strong>💻 Для роботи:</strong> Просторий зал, багато розеток, тихо вдень.</p>
-            <p><strong>🌐 Wi-Fi:</strong> Безкоштовний швидкісний Wi-Fi.</p>
-            <p><strong>☕ Особливості:</strong> Великий вибір десертів та альтернативного молока.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Uzhhorod+Prospekt+Svobody+54"
-               target="_blank" class="btn" style="width: 100%;">📍 Побудувати маршрут</a>
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> просп. Свободи, 54, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <p class="popup__info-text"><strong>💻 Для роботи:</strong> Просторий зал, багато розеток, тихо вдень.</p>
+            <p class="popup__info-text"><strong>🌐 Wi-Fi:</strong> Безкоштовний швидкісний Wi-Fi.</p>
+            <p class="popup__info-text"><strong>☕ Особливості:</strong> Великий вибір десертів та альтернативного молока.</p>
         </div>
     </div>
 </div>
@@ -194,18 +182,14 @@
         <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image">
         <h3 class="popup__title">Medelin Bozdosh</h3>
         <div class="popup__info">
-            <p><strong>📍 Адреса:</strong> Слов'янська набережна, 23А, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
-            <p><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
-            <p><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
-            <p><strong>🌳 Розташування:</strong> Біля паркового входу Боздош, серед зелені.</p>
-            <p><strong>🐾 Pet-friendly:</strong> Так, вітаємо ваших улюбленців.</p>
-            <p><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
-            <p><strong>☕ Особливості:</strong> Літня тераса, свіже повітря, лаунг-зона.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Uzhhorod+Slovianska+naberezhna+23A"
-               target="_blank" class="btn" style="width: 100%;">📍 Побудувати маршрут</a>
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> Слов'янська набережна, 23А, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <p class="popup__info-text"><strong>🌳 Розташування:</strong> Біля паркового входу Боздош, серед зелені.</p>
+            <p class="popup__info-text"><strong>🐾 Pet-friendly:</strong> Так, вітаємо ваших улюбленців.</p>
+            <p class="popup__info-text"><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
+            <p class="popup__info-text"><strong>☕ Особливості:</strong> Літня тераса, свіже повітря, лаунг-зона.</p>
         </div>
     </div>
 </div>
@@ -217,17 +201,13 @@
         <img src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80" class="popup__image">
         <h3 class="popup__title">Medelin на Гойди</h3>
         <div class="popup__info">
-            <p><strong>📍 Адреса:</strong> вул. Гойди, 4, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
-            <p><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
-            <p><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
-            <p><strong>🚗 Парковка:</strong> Зручна парковка поруч із закладом.</p>
-            <p><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
-            <p><strong>☕ Особливості:</strong> Тиха вулиця, камерна атмосфера, великий вибір десертів.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Uzhhorod+Hoidy+4" target="_blank"
-               class="btn" style="width: 100%;">📍 Побудувати маршрут</a>
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Гойди, 4, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <p class="popup__info-text"><strong>🚗 Парковка:</strong> Зручна парковка поруч із закладом.</p>
+            <p class="popup__info-text"><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
+            <p class="popup__info-text"><strong>☕ Особливості:</strong> Тиха вулиця, камерна атмосфера, великий вибір десертів.</p>
         </div>
     </div>
 </div>
@@ -239,17 +219,13 @@
         <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" class="popup__image">
         <h3 class="popup__title">Medelin на Анатолія Тегзи</h3>
         <div class="popup__info">
-            <p><strong>📍 Адреса:</strong> вул. Анатолія Тегзи, 11, Ужгород</p>
-            <p><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
-            <p><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
-            <p><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
-            <p><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
-            <p><strong>☕ Особливості:</strong> Авторські сніданки, панорамні вікна, сучасний інтер'єр.</p>
-            <p><strong>🍳 Сніданки:</strong> Подаються щодня з 08:00 до 12:00.</p>
-        </div>
-        <div style="padding: 0 2rem 2rem;">
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Medelin+Uzhhorod+Anatoliya+Tehzy+11"
-               target="_blank" class="btn" style="width: 100%;">📍 Побудувати маршрут</a>
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Анатолія Тегзи, 11, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <p class="popup__info-text"><strong>🌐 Wi-Fi:</strong> Безкоштовний Wi-Fi для гостей.</p>
+            <p class="popup__info-text"><strong>☕ Особливості:</strong> Авторські сніданки, панорамні вікна, сучасний інтер'єр.</p>
+            <p class="popup__info-text"><strong>🍳 Сніданки:</strong> Подаються щодня з 08:00 до 12:00.</p>
         </div>
     </div>
 </div>

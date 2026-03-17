@@ -18,9 +18,9 @@
     <div class="header__container">
         <a href="../../index.html" class="header__logo">Medelin</a>
         <button class="header__burger" id="burger-btn" aria-label="Відкрити меню">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
         </button>
         <nav class="nav" id="nav-menu">
             <ul class="nav__list">
@@ -34,45 +34,39 @@
 </header>
 
 <main class="main">
-    <section class="menu">
-        <h1 class="section-title text-center mb-5">Кава в зернах та чаї</h1>
-        <div class="products__grid">
+    <section class="products">
+        <h1 class="section-title section-title--mb-5">Кава в зернах та чай</h1>
+        <div class="products-grid">
             <article class="product-card" onclick="openPopup('c1')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Індія Монсун Малабар</h3>
                     <p class="product-card__price">271 ₴</p>
-                    <span class="badge"
-                          style="background: var(--coffee); color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">Нове та популярне</span>
                 </div>
             </article>
 
             <article class="product-card" onclick="openPopup('c2')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1621878624337-a5412b3f8974?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Індія Плантейшн</h3>
                     <p class="product-card__price">245 ₴</p>
-                    <span class="badge"
-                          style="background: var(--coffee); color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">Нове та популярне</span>
                 </div>
             </article>
 
             <article class="product-card" onclick="openPopup('c3')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1504620293773-9dd942d75143?w=400&q=80');"></div>
                 <div class="product-card__content">
-                    <h3 class="product-card__title">Італьяно</h3>
+                    <h3 class="product-card__title">Бленд Італьяно</h3>
                     <p class="product-card__price">205 ₴</p>
-                    <span class="badge"
-                          style="background: var(--coffee); color: #fff; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">Нове та популярне</span>
                 </div>
             </article>
 
             <article class="product-card" onclick="openPopup('c4')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1545665225-b23b99e4d45e?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Ефіопія Йергачіф</h3>
                     <p class="product-card__price">281 ₴</p>
@@ -81,7 +75,7 @@
 
             <article class="product-card" onclick="openPopup('c5')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1512568400610-62da2848a094?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Ефіопія Сідамо</h3>
                     <p class="product-card__price">282 ₴</p>
@@ -90,7 +84,7 @@
 
             <article class="product-card" onclick="openPopup('c6')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1506372023396-13363f3b53a4?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Кенія Кіліманджаро</h3>
                     <p class="product-card__price">322 ₴</p>
@@ -99,7 +93,7 @@
 
             <article class="product-card" onclick="openPopup('c7')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1581996323441-7a7e9ac9b7e4?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d713b20e473?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Колумбія Супремо</h3>
                     <p class="product-card__price">261 ₴</p>
@@ -108,16 +102,16 @@
 
             <article class="product-card" onclick="openPopup('c8')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1511537632536-b7a575845363?w=400&q=80');"></div>
                 <div class="product-card__content">
-                    <h3 class="product-card__title">Мастермікс</h3>
+                    <h3 class="product-card__title">Мастермікс 250гр.</h3>
                     <p class="product-card__price">218 ₴</p>
                 </div>
             </article>
 
             <article class="product-card" onclick="openPopup('c9')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1599749984338-a6d83a653a6f?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Мексика Марагоджип</h3>
                     <p class="product-card__price">348 ₴</p>
@@ -126,7 +120,7 @@
 
             <article class="product-card" onclick="openPopup('c10')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1512568404398-4e8036224ec2?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1509042438697-d1c7378a3a8c?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Преміум</h3>
                     <p class="product-card__price">228 ₴</p>
@@ -135,25 +129,25 @@
 
             <article class="product-card" onclick="openPopup('c11')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&q=80');"></div>
                 <div class="product-card__content">
-                    <h3 class="product-card__title">Колумбія б/к</h3>
+                    <h3 class="product-card__title">Колумбія Без Кофеїну</h3>
                     <p class="product-card__price">271 ₴</p>
                 </div>
             </article>
 
             <article class="product-card" onclick="openPopup('c12')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1583566916016-5c4e38ffca98?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1564858882894-67252cb78086?w=400&q=80');"></div>
                 <div class="product-card__content">
-                    <h3 class="product-card__title">Чай Лохина</h3>
+                    <h3 class="product-card__title">Чай Лохина 250г</h3>
                     <p class="product-card__price">200 ₴</p>
                 </div>
             </article>
 
             <article class="product-card" onclick="openPopup('c13')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1505423139859-6243f8f019c6?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Нікарагуа 250г</h3>
                     <p class="product-card__price">253 ₴</p>
@@ -162,7 +156,7 @@
 
             <article class="product-card" onclick="openPopup('c14')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1585863261763-8a07f06913e6?w=400&q=80');"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Індія 1кг</h3>
                     <p class="product-card__price">781 ₴</p>
@@ -172,18 +166,23 @@
     </section>
 </main>
 
+
 <div class="popup" id="c1">
     <div class="popup__overlay" onclick="closePopup('c1')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c1')">✕</button>
-        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=800&q=80" class="popup__image"
+             alt="Індія Монсун Малабар">
         <h3 class="popup__title">Індія Монсун Малабар</h3>
         <p class="popup__price">271 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🌍 Регіон:</strong> Малабарське узбережжя, Індія</p>
-            <p><strong>⚙️ Обробка:</strong> Мусонова (витримування під вітрами)</p>
-            <p><strong>🌿 Сорт:</strong> 100% Арабіка</p>
-            <p><strong>☕ Смак:</strong> Дуже низька кислотність, ноти спецій, мускатного горіха та темного шоколаду.</p>
+            <p class="popup__description">Унікальна кава, зерна якої проходять спеціальну обробку мусонними вітрами. Це
+                надає напою густоти та специфічних пряних нот.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка (Monsooned)</p>
+                <p><strong>Смак:</strong> Хлібні ноти, спеції, дерево, відсутність кислинки</p>
+                <p><strong>Обсмаження:</strong> Середньо-темне</p>
+            </div>
         </div>
     </div>
 </div>
@@ -192,14 +191,18 @@
     <div class="popup__overlay" onclick="closePopup('c2')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c2')">✕</button>
-        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1621878624337-a5412b3f8974?w=800&q=80" class="popup__image"
+             alt="Індія Плантейшн">
         <h3 class="popup__title">Індія Плантейшн</h3>
         <p class="popup__price">245 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🌍 Країна:</strong> Індія</p>
-            <p><strong>🔥 Обсмаження:</strong> Середнє</p>
-            <p><strong>🌿 Сорт:</strong> 100% Арабіка</p>
-            <p><strong>☕ Смак:</strong> Класичний профіль: горіх, какао, легка пряність. Щільне тіло.</p>
+            <p class="popup__description">Класична індійська арабіка. Насичений, зрозумілий смак з гарним балансом
+                гірчинки та тіла.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка</p>
+                <p><strong>Смак:</strong> Гіркий шоколад, смажені горіхи, табак</p>
+                <p><strong>Обсмаження:</strong> Середнє</p>
+            </div>
         </div>
     </div>
 </div>
@@ -208,13 +211,18 @@
     <div class="popup__overlay" onclick="closePopup('c3')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c3')">✕</button>
-        <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=800&q=80" class="popup__image">
-        <h3 class="popup__title">Італьяно</h3>
+        <img src="https://images.unsplash.com/photo-1504620293773-9dd942d75143?w=800&q=80" class="popup__image"
+             alt="Бленд Італьяно">
+        <h3 class="popup__title">Бленд Італьяно</h3>
         <p class="popup__price">205 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>📋 Тип:</strong> Еспресо-бленд</p>
-            <p><strong>🔥 Обсмаження:</strong> Темне</p>
-            <p><strong>☕ Смак:</strong> Міцна кава з густою пінкою, шоколадною гірчинкою та карамельним післясмаком.</p>
+            <p class="popup__description">Ідеальний вибір для ранкового еспресо. Міцна кава з густою пінкою та бадьорим
+                ефектом.</p>
+            <div class="popup__details">
+                <p><strong>Склад:</strong> Арабіка 80% / Робуста 20%</p>
+                <p><strong>Смак:</strong> Насичений, какао, прянощі</p>
+                <p><strong>Обсмаження:</strong> Темне (Віденське)</p>
+            </div>
         </div>
     </div>
 </div>
@@ -223,13 +231,18 @@
     <div class="popup__overlay" onclick="closePopup('c4')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c4')">✕</button>
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1545665225-b23b99e4d45e?w=800&q=80" class="popup__image"
+             alt="Ефіопія Йергачіф">
         <h3 class="popup__title">Ефіопія Йергачіф</h3>
         <p class="popup__price">281 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🌍 Регіон:</strong> Yirgacheffe, Ефіопія</p>
-            <p><strong>🌿 Сорт:</strong> 100% Арабіка</p>
-            <p><strong>☕ Смак:</strong> Вишуканий квітковий аромат, ноти лимона, бергамоту та солодких ягід.</p>
+            <p class="popup__description">Один з найвишуканіших сортів світу. Легка, чайна текстура та неймовірний
+                квітковий аромат.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка (мита обробка)</p>
+                <p><strong>Смак:</strong> Жасмин, бергамот, лимон, персик</p>
+                <p><strong>Кислинка:</strong> Висока, цитрусова</p>
+            </div>
         </div>
     </div>
 </div>
@@ -238,14 +251,18 @@
     <div class="popup__overlay" onclick="closePopup('c5')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c5')">✕</button>
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1512568400610-62da2848a094?w=800&q=80" class="popup__image"
+             alt="Ефіопія Сідамо">
         <h3 class="popup__title">Ефіопія Сідамо</h3>
         <p class="popup__price">282 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🌍 Регіон:</strong> Sidamo, Ефіопія</p>
-            <p><strong>🌿 Сорт:</strong> 100% Арабіка</p>
-            <p><strong>☕ Смак:</strong> Збалансована кислотність, ноти абрикоса, жасмину та солодкий цитрусовий фініш.
-            </p>
+            <p class="popup__description">Яскрава африканська кава з багатим фруктовим профілем та солодким
+                післясмаком.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка</p>
+                <p><strong>Смак:</strong> Сухофрукти, вино, шоколад, квіткові ноти</p>
+                <p><strong>Обсмаження:</strong> Середнє світле</p>
+            </div>
         </div>
     </div>
 </div>
@@ -254,13 +271,18 @@
     <div class="popup__overlay" onclick="closePopup('c6')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c6')">✕</button>
-        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1506372023396-13363f3b53a4?w=800&q=80" class="popup__image"
+             alt="Кенія Кіліманджаро">
         <h3 class="popup__title">Кенія Кіліманджаро</h3>
         <p class="popup__price">322 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🌍 Походження:</strong> Схили Кіліманджаро</p>
-            <p><strong>🌿 Сорт:</strong> 100% Арабіка</p>
-            <p><strong>☕ Смак:</strong> Висока соковита кислотність, яскраві ноти смородини, ожини та грейпфрута.</p>
+            <p class="popup__description">Кава, вирощена на вулканічних схилах. Відома своєю вибуховою ягідною
+                соковитістю.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка</p>
+                <p><strong>Смак:</strong> Чорна смородина, ожина, грейпфрут</p>
+                <p><strong>Кислинка:</strong> Виражена, винна</p>
+            </div>
         </div>
     </div>
 </div>
@@ -269,13 +291,18 @@
     <div class="popup__overlay" onclick="closePopup('c7')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c7')">✕</button>
-        <img src="https://images.unsplash.com/photo-1581996323441-7a7e9ac9b7e4?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d713b20e473?w=800&q=80" class="popup__image"
+             alt="Колумбія Супремо">
         <h3 class="popup__title">Колумбія Супремо</h3>
         <p class="popup__price">261 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🌍 Країна:</strong> Колумбія</p>
-            <p><strong>🌿 Сорт:</strong> 100% Арабіка</p>
-            <p><strong>☕ Смак:</strong> Дуже збалансована, карамельна солодкість, легка фруктова кислинка.</p>
+            <p class="popup__description">Золотий стандарт кави. Великі зерна, чистий смак та універсальність у
+                приготуванні.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка (скрін 17/18)</p>
+                <p><strong>Смак:</strong> Карамель, червоне яблуко, цитрус</p>
+                <p><strong>Обсмаження:</strong> Середнє</p>
+            </div>
         </div>
     </div>
 </div>
@@ -284,13 +311,18 @@
     <div class="popup__overlay" onclick="closePopup('c8')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c8')">✕</button>
-        <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=800&q=80" class="popup__image">
-        <h3 class="popup__title">Мастермікс</h3>
+        <img src="https://images.unsplash.com/photo-1511537632536-b7a575845363?w=800&q=80" class="popup__image"
+             alt="Мастермікс">
+        <h3 class="popup__title">Мастермікс 250гр.</h3>
         <p class="popup__price">218 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>📋 Тип:</strong> Фірмова суміш від обсмажувальника</p>
-            <p><strong>☕ Смак:</strong> Авторський баланс арабіки та робусти для стабільного смаку в домашніх умовах.
-            </p>
+            <p class="popup__description">Спеціальний купаж від наших бариста для тих, хто любить щільну та ароматну
+                каву з пінкою.</p>
+            <div class="popup__details">
+                <p><strong>Склад:</strong> Арабіка / Робуста</p>
+                <p><strong>Смак:</strong> Збалансований, шоколадний, без зайвої кислоти</p>
+                <p><strong>Призначення:</strong> Автоматичні кавомашини, турка</p>
+            </div>
         </div>
     </div>
 </div>
@@ -299,12 +331,18 @@
     <div class="popup__overlay" onclick="closePopup('c9')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c9')">✕</button>
-        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1599749984338-a6d83a653a6f?w=800&q=80" class="popup__image"
+             alt="Мексика Марагоджип">
         <h3 class="popup__title">Мексика Марагоджип</h3>
         <p class="popup__price">348 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🌿 Сорт:</strong> Величезні зерна ("слоняче зерно")</p>
-            <p><strong>☕ Смак:</strong> М'який, ніжний, з нотами шоколаду, ванілі та легким горіховим відтінком.</p>
+            <p class="popup__description">Сорт з гігантськими зернами ("слоняче вухо"). Кава виходить дуже м'якою та
+                обволікаючою.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка (Марагоджип)</p>
+                <p><strong>Смак:</strong> Вершки, ваніль, легкі горіхові ноти</p>
+                <p><strong>Кислинка:</strong> Мінімальна</p>
+            </div>
         </div>
     </div>
 </div>
@@ -313,12 +351,18 @@
     <div class="popup__overlay" onclick="closePopup('c10')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c10')">✕</button>
-        <img src="https://images.unsplash.com/photo-1512568404398-4e8036224ec2?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1509042438697-d1c7378a3a8c?w=800&q=80" class="popup__image"
+             alt="Преміум">
         <h3 class="popup__title">Преміум</h3>
         <p class="popup__price">228 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>📋 Тип:</strong> Відбірна арабіка</p>
-            <p><strong>☕ Смак:</strong> Збалансований, насичений, з приємним шоколадним післясмаком.</p>
+            <p class="popup__description">Вишуканий бленд для поціновувачів складного смаку. Поєднання кращих сортів
+                арабіки з дрібкою якісної робусти.</p>
+            <div class="popup__details">
+                <p><strong>Склад:</strong> 90% Арабіка / 10% Робуста</p>
+                <p><strong>Смак:</strong> Багатий, шоколадно-горіховий</p>
+                <p><strong>Обсмаження:</strong> Середнє</p>
+            </div>
         </div>
     </div>
 </div>
@@ -327,12 +371,18 @@
     <div class="popup__overlay" onclick="closePopup('c11')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c11')">✕</button>
-        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80" class="popup__image">
-        <h3 class="popup__title">Колумбія без кофеїну</h3>
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80" class="popup__image"
+             alt="Колумбія Без Кофеїну">
+        <h3 class="popup__title">Колумбія Без Кофеїну</h3>
         <p class="popup__price">271 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>⚙️ Процес:</strong> Swiss Water або CO2 decaf</p>
-            <p><strong>☕ Смак:</strong> Зберігає всі якості колумбійської кави без вмісту кофеїну. М'яка та солодка.</p>
+            <p class="popup__description">Справжня колумбійська кава, з якої дбайливо видалено кофеїн, зберігаючи при
+                цьому весь смак та аромат.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка (Decaf)</p>
+                <p><strong>Смак:</strong> М'який, солодкуватий, горіховий</p>
+                <p><strong>Особливість:</strong> Можна пити ввечері</p>
+            </div>
         </div>
     </div>
 </div>
@@ -341,12 +391,18 @@
     <div class="popup__overlay" onclick="closePopup('c12')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c12')">✕</button>
-        <img src="https://images.unsplash.com/photo-1583566916016-5c4e38ffca98?w=800&q=80" class="popup__image">
-        <h3 class="popup__title">Чай Лохина</h3>
+        <img src="https://images.unsplash.com/photo-1564858882894-67252cb78086?w=800&q=80" class="popup__image"
+             alt="Чай Лохина">
+        <h3 class="popup__title">Чай Лохина 250г</h3>
         <p class="popup__price">200 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🍃 Склад:</strong> Крупнолистовий чай, сушена лохина, натуральний аромат.</p>
-            <p><strong>☕ Смак:</strong> Насичений ягідний аромат, приємна терпкість та довгий післясмак.</p>
+            <p class="popup__description">Натуральна основа для приготування вітамінного чаю. Складається з перетертих
+                ягід лохини.</p>
+            <div class="popup__details">
+                <p><strong>Склад:</strong> Ягоди лохини, цукор/сироп</p>
+                <p><strong>Приготування:</strong> Залити гарячою водою</p>
+                <p><strong>Смак:</strong> Насичений ягідний, кисло-солодкий</p>
+            </div>
         </div>
     </div>
 </div>
@@ -355,12 +411,17 @@
     <div class="popup__overlay" onclick="closePopup('c13')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c13')">✕</button>
-        <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=800&q=80" class="popup__image">
-        <h3 class="popup__title">Нікарагуа</h3>
+        <img src="https://images.unsplash.com/photo-1505423139859-6243f8f019c6?w=800&q=80" class="popup__image"
+             alt="Нікарагуа">
+        <h3 class="popup__title">Нікарагуа 250г</h3>
         <p class="popup__price">253 ₴ / 250г</p>
         <div class="popup__info">
-            <p><strong>🌍 Походження:</strong> Нікарагуа</p>
-            <p><strong>☕ Смак:</strong> Щільне тіло, ноти карамелі, какао та червоного яблука.</p>
+            <p class="popup__description">Високогірна арабіка з Центральної Америки. Має чистий збалансований смак.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> 100% Арабіка (SHG)</p>
+                <p><strong>Смак:</strong> Шоколад, цитрус, квіткові відтінки</p>
+                <p><strong>Кислинка:</strong> Середня, приємна</p>
+            </div>
         </div>
     </div>
 </div>
@@ -369,13 +430,18 @@
     <div class="popup__overlay" onclick="closePopup('c14')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('c14')">✕</button>
-        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1585863261763-8a07f06913e6?w=800&q=80" class="popup__image"
+             alt="Індія 1кг">
         <h3 class="popup__title">Індія 1кг</h3>
         <p class="popup__price">781 ₴ / 1кг</p>
         <div class="popup__info">
-            <p><strong>📋 Вигода:</strong> Економічна упаковка для дому чи офісу.</p>
-            <p><strong>🌿 Сорт:</strong> 100% Арабіка</p>
-            <p><strong>☕ Смак:</strong> Класична Індія з горіхово-шоколадним профілем.</p>
+            <p class="popup__description">Велика економічна упаковка вашої улюбленої індійської арабіки. Вигідна
+                пропозиція для дому чи офісу.</p>
+            <div class="popup__details">
+                <p><strong>Сорт:</strong> Індія Плантейшн АА</p>
+                <p><strong>Вага:</strong> 1000 г</p>
+                <p><strong>Упаковка:</strong> Вакуумний пакет з клапаном</p>
+            </div>
         </div>
     </div>
 </div>
