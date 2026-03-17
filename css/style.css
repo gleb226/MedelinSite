@@ -417,6 +417,15 @@ h1, h2, h3, h4 {
     opacity: 0.9;
 }
 
+.booking-hero .btn {
+    font-size: 1.6rem;
+    padding: 1.4rem 4rem;
+    font-weight: 700;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .menu,
 .contact,
 .products {
