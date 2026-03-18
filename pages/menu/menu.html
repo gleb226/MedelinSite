@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ознайомтеся з нашим меню: від класичного еспресо до авторських десертів. Найкраща кава в Ужгороді.">
     <title>Меню - Medelin Coffee</title>
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50BUE2d30GBASKRdrCoBgrFBfvjFTiAKCYA&s"
           type="image/png">
@@ -1009,9 +1010,9 @@
 
         if (item.vol || item.ing || item.energy) {
             html += `<div class="popup__details">`;
-            if (item.vol) html += `<p class="popup__details-text"><strong>📏 Об'єм/Вага:</strong> ${item.vol}</p>`;
-            if (item.ing) html += `<p class="popup__details-text"><strong>🌿 Склад:</strong> ${item.ing}</p>`;
-            if (item.energy) html += `<p class="popup__details-text"><strong>🔥 Енергетична цінність:</strong> ${item.energy}</p>`;
+            if (item.vol) html += `<p class="popup__details-text"><strong class="popup__details-label">📏 Об'єм/Вага:</strong> ${item.vol}</p>`;
+            if (item.ing) html += `<p class="popup__details-text"><strong class="popup__details-label">🌿 Склад:</strong> ${item.ing}</p>`;
+            if (item.energy) html += `<p class="popup__details-text"><strong class="popup__details-label">🔥 Енергетична цінність:</strong> ${item.energy}</p>`;
             html += `</div>`;
         }
 

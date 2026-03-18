@@ -39,7 +39,7 @@
             <h2 class="booking-hero__title">Бажаєте забронювати столик?</h2>
             <p class="booking-hero__text">Зателефонуйте нам прямо зараз, і ми підготуємо для вас найкраще місце в
                 будь-якому з наших закладів.</p>
-            <a href="tel:+380503775906" class="btn">Забронювати: +38 (050) 377-59-06</a>
+            <a href="tel:+380503775906" class="btn btn--booking">Забронювати</a>
         </div>
     </section>
 
@@ -48,44 +48,44 @@
         <div class="products-grid">
             <article class="product-card" onclick="openPopup('loc1')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80');" aria-label="Інтер'єр Medelin на Корятовича"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Medelin на Корятовича</h3>
                 </div>
             </article>
             <article class="product-card" onclick="openPopup('loc2')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80');" aria-label="Інтер'єр Medelin на Закарпатській"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Medelin на Закарпатській</h3>
                 </div>
             </article>
             <article class="product-card" onclick="openPopup('loc3')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80');" aria-label="Інтер'єр Medelin на Проспекті Свободи"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Medelin на Проспекті Свободи</h3>
                 </div>
             </article>
             <article class="product-card" onclick="openPopup('loc4')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80');" aria-label="Інтер'єр Medelin Bozdosh"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Medelin Bozdosh</h3>
                 </div>
             </article>
             <article class="product-card" onclick="openPopup('loc5')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80');" aria-label="Інтер'єр Medelin на Гойди"></div>
                 <div class="product-card__content">
                     <h3 class="product-card__title">Medelin на Гойди</h3>
                 </div>
             </article>
             <article class="product-card" onclick="openPopup('loc6')">
                 <div class="product-card__image"
-                     style="background-image: url('https://images.unsplash.com/photo-1669295987842-53270c972055?w=800&q=80');"></div>
+                     style="background-image: url('https://images.unsplash.com/photo-1669295987842-53270c972055?w=800&q=80');" aria-label="Інтер'єр Medelin на Анатолія Тегзи"></div>
                 <div class="product-card__content">
-                    <h3 class="product-card__title">Medelin на Анатолія Тегзи</h3>
+                    <h3 class="product-card__title">Medelin на Новака</h3>
                 </div>
             </article>
         </div>
@@ -123,13 +123,14 @@
     <div class="popup__overlay" onclick="closePopup('loc1')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('loc1')">✕</button>
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image" alt="Інтер'єр Medelin на Корятовича">
         <h3 class="popup__title">Medelin на Корятовича</h3>
         <div class="popup__info">
             <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Корятовича, 5, Ужгород</p>
             <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
             <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
             <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <a href="https://maps.app.goo.gl/eaHX2hzMBL8cj75U7" target="_blank" class="btn btn--route">Побудувати маршрут</a>
         </div>
     </div>
 </div>
@@ -138,13 +139,14 @@
     <div class="popup__overlay" onclick="closePopup('loc2')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('loc2')">✕</button>
-        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" class="popup__image" alt="Інтер'єр Medelin на Закарпатській">
         <h3 class="popup__title">Medelin на Закарпатській</h3>
         <div class="popup__info">
             <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Закарпатська, 44, Ужгород</p>
             <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
             <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
             <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <a href="https://maps.app.goo.gl/1UEwR2JLh3S1bmZn6" target="_blank" class="btn btn--route">Побудувати маршрут</a>
         </div>
     </div>
 </div>
@@ -153,13 +155,14 @@
     <div class="popup__overlay" onclick="closePopup('loc3')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('loc3')">✕</button>
-        <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80" class="popup__image" alt="Інтер'єр Medelin на Проспекті Свободи">
         <h3 class="popup__title">Medelin на Проспекті Свободи</h3>
         <div class="popup__info">
             <p class="popup__info-text"><strong>📍 Адреса:</strong> просп. Свободи, 54, Ужгород</p>
             <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
             <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
             <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <a href="https://maps.app.goo.gl/r5G4deBWcvcRuu3R9" target="_blank" class="btn btn--route">Побудувати маршрут</a>
         </div>
     </div>
 </div>
@@ -168,13 +171,14 @@
     <div class="popup__overlay" onclick="closePopup('loc4')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('loc4')">✕</button>
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image" alt="Інтер'єр Medelin Bozdosh">
         <h3 class="popup__title">Medelin Bozdosh</h3>
         <div class="popup__info">
             <p class="popup__info-text"><strong>📍 Адреса:</strong> Слов'янська набережна, 23А, Ужгород</p>
             <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
             <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
             <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <a href="https://maps.app.goo.gl/XRraroUzqtbCMzLw8" target="_blank" class="btn btn--route">Побудувати маршрут</a>
         </div>
     </div>
 </div>
@@ -183,13 +187,14 @@
     <div class="popup__overlay" onclick="closePopup('loc5')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('loc5')">✕</button>
-        <img src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80" class="popup__image">
+        <img src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80" class="popup__image" alt="Інтер'єр Medelin на Гойди">
         <h3 class="popup__title">Medelin на Гойди</h3>
         <div class="popup__info">
             <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Гойди, 4, Ужгород</p>
             <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
             <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
             <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <a href="https://maps.app.goo.gl/DUs2U6gcVF7drXLy8" target="_blank" class="btn btn--route">Побудувати маршрут</a>
         </div>
     </div>
 </div>
@@ -198,13 +203,14 @@
     <div class="popup__overlay" onclick="closePopup('loc6')"></div>
     <div class="popup__content">
         <button class="popup__close" onclick="closePopup('loc6')">✕</button>
-        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" class="popup__image">
-        <h3 class="popup__title">Medelin на Анатолія Тегзи</h3>
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" class="popup__image" alt="Інтер'єр Medelin на Анатолія Тегзи">
+        <h3 class="popup__title">Medelin на Новака</h3>
         <div class="popup__info">
-            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Анатолія Тегзи, 11, Ужгород</p>
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Новака, 2, Ужгород</p>
             <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
             <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
             <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+            <a href="https://maps.app.goo.gl/JDja54iHdQKsvqR16" target="_blank" class="btn btn--route">Побудувати маршрут</a>
         </div>
     </div>
 </div>
@@ -214,6 +220,7 @@
         <div class="footer__section">
             <h3 class="footer__title">Medelin Coffee</h3>
             <p class="footer__text">Найкраща кава в Ужгороді</p>
+            <p class="footer__text">Смак, якість, атмосфера</p>
         </div>
         <div class="footer__section">
             <h3 class="footer__title">Контакти</h3>
@@ -222,8 +229,8 @@
         </div>
         <div class="footer__section">
             <h3 class="footer__title">Години роботи</h3>
-            <p class="footer__text">Понеділок-Неділя</p>
-            <p class="footer__text">08:00 - 20:00</p>
+            <p class="footer__text">Понеділок–Неділя</p>
+            <p class="footer__text">08:00–20:00</p>
         </div>
         <div class="footer__section">
             <h3 class="footer__title">Соцмережі</h3>
