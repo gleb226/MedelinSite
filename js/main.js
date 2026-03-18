@@ -13,26 +13,35 @@ function initScrollReveal() {
     }
 
     const revealElements = document.querySelectorAll('.promo-card, .category, .product-card, .about-summary__container, .booking-hero__card, .contact__social');
+    const grids = document.querySelectorAll('.products-grid, .menu__categories');
+
+    const revealGridChildren = (grid) => {
+        const children = grid.children;
+        Array.from(children).forEach((child, index) => {
+            child.classList.add('u-reveal');
+            child.style.transitionDelay = `${index * 0.1}s`;
+            setTimeout(() => child.classList.add('u-reveal--active'), 50);
+        });
+    };
+
+    const revealSingle = (el) => {
+        el.classList.add('u-reveal--active');
+    };
     
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 if (entry.target.classList.contains('products-grid') || entry.target.classList.contains('menu__categories')) {
-                    const children = entry.target.children;
-                    Array.from(children).forEach((child, index) => {
-                        child.classList.add('u-reveal');
-                        child.style.transitionDelay = `${index * 0.1}s`;
-                        setTimeout(() => child.classList.add('u-reveal--active'), 50);
-                    });
+                    revealGridChildren(entry.target);
                 } else {
-                    entry.target.classList.add('u-reveal--active');
+                    revealSingle(entry.target);
                 }
                 revealObserver.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.01,
+        rootMargin: '0px 0px -40px 0px'
     });
 
     revealElements.forEach(el => {
@@ -40,8 +49,32 @@ function initScrollReveal() {
         revealObserver.observe(el);
     });
 
-    const grids = document.querySelectorAll('.products-grid, .menu__categories');
     grids.forEach(grid => revealObserver.observe(grid));
+
+    const isInViewport = (el) => {
+        const rect = el.getBoundingClientRect();
+        const viewH = window.innerHeight || document.documentElement.clientHeight;
+        const viewW = window.innerWidth || document.documentElement.clientWidth;
+        return rect.bottom > 0 && rect.right > 0 && rect.top < viewH && rect.left < viewW;
+    };
+
+    const runInitialRevealCheck = () => {
+        revealElements.forEach(el => {
+            if (el.classList.contains('u-reveal--active')) return;
+            if (!isInViewport(el)) return;
+            revealSingle(el);
+            revealObserver.unobserve(el);
+        });
+
+        grids.forEach(grid => {
+            if (!isInViewport(grid)) return;
+            revealGridChildren(grid);
+            revealObserver.unobserve(grid);
+        });
+    };
+
+    requestAnimationFrame(runInitialRevealCheck);
+    window.addEventListener('load', () => requestAnimationFrame(runInitialRevealCheck), { once: true });
 }
 
 function initHeroAnimations() {

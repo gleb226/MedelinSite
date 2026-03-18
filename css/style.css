@@ -627,7 +627,7 @@ h1, h2, h3, h4 {
     background: linear-gradient(135deg, var(--color-coffee), var(--color-coffee-soft));
     border: none;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: pulse 2s infinite ease-in-out;
+    animation: pulse 2s ease-in-out 0s 3;
 }
 
 .btn--booking::before {
