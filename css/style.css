@@ -43,7 +43,7 @@
     --ring-focus: 0 0 0 3px rgba(139, 94, 60, 0.25);
     --transition-base: 0.25s ease;
     --transition-slow: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
+
     --overlay-dark: rgba(60, 47, 47, 0.52);
     --overlay-deeper: rgba(60, 47, 47, 0.7);
     --overlay-popup: rgba(60, 47, 47, 0.88);
@@ -52,8 +52,12 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideUp {
@@ -101,8 +105,12 @@
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .u-animate-fade-in {
@@ -141,11 +149,25 @@
     transform: scale(1) translateY(0);
 }
 
-.u-delay-1 { transition-delay: 0.1s; }
-.u-delay-2 { transition-delay: 0.2s; }
-.u-delay-3 { transition-delay: 0.3s; }
-.u-delay-4 { transition-delay: 0.4s; }
-.u-delay-5 { transition-delay: 0.5s; }
+.u-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.u-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.u-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.u-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.u-delay-5 {
+    transition-delay: 0.5s;
+}
 
 
 *, *::before, *::after {
@@ -633,7 +655,7 @@ h1, h2, h3, h4 {
 .btn--booking::before {
     content: "📞";
     font-size: 1.5rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .btn--booking:hover {
@@ -647,9 +669,18 @@ h1, h2, h3, h4 {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); box-shadow: var(--shadow-cta); }
-    50% { transform: scale(1.05); box-shadow: var(--shadow-cta-hover); }
-    100% { transform: scale(1); box-shadow: var(--shadow-cta); }
+    0% {
+        transform: scale(1);
+        box-shadow: var(--shadow-cta);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-cta-hover);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: var(--shadow-cta);
+    }
 }
 
 .menu,
@@ -694,8 +725,8 @@ h1, h2, h3, h4 {
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
     border: 1px solid var(--border-light);
 }

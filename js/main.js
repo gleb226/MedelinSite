@@ -27,7 +27,7 @@ function initScrollReveal() {
     const revealSingle = (el) => {
         el.classList.add('u-reveal--active');
     };
-    
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -74,7 +74,7 @@ function initScrollReveal() {
     };
 
     requestAnimationFrame(runInitialRevealCheck);
-    window.addEventListener('load', () => requestAnimationFrame(runInitialRevealCheck), { once: true });
+    window.addEventListener('load', () => requestAnimationFrame(runInitialRevealCheck), {once: true});
 }
 
 function initHeroAnimations() {
@@ -84,14 +84,16 @@ function initHeroAnimations() {
     const heroBtn = document.querySelector('.hero__cta');
 
     if (prefersReducedMotion) {
-        [heroTitle, heroSubtitle, heroBtn].filter(Boolean).forEach(el => { el.style.opacity = '1'; });
+        [heroTitle, heroSubtitle, heroBtn].filter(Boolean).forEach(el => {
+            el.style.opacity = '1';
+        });
         return;
     }
 
     if (heroTitle) {
         heroTitle.classList.add('u-animate-slide-up');
     }
-    
+
     if (heroSubtitle) {
         heroSubtitle.style.animationDelay = '0.2s';
         heroSubtitle.classList.add('u-animate-slide-up');
@@ -101,7 +103,7 @@ function initHeroAnimations() {
             heroSubtitle.classList.add('u-animate-float');
         }, 1200);
     }
-    
+
     if (heroBtn) {
         heroBtn.style.animationDelay = '0.4s';
         heroBtn.classList.add('u-animate-slide-up');
@@ -118,9 +120,9 @@ function initBurgerMenu() {
     const toggleMenu = () => {
         const isActive = navMenu.classList.toggle('nav--active');
         burgerBtn.classList.toggle('header__burger--active');
-        
+
         burgerBtn.setAttribute('aria-label', isActive ? 'Закрити меню' : 'Відкрити меню');
-        
+
         if (isActive) {
             document.body.style.overflow = 'hidden';
             document.body.classList.add('is-scroll-locked');
@@ -150,10 +152,10 @@ function initBurgerMenu() {
 
     document.addEventListener('click', (e) => {
         if (!navMenu.classList.contains('nav--active')) return;
-        
+
         const isClickInsideMenu = navMenu.contains(e.target);
         const isClickOnBurger = burgerBtn.contains(e.target);
-        
+
         if (!isClickInsideMenu && !isClickOnBurger) {
             closeMenu();
         }
