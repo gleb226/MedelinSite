@@ -1,11 +1,11 @@
-﻿# ☕ Medellin Coffee — Website
+﻿# ☕ Medelin Coffee — Website
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
 [![BEM](https://img.shields.io/badge/BEM-Methodology-29BDfD?style=for-the-badge)](https://getbem.com/)
 [![Responsive](https://img.shields.io/badge/Responsive-Mobile--First-success?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
 
-Багатосторінковий вебсайт для мережі кав'ярень Medellin Coffee в Ужгороді. Чистий HTML/CSS без фреймворків з адаптивним дизайном та БЕМ методологією.
+Багатосторінковий вебсайт для мережі кав'ярень Medelin Coffee в Ужгороді. Чистий HTML/CSS без фреймворків з адаптивним дизайном та БЕМ методологією.
 
 ---
 
