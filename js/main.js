@@ -3,7 +3,67 @@ document.addEventListener('DOMContentLoaded', () => {
     initPopupHandlers();
     initScrollReveal();
     initHeroAnimations();
+    initSubNav();
 });
+
+function initSubNav() {
+    const subnavList = document.querySelector('.menu-subnav__list');
+    const subnavLinks = document.querySelectorAll('.menu-subnav__link');
+    const sections = document.querySelectorAll('section[id]');
+
+    if (!subnavLinks.length || !sections.length) return;
+
+
+    subnavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const subnavHeight = document.querySelector('.menu-subnav').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight - subnavHeight + 1;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-150px 0px -70% 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                const activeLink = document.querySelector(`.menu-subnav__link[href="#${id}"]`);
+
+                if (activeLink) {
+                    subnavLinks.forEach(link => link.classList.remove('menu-subnav__link--active'));
+                    activeLink.classList.add('menu-subnav__link--active');
+
+
+                    if (subnavList) {
+                        const offset = activeLink.offsetLeft - (subnavList.clientWidth / 2) + (activeLink.clientWidth / 2);
+                        subnavList.scrollTo({ left: offset, behavior: 'smooth' });
+                    }
+                }
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+}
 
 function initScrollReveal() {
     if (!('IntersectionObserver' in window)) {
