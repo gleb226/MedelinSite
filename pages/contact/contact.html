@@ -1,29 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Контакти Medelin Coffee: кабінет на Проспекті Свободи та доставка кави по місту.">
-    <meta name="keywords" content="контакти, Medelin Coffee, Ужгород, кав'ярня">
-    <meta name="author" content="Medelin Coffee">
-    <meta name="robots" content="index, follow">
-    <meta property="og:locale" content="uk_UA">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://medelin.uz.ua/pages/contact/contact.html">
-    <meta property="og:site_name" content="Medelin Coffee">
-    <meta property="og:title" content="Контакти Medelin Coffee">
-    <meta property="og:description" content="Зв'яжіться з Medelin Coffee — кав'ярня на Проспекті Свободи з доставкою по Ужгороду.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=1200&q=63">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@medelin_coffee">
-    <meta property="twitter:title" content="Контакти Medelin Coffee">
-    <meta property="twitter:description" content="Завітай до кав'ярні Medelin або замов доставку улюбленої кави.">
-    <link rel="canonical" href="https://medelin.uz.ua/pages/contact/contact.html">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50BUE2d30GBASKRdrCoBgrFBfvjFTiAKCYA&s" type="image/png">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Контакти - Medelin Coffee</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50BUE2d30GBASKRdrCoBgrFBfvjFTiAKCYA&s"
+          type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/responsive.css">
 </head>
@@ -48,61 +34,245 @@
 </header>
 
 <main class="main">
-    <section class="promo promo--coffee">
-        <div class="promo-card">
-            <div class="promo-card__image" style="background-image: url('https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=800&q=80');" role="img" aria-label="Бариста спілкується з гостями"></div>
-            <div class="promo-card__content">
-                <h2 class="promo-card__title">Зв'яжіться з нами</h2>
-                <p class="promo-card__text">Напишіть у Instagram, зателефонуйте, замовте доставку чи просто завітайте — ми завжди з теплою кавою та усмішкою.</p>
-                <a href="#contacts" class="btn">Детальні контакти</a>
-            </div>
+    <section class="booking-hero">
+        <div class="booking-hero__card">
+            <h2 class="booking-hero__title">Бажаєте забронювати столик?</h2>
+            <p class="booking-hero__text">Зателефонуйте нам прямо зараз, і ми підготуємо для вас найкраще місце в
+                будь-якому з наших закладів.</p>
+            <a href="tel:+380503775906" class="btn btn--booking">Забронювати</a>
         </div>
     </section>
 
-    <section id="contacts" class="contact">
-        <div class="contact__container">
-            <h1 class="section-title section-title--mb-5">Ми поруч</h1>
-            <div class="menu__categories">
-                <article class="category">
-                    <h3 class="category__title">Проспект Свободи, 54</h3>
-                    <p class="menu-item__info">Щодня 08:00–21:00 · кав'ярня на першому поверсі з панорамним вікном.</p>
-                    <p class="menu-item__info">Бариста-консультації, кава з собою та невеличкі десерти на вибір.</p>
-                </article>
-                <article class="category">
-                    <h3 class="category__title">Доставка по місту</h3>
-                    <p class="menu-item__info">Мінімальне замовлення 250 ₴, доставка до 45 хвилин.</p>
-                    <p class="menu-item__info">Доступні вибори: кавові сет-шоу, сезонні латте й прохолодні домашні лимонади.</p>
-                </article>
-                <article class="category">
-                    <h3 class="category__title">Зворотній зв'язок</h3>
-                    <p class="menu-item__info">☎ +38 (050) 377-59-06</p>
-                    <p class="menu-item__info">✉ medelin.social@gmail.com</p>
-                    <p class="menu-item__info">Instagram @medelin_com або Facebook Medelin.Uzh.</p>
-                </article>
+    <section class="contact">
+        <h1 class="section-title section-title--mb-5">Наші локації</h1>
+        <div class="products-grid">
+            <article class="product-card" onclick="openPopup('loc1')">
+                <div class="product-card__image"
+                     style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80');"
+                     aria-label="Інтер'єр Medelin на Корятовича"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Корятовича</h3>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('loc2')">
+                <div class="product-card__image"
+                     style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80');"
+                     aria-label="Інтер'єр Medelin на Закарпатській"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Закарпатській</h3>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('loc3')">
+                <div class="product-card__image"
+                     style="background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80');"
+                     aria-label="Інтер'єр Medelin на Проспекті Свободи"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Проспекті Свободи</h3>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('loc4')">
+                <div class="product-card__image"
+                     style="background-image: url('https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80');"
+                     aria-label="Інтер'єр Medelin Bozdosh"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin Bozdosh</h3>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('loc5')">
+                <div class="product-card__image"
+                     style="background-image: url('https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80');"
+                     aria-label="Інтер'єр Medelin на Гойди"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Гойди</h3>
+                </div>
+            </article>
+            <article class="product-card" onclick="openPopup('loc6')">
+                <div class="product-card__image"
+                     style="background-image: url('https://images.unsplash.com/photo-1669295987842-53270c972055?w=800&q=80');"
+                     aria-label="Інтер'єр Medelin на Анатолія Тегзи"></div>
+                <div class="product-card__content">
+                    <h3 class="product-card__title">Medelin на Новака</h3>
+                </div>
+            </article>
+        </div>
+
+        <div class="contact__container contact__container--mt-large">
+            <div class="contact__social">
+                <h4 class="contact__location-name">Зв'яжіться з нами</h4>
+                <div class="contact__item">
+                    <span class="contact__item-icon">📞</span>
+                    <p><a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+                </div>
+                <div class="contact__item">
+                    <span class="contact__item-icon">✉️</span>
+                    <p><a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+                </div>
+                <div class="contact__item">
+                    <span class="contact__item-icon">📸</span>
+                    <p><a href="https://www.instagram.com/medelin_com/" target="_blank">Instagram: @medelin_com</a></p>
+                </div>
+                <div class="contact__item">
+                    <span class="contact__item-icon">📸</span>
+                    <p><a href="https://www.instagram.com/medelin_uzh/" target="_blank">Instagram: @medelin_uzh</a></p>
+                </div>
+                <div class="contact__item">
+                    <span class="contact__item-icon">🔵</span>
+                    <p><a href="https://www.facebook.com/medelin.uzh/" target="_blank">Facebook: Medelin Uzhhorod</a>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 </main>
 
+<div class="popup" id="loc1">
+    <div class="popup__overlay" onclick="closePopup('loc1')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('loc1')">✕</button>
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image"
+             alt="Інтер'єр Medelin на Корятовича">
+        <h3 class="popup__title">Medelin на Корятовича</h3>
+        <div class="popup__info">
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Корятовича, 5, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a>
+            </p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a>
+            </p>
+            <a href="https://maps.app.goo.gl/eaHX2hzMBL8cj75U7" target="_blank" class="btn btn--route">Побудувати
+                маршрут</a>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="loc2">
+    <div class="popup__overlay" onclick="closePopup('loc2')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('loc2')">✕</button>
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" class="popup__image"
+             alt="Інтер'єр Medelin на Закарпатській">
+        <h3 class="popup__title">Medelin на Закарпатській</h3>
+        <div class="popup__info">
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Закарпатська, 44, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a>
+            </p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a>
+            </p>
+            <a href="https://maps.app.goo.gl/1UEwR2JLh3S1bmZn6" target="_blank" class="btn btn--route">Побудувати
+                маршрут</a>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="loc3">
+    <div class="popup__overlay" onclick="closePopup('loc3')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('loc3')">✕</button>
+        <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80" class="popup__image"
+             alt="Інтер'єр Medelin на Проспекті Свободи">
+        <h3 class="popup__title">Medelin на Проспекті Свободи</h3>
+        <div class="popup__info">
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> просп. Свободи, 54, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a>
+            </p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a>
+            </p>
+            <a href="https://maps.app.goo.gl/r5G4deBWcvcRuu3R9" target="_blank" class="btn btn--route">Побудувати
+                маршрут</a>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="loc4">
+    <div class="popup__overlay" onclick="closePopup('loc4')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('loc4')">✕</button>
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" class="popup__image"
+             alt="Інтер'єр Medelin Bozdosh">
+        <h3 class="popup__title">Medelin Bozdosh</h3>
+        <div class="popup__info">
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> Слов'янська набережна, 23А, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a>
+            </p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a>
+            </p>
+            <a href="https://maps.app.goo.gl/XRraroUzqtbCMzLw8" target="_blank" class="btn btn--route">Побудувати
+                маршрут</a>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="loc5">
+    <div class="popup__overlay" onclick="closePopup('loc5')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('loc5')">✕</button>
+        <img src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?w=800&q=80" class="popup__image"
+             alt="Інтер'єр Medelin на Гойди">
+        <h3 class="popup__title">Medelin на Гойди</h3>
+        <div class="popup__info">
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Гойди, 4, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a>
+            </p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a>
+            </p>
+            <a href="https://maps.app.goo.gl/DUs2U6gcVF7drXLy8" target="_blank" class="btn btn--route">Побудувати
+                маршрут</a>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="loc6">
+    <div class="popup__overlay" onclick="closePopup('loc6')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('loc6')">✕</button>
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80" class="popup__image"
+             alt="Інтер'єр Medelin на Анатолія Тегзи">
+        <h3 class="popup__title">Medelin на Новака</h3>
+        <div class="popup__info">
+            <p class="popup__info-text"><strong>📍 Адреса:</strong> вул. Новака, 2, Ужгород</p>
+            <p class="popup__info-text"><strong>⏰ Графік:</strong> Пн–Нд: 08:00 – 20:00</p>
+            <p class="popup__info-text"><strong>📞 Телефон:</strong> <a href="tel:+380503775906">+38 (050) 377-59-06</a>
+            </p>
+            <p class="popup__info-text"><strong>✉️ Email:</strong> <a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a>
+            </p>
+            <a href="https://maps.app.goo.gl/JDja54iHdQKsvqR16" target="_blank" class="btn btn--route">Побудувати
+                маршрут</a>
+        </div>
+    </div>
+</div>
+
 <footer class="footer">
     <div class="footer__content">
         <div class="footer__section">
             <h3 class="footer__title">Medelin Coffee</h3>
-            <p class="footer__text">Тут можна забронювати бізнес-зустріч чи кавовий перерв.</p>
+            <p class="footer__text">Найкраща кава в Ужгороді</p>
+            <p class="footer__text">Смак, якість, атмосфера</p>
         </div>
         <div class="footer__section">
-            <h3 class="footer__title">Наші локації</h3>
-            <p class="footer__text">Проспект Свободи, 54 — центральна кавова точка.</p>
+            <h3 class="footer__title">Контакти</h3>
+            <p class="footer__text">📞 +38 (050) 377-59-06</p>
+            <p class="footer__text">✉️ medelin.social@gmail.com</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Години роботи</h3>
+            <p class="footer__text">Понеділок–Неділя</p>
+            <p class="footer__text">08:00–20:00</p>
         </div>
         <div class="footer__section">
             <h3 class="footer__title">Соцмережі</h3>
             <a href="https://www.instagram.com/medelin_com/" target="_blank" class="footer__link">Instagram</a>
             <a href="https://www.facebook.com/medelin.uzh/" target="_blank" class="footer__link">Facebook</a>
+            <a href="https://github.com/gleb226/MedelineSite" target="_blank" rel="noopener noreferrer"
+               class="footer__link">GitHub</a>
         </div>
     </div>
     <div class="footer__bottom">
-        <p class="footer__copyright">© 2026 Medelin Coffee. Усі права захищено.</p>
-        <p class="footer__copyright">Кава, що об’єднує людей.</p>
+        <p class="footer__copyright">© 2026 Medelin Coffee. Усі права захищені.</p>
+        <p class="footer__copyright">Сайт створено <strong>Глєбом</strong> — веброзробником з Ужгорода.</p>
     </div>
 </footer>
 
