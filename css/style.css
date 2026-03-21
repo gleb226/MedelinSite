@@ -3,8 +3,11 @@
     --color-dark-brown: #3c2f2f;
     --color-coffee: #8b5e3c;
     --color-coffee-soft: #a67c52;
+    --color-coffee-light: #c69468;
     --color-olive: #5c6447;
     --color-olive-soft: #7a845e;
+    --color-olive-light: #8ca06c;
+    --color-olive-deep: #3f4732;
     --color-text: var(--color-dark-brown);
     --color-muted: #5d5656;
     --color-white: #ffffff;
@@ -430,7 +433,7 @@ h1, h2, h3, h4 {
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--color-white);
-    background: linear-gradient(135deg, var(--color-coffee), #c69468);
+    background: linear-gradient(135deg, var(--color-coffee), var(--color-coffee-light));
     border: none;
     border-radius: var(--radius-full);
     box-shadow: 0 10px 25px rgba(139, 94, 60, 0.4), inset 0 -2px 5px rgba(0,0,0,0.1);
@@ -454,7 +457,7 @@ h1, h2, h3, h4 {
 }
 
 .btn--route:hover {
-    background: linear-gradient(135deg, var(--color-olive), #8ca06c);
+    background: linear-gradient(135deg, var(--color-olive), var(--color-olive-light));
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(92, 100, 71, 0.45);
     color: var(--color-white);
@@ -1007,71 +1010,12 @@ h1, h2, h3, h4 {
     color: var(--color-muted);
 }
 
-.btn-map-route {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 1.6rem;
-    margin-top: 1.2rem;
-    background: linear-gradient(135deg, var(--color-coffee), #c69468);
-    color: var(--color-white) !important;
-    border-radius: var(--radius-full);
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    width: 100%;
-    box-shadow: 0 6px 18px rgba(139, 94, 60, 0.35);
-    position: relative;
-    overflow: hidden;
-    gap: 8px;
-    z-index: 1;
-}
-
-.btn-map-route::before {
-    content: "📍";
-    font-size: 1.1rem;
-    transition: transform 0.4s ease;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
-}
-
-.btn-map-route:hover {
-    background: linear-gradient(135deg, var(--color-olive), #8ca06c);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(92, 100, 71, 0.4);
-    color: var(--color-white) !important;
-}
-
-.btn-map-route:hover::before {
-    transform: scale(1.2) rotate(-10deg) translateY(-2px);
-}
-
-.btn-map-route::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.6s ease;
-    z-index: -1;
-}
-
-.btn-map-route:hover::after {
-    left: 120%;
-}
-
-
 .custom-map-marker {
     background: transparent;
     border: none;
 }
 
-.marker-pin {
+.custom-map-marker__pin {
     width: 40px;
     height: 40px;
     border-radius: 50% 50% 50% 0;
@@ -1088,7 +1032,7 @@ h1, h2, h3, h4 {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
 }
 
-.marker-dot {
+.custom-map-marker__dot {
     transform: rotate(45deg);
     font-size: 1.2rem;
     color: var(--color-white);
@@ -1096,9 +1040,9 @@ h1, h2, h3, h4 {
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.custom-map-marker:hover .marker-pin {
+.custom-map-marker:hover .custom-map-marker__pin {
     transform: rotate(-45deg) scale(1.15) translateY(-5px);
-    background: linear-gradient(135deg, var(--color-olive), #3f4732);
+    background: linear-gradient(135deg, var(--color-olive), var(--color-olive-deep));
     box-shadow: inset 0 0 0 2px var(--color-white), 0 8px 20px rgba(0,0,0,0.4);
 }
 
