@@ -289,19 +289,19 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         if(document.getElementById('map')) {
-            var map = L.map('map').setView([48.6217, 22.2875], 14);
+            var map = L.map('map').setView([48.6217, 22.2875], 13);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
             var locations = [
-                { name: "Medelin на Корятовича", lat: 48.6238, lng: 22.3005, address: "вул. Корятовича, 5", gmaps: "https://maps.app.goo.gl/eaHX2hzMBL8cj75U7" },
-                { name: "Medelin на Закарпатській", lat: 48.6340519, lng: 22.256649, address: "вул. Закарпатська, 44", gmaps: "https://maps.app.goo.gl/1UEwR2JLh3S1bmZn6" },
-                { name: "Medelin на Проспекті Свободи", lat: 48.6173, lng: 22.2801, address: "просп. Свободи, 54", gmaps: "https://maps.app.goo.gl/r5G4deBWcvcRuu3R9" },
-                { name: "Medelin Bozdosh", lat: 48.6210, lng: 22.2680, address: "Слов'янська набережна, 23А", gmaps: "https://maps.app.goo.gl/XRraroUzqtbCMzLw8" },
-                { name: "Medelin на Гойди", lat: 48.6265, lng: 22.2925, address: "вул. Гойди, 4", gmaps: "https://maps.app.goo.gl/DUs2U6gcVF7drXLy8" },
-                { name: "Medelin на Новака", lat: 48.6250, lng: 22.2980, address: "вул. Новака, 2", gmaps: "https://maps.app.goo.gl/JDja54iHdQKsvqR16" }
+                { name: "Medelin на Корятовича", lat: 48.624760, lng: 22.300253, address: "вул. Корятовича, 5", gmaps: "https://maps.app.goo.gl/eaHX2hzMBL8cj75U7" },
+                { name: "Medelin на Закарпатській", lat: 48.6320557, lng: 22.2784770, address: "вул. Закарпатська, 44", gmaps: "https://maps.app.goo.gl/1UEwR2JLh3S1bmZn6" },
+                { name: "Medelin на Проспекті Свободи", lat: 48.615100, lng: 22.291200, address: "просп. Свободи, 54", gmaps: "https://maps.app.goo.gl/r5G4deBWcvcRuu3R9" },
+                { name: "Medelin Bozdosh", lat: 48.618168, lng: 22.263889, address: "Слов'янська набережна, 23А", gmaps: "https://maps.app.goo.gl/XRraroUzqtbCMzLw8" },
+                { name: "Medelin на Гойди", lat: 48.627346, lng: 22.287569, address: "вул. Гойди, 4", gmaps: "https://maps.app.goo.gl/DUs2U6gcVF7drXLy8" },
+                { name: "Medelin на Новака", lat: 48.619260, lng: 22.292710, address: "вул. Новака, 2", gmaps: "https://maps.app.goo.gl/JDja54iHdQKsvqR16" }
             ];
 
             locations.forEach(function(loc) {
