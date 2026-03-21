@@ -104,26 +104,27 @@
             <div class="contact-split__social">
                 <div class="contact__social">
                     <h4 class="contact__location-name">Зв'яжіться з нами</h4>
-                    <div class="contact__item">
-                        <span class="contact__item-icon">📞</span>
-                        <p><a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
-                    </div>
-                    <div class="contact__item">
-                        <span class="contact__item-icon">✉️</span>
-                        <p><a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
-                    </div>
-                    <div class="contact__item">
-                        <span class="contact__item-icon">📸</span>
-                        <p><a href="https://www.instagram.com/medelin_com/" target="_blank">Instagram: @medelin_com</a></p>
-                    </div>
-                    <div class="contact__item">
-                        <span class="contact__item-icon">📸</span>
-                        <p><a href="https://www.instagram.com/medelin_uzh/" target="_blank">Instagram: @medelin_uzh</a></p>
-                    </div>
-                    <div class="contact__item">
-                        <span class="contact__item-icon">🔵</span>
-                        <p><a href="https://www.facebook.com/medelin.uzh/" target="_blank">Facebook: Medelin Uzhhorod</a>
-                        </p>
+                    <div class="contact-card contact-card--full-height">
+                        <a href="tel:+380503775906" class="contact-card__link">
+                            <span class="contact-card__icon">📞</span>
+                            <span class="contact-card__text">+38 (050) 377-59-06</span>
+                        </a>
+                        <a href="mailto:medelin.social@gmail.com" class="contact-card__link">
+                            <span class="contact-card__icon">✉️</span>
+                            <span class="contact-card__text">medelin.social@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/medelin_com/" target="_blank" class="contact-card__link">
+                            <span class="contact-card__icon">📸</span>
+                            <span class="contact-card__text">Insta: @medelin_com</span>
+                        </a>
+                        <a href="https://www.instagram.com/medelin_uzh/" target="_blank" class="contact-card__link">
+                            <span class="contact-card__icon">📸</span>
+                            <span class="contact-card__text">Insta: @medelin_uzh</span>
+                        </a>
+                        <a href="https://www.facebook.com/medelin.uzh/" target="_blank" class="contact-card__link">
+                            <span class="contact-card__icon">🔵</span>
+                            <span class="contact-card__text">FB: Medelin Uzhhorod</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -304,13 +305,21 @@
                 { name: "Medelin на Новака", lat: 48.619260, lng: 22.292710, address: "вул. Новака, 2", gmaps: "https://maps.app.goo.gl/JDja54iHdQKsvqR16" }
             ];
 
+            var customIcon = L.divIcon({
+                className: 'custom-map-marker',
+                html: '<div class="marker-pin"><div class="marker-dot">☕</div></div>',
+                iconSize: [40, 40],
+                iconAnchor: [20, 40],
+                popupAnchor: [0, -40]
+            });
+
             locations.forEach(function(loc) {
                 var popupContent =
                     '<h3>' + loc.name + '</h3>' +
                     '<p>' + loc.address + '</p>' +
                     '<a href="' + loc.gmaps + '" target="_blank" class="btn-map-route">Побудувати маршрут</a>';
 
-                L.marker([loc.lat, loc.lng])
+                L.marker([loc.lat, loc.lng], { icon: customIcon })
                     .addTo(map)
                     .bindPopup(popupContent);
             });

@@ -316,7 +316,7 @@
         font-size: 2.1rem;
     }
 
-    .contact__item {
+    .contact-card__link {
         justify-content: flex-start;
     }
 
