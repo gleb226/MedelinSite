@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
           rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/responsive.css">
 </head>
@@ -96,30 +100,35 @@
             </article>
         </div>
 
-        <div class="contact__container contact__container--mt-large">
-            <div class="contact__social">
-                <h4 class="contact__location-name">Зв'яжіться з нами</h4>
-                <div class="contact__item">
-                    <span class="contact__item-icon">📞</span>
-                    <p><a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+        <div class="contact-split">
+            <div class="contact-split__social">
+                <div class="contact__social">
+                    <h4 class="contact__location-name">Зв'яжіться з нами</h4>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📞</span>
+                        <p><a href="tel:+380503775906">+38 (050) 377-59-06</a></p>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">✉️</span>
+                        <p><a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📸</span>
+                        <p><a href="https://www.instagram.com/medelin_com/" target="_blank">Instagram: @medelin_com</a></p>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">📸</span>
+                        <p><a href="https://www.instagram.com/medelin_uzh/" target="_blank">Instagram: @medelin_uzh</a></p>
+                    </div>
+                    <div class="contact__item">
+                        <span class="contact__item-icon">🔵</span>
+                        <p><a href="https://www.facebook.com/medelin.uzh/" target="_blank">Facebook: Medelin Uzhhorod</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="contact__item">
-                    <span class="contact__item-icon">✉️</span>
-                    <p><a href="mailto:medelin.social@gmail.com">medelin.social@gmail.com</a></p>
-                </div>
-                <div class="contact__item">
-                    <span class="contact__item-icon">📸</span>
-                    <p><a href="https://www.instagram.com/medelin_com/" target="_blank">Instagram: @medelin_com</a></p>
-                </div>
-                <div class="contact__item">
-                    <span class="contact__item-icon">📸</span>
-                    <p><a href="https://www.instagram.com/medelin_uzh/" target="_blank">Instagram: @medelin_uzh</a></p>
-                </div>
-                <div class="contact__item">
-                    <span class="contact__item-icon">🔵</span>
-                    <p><a href="https://www.facebook.com/medelin.uzh/" target="_blank">Facebook: Medelin Uzhhorod</a>
-                    </p>
-                </div>
+            </div>
+            <div class="contact-split__map">
+                <div id="map"></div>
             </div>
         </div>
     </section>
@@ -277,5 +286,36 @@
 </footer>
 
 <script src="../../js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if(document.getElementById('map')) {
+            var map = L.map('map').setView([48.6217, 22.2875], 14);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var locations = [
+                { name: "Medelin на Корятовича", lat: 48.6238, lng: 22.3005, address: "вул. Корятовича, 5", gmaps: "https://maps.app.goo.gl/eaHX2hzMBL8cj75U7" },
+                { name: "Medelin на Закарпатській", lat: 48.6340519, lng: 22.256649, address: "вул. Закарпатська, 44", gmaps: "https://maps.app.goo.gl/1UEwR2JLh3S1bmZn6" },
+                { name: "Medelin на Проспекті Свободи", lat: 48.6173, lng: 22.2801, address: "просп. Свободи, 54", gmaps: "https://maps.app.goo.gl/r5G4deBWcvcRuu3R9" },
+                { name: "Medelin Bozdosh", lat: 48.6210, lng: 22.2680, address: "Слов'янська набережна, 23А", gmaps: "https://maps.app.goo.gl/XRraroUzqtbCMzLw8" },
+                { name: "Medelin на Гойди", lat: 48.6265, lng: 22.2925, address: "вул. Гойди, 4", gmaps: "https://maps.app.goo.gl/DUs2U6gcVF7drXLy8" },
+                { name: "Medelin на Новака", lat: 48.6250, lng: 22.2980, address: "вул. Новака, 2", gmaps: "https://maps.app.goo.gl/JDja54iHdQKsvqR16" }
+            ];
+
+            locations.forEach(function(loc) {
+                var popupContent =
+                    '<h3>' + loc.name + '</h3>' +
+                    '<p>' + loc.address + '</p>' +
+                    '<a href="' + loc.gmaps + '" target="_blank" class="btn-map-route">Побудувати маршрут</a>';
+
+                L.marker([loc.lat, loc.lng])
+                    .addTo(map)
+                    .bindPopup(popupContent);
+            });
+        }
+    });
+</script>
 </body>
 </html>
