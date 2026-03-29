@@ -1,11 +1,3 @@
-const PRODUCTION_API_URL = 'https://medelin-api.onrender.com'; 
-
-let API_BASE_URL = PRODUCTION_API_URL;
-
-if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    API_BASE_URL = 'http://localhost:8000';
-}
-
 const EMOJI_MAP = {
     'Кава': '☕',
     'До Кави': '➕',
@@ -24,7 +16,6 @@ const EMOJI_MAP = {
 
 function getCatWithEmoji(cat) {
     let catS = cat.trim();
-    
     for (const emoji of Object.values(EMOJI_MAP)) {
         catS = catS.replace(emoji, "").trim();
     }
@@ -35,37 +26,27 @@ function getCatWithEmoji(cat) {
 async function fetchMenu() {
     const root = document.getElementById('menu-root');
     const subnav = document.getElementById('subnav-list');
-    
     if (!root || !subnav) return;
 
     root.innerHTML = '<div class="loading">Завантаження меню...</div>';
 
     try {
         const response = await fetch(`${API_BASE_URL}/api/menu`, {
-            method: 'GET',
-            mode: 'cors',
-            headers: { 'Accept': 'application/json' }
+            headers: { 'ngrok-skip-browser-warning': 'true' }
         });
-
         if (!response.ok) throw new Error(`Помилка: ${response.status}`);
-        
         const menuData = await response.json();
-        
         root.innerHTML = '';
         subnav.innerHTML = '';
-
         if (!menuData || menuData.length === 0) {
             root.innerHTML = '<div class="no-data">Меню порожнє.</div>';
             return;
         }
-
         buildSubnav(menuData);
         buildMenu(menuData);
-        initMenuObserver();
-
     } catch (error) {
         console.error('Fetch error:', error);
-        root.innerHTML = `<div class="error-msg">Не вдалося завантажити меню. <br> <small>Переконайтеся, що бот запущений.</small></div>`;
+        root.innerHTML = `<div class="error-msg">Не вдалося завантажити меню.</div>`;
     }
 }
 
@@ -109,28 +90,17 @@ function buildMenu(menuData) {
             section.items.forEach(item => {
                 const li = document.createElement('li');
                 li.className = 'menu-list__item';
-                li.innerHTML = `
-                    <span class="menu-list__name">${item.name}</span>
-                    <span class="menu-list__price">${item.price}</span>`;
+                li.innerHTML = `<span class="menu-list__name">${item.name}</span><span class="menu-list__price">${item.price}</span>`;
                 list.appendChild(li);
             });
             art.appendChild(list);
         } else {
             const grid = document.createElement('div');
             grid.className = 'products-grid'; 
-            
             section.items.forEach(item => {
                 const div = document.createElement('div');
                 div.className = 'menu-item';
-                const imgUrl = item.image_url || defaultImg;
-                
-                div.innerHTML = `
-                    <div class="menu-item__image" style="background-image:url('${imgUrl}')"></div>
-                    <div class="menu-item__info">
-                        <h4 class="menu-item__title">${item.name}</h4>
-                        <span class="menu-item__price">${item.price}</span>
-                    </div>`;
-                
+                div.innerHTML = `<div class="menu-item__image" style="background-image:url('${item.image_url || defaultImg}')"></div><div class="menu-item__info"><h4 class="menu-item__title">${item.name}</h4><span class="menu-item__price">${item.price}</span></div>`;
                 div.addEventListener('click', () => openItemPopup(item));
                 grid.appendChild(div);
             });
@@ -152,45 +122,14 @@ function openItemPopup(item) {
     if (popupPrice) popupPrice.textContent = item.price;
 
     let html = `<p class="popup__description">${item.description || ''}</p>`;
-
     if (item.volume || item.calories) {
         html += `<div class="popup__details">`;
-        if (item.volume) html += `<p class="popup__details-text"><strong class="popup__details-label">📏 Об'єм/Вага:</strong> ${item.volume}</p>`;
-        if (item.calories) html += `<p class="popup__details-text"><strong class="popup__details-label">🔥 Калорійність:</strong> ${item.calories}</p>`;
+        if (item.volume) html += `<p class="popup__details-text"><strong>📏 Об'єм/Вага:</strong> ${item.volume}</p>`;
+        if (item.calories) html += `<p class="popup__details-text"><strong>🔥 Калорійність:</strong> ${item.calories}</p>`;
         html += `</div>`;
     }
-
     if (popupBody) popupBody.innerHTML = html;
-
-    if (typeof openPopup === 'function') {
-        openPopup('item-popup');
-    } else {
-        const p = document.getElementById('item-popup');
-        if (p) p.classList.add('popup--active');
-    }
-}
-
-function initMenuObserver() {
-    if (!('IntersectionObserver' in window)) return;
-    
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const idx = entry.target.id.replace('cat-', '');
-                const subnavList = document.getElementById('subnav-list');
-                const active = document.querySelector(`.menu-subnav__link[data-idx="${idx}"]`);
-
-                if (active && subnavList) {
-                    document.querySelectorAll('.menu-subnav__link').forEach(a => a.classList.remove('menu-subnav__link--active'));
-                    active.classList.add('menu-subnav__link--active');
-                    const offset = active.offsetLeft - (subnavList.clientWidth / 2) + (active.clientWidth / 2);
-                    subnavList.scrollTo({left: offset, behavior: 'smooth'});
-                }
-            }
-        });
-    }, {rootMargin: '-20% 0px -70% 0px', threshold: 0});
-
-    document.querySelectorAll('[id^="cat-"]').forEach(el => observer.observe(el));
+    openPopup('item-popup');
 }
 
 document.addEventListener('DOMContentLoaded', fetchMenu);

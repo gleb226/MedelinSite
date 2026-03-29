@@ -1,3 +1,8 @@
+// Глобальні налаштування API
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const REMOTE_API_URL = 'https://benita-pseudogeneric-krista.ngrok-free.dev'; 
+const API_BASE_URL = isLocal ? 'http://localhost:8000' : REMOTE_API_URL;
+
 document.addEventListener('DOMContentLoaded', () => {
     initBurgerMenu();
     initPopupHandlers();
