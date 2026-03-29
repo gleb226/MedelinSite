@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Контакти - Medelin Coffee</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50BUE2d30GBASKRdrCoBgrFBfvjFTiAKCYA&s"
+          type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <style>
+        .loading, .no-data, .error-msg {
+            text-align: center;
+            padding: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: #5d4037;
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header__container">
+        <a href="../../index.html" class="header__logo">Medelin</a>
+        <button class="header__burger" id="burger-btn" aria-label="Відкрити меню">
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+        </button>
+        <nav class="nav" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../../index.html" class="nav__link">Головна</a></li>
+                <li class="nav__item"><a href="../menu/menu.html" class="nav__link">Меню</a></li>
+                <li class="nav__item"><a href="../coffee/beans.html" class="nav__link">Кава в зернах</a></li>
+                <li class="nav__item"><a href="contact.html" class="nav__link nav__link--active">Контакти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="booking-hero">
+        <div class="booking-hero__card">
+            <h2 class="booking-hero__title">Бажаєте забронювати столик?</h2>
+            <p class="booking-hero__text">Скористайтеся нашим зручним Telegram-ботом для миттєвого бронювання столика в будь-якому з наших закладів.</p>
+            <a href="https://t.me/MedelnBot" target="_blank" class="btn btn--booking">Забронювати через бот</a>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h1 class="section-title section-title--mb-5">Наші локації</h1>
+        <div id="locations-grid" class="products-grid">
+            <div class="loading">Завантаження локацій...</div>
+        </div>
+
+        <div class="contact-split">
+            <div class="contact-split__social">
+                <div class="contact__social">
+                    <h4 class="contact__location-name">Зв'яжіться з нами</h4>
+                    <div id="socials-list" class="contact-card contact-card--full-height">
+                        <div class="loading">Завантаження контактів...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-split__map">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="popups-container"></div>
+
+<footer class="footer">
+    <div class="footer__content">
+        <div class="footer__section">
+            <h3 class="footer__title">Medelin Coffee</h3>
+            <p class="footer__text">Найкраща кава в Ужгороді</p>
+            <p class="footer__text">Смак, якість, атмосфера</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Контакти</h3>
+            <p class="footer__text">📞 +38 (050) 377-59-06</p>
+            <p class="footer__text">✉️ medelin.social@gmail.com</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Години роботи</h3>
+            <p class="footer__text">Понеділок–Неділя</p>
+            <p class="footer__text">08:00–20:00</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Соцмережі</h3>
+            <div id="footer-socials">
+                <a href="https://www.instagram.com/medelin_com/" target="_blank" rel="noopener noreferrer" class="footer__link">Instagram</a>
+                <a href="https://www.facebook.com/medelin.uzh/" target="_blank" rel="noopener noreferrer" class="footer__link">Facebook</a>
+            </div>
+            <a href="https://github.com/gleb226/MedelineSite" target="_blank" rel="noopener noreferrer"
+               class="footer__link">GitHub</a>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 Medelin Coffee. Усі права захищені.</p>
+        <p class="footer__copyright">Сайт створено <strong>Глєбом</strong> — веброзробником з Ужгорода.</p>
+    </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script src="../../js/locations.js"></script>
+</body>
+</html>

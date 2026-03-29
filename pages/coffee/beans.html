@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Замовляйте свіжообсмажену каву Medelin в зернах. Найкращі сорти арабіки для вашого дому та офісу.">
+    <title>Кава в зернах - Medelin Coffee</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50BUE2d30GBASKRdrCoBgrFBfvjFTiAKCYA&s"
+          type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <style>
+        .loading, .no-data, .error-msg {
+            text-align: center;
+            padding: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: #5d4037;
+        }
+        .error-msg { color: #d32f2f; }
+        .loading::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid #d7ccc8;
+            border-top: 4px solid #5d4037;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .popup__prices-extra {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #d7ccc8;
+        }
+        .popup__prices-extra p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+            color: #5d4037;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header__container">
+        <a href="../../index.html" class="header__logo">Medelin</a>
+        <button class="header__burger" id="burger-btn" aria-label="Відкрити меню">
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+        </button>
+        <nav class="nav" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../../index.html" class="nav__link">Головна</a></li>
+                <li class="nav__item"><a href="../menu/menu.html" class="nav__link">Меню</a></li>
+                <li class="nav__item"><a href="beans.html" class="nav__link nav__link--active">Кава в зернах</a></li>
+                <li class="nav__item"><a href="../contact/contact.html" class="nav__link">Заклади</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="products">
+        <h1 class="section-title section-title--mb-5">Кава в зернах</h1>
+        <div id="coffee-root"></div>
+    </section>
+</main>
+
+<div class="popup" id="item-popup">
+    <div class="popup__overlay" onclick="closePopup('item-popup')"></div>
+    <div class="popup__content">
+        <button class="popup__close" onclick="closePopup('item-popup')">✕</button>
+        <img id="popup-img" src="" class="popup__image" alt="">
+        <h3 id="popup-title" class="popup__title"></h3>
+        <p id="popup-price" class="popup__price"></p>
+        <div id="popup-body" class="popup__info"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer__content">
+        <div class="footer__section">
+            <h3 class="footer__title">Medelin Coffee</h3>
+            <p class="footer__text">Найкраща кава в Ужгороді</p>
+            <p class="footer__text">Смак, якість, атмосфера</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Контакти</h3>
+            <p class="footer__text">📞 +38 (050) 377-59-06</p>
+            <p class="footer__text">✉️ medelin.social@gmail.com</p>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Навігація</h3>
+            <a href="../../index.html" class="footer__link">Головна</a>
+            <a href="../menu/menu.html" class="footer__link">Меню</a>
+            <a href="beans.html" class="footer__link">Кава в зернах</a>
+            <a href="../contact/contact.html" class="footer__link">Заклади</a>
+        </div>
+        <div class="footer__section">
+            <h3 class="footer__title">Соцмережі</h3>
+            <a href="https://www.instagram.com/medelin_com/" target="_blank" rel="noopener noreferrer" class="footer__link">Instagram</a>
+            <a href="https://www.facebook.com/medelin.uzh/" target="_blank" rel="noopener noreferrer" class="footer__link">Facebook</a>
+            <a href="https://github.com/gleb226/MedelineSite" target="_blank" rel="noopener noreferrer"
+               class="footer__link">GitHub</a>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 Medelin Coffee. Усі права захищені.</p>
+        <p class="footer__copyright">Сайт створено <strong>Глєбом</strong> — веброзробником з Ужгорода.</p>
+    </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script src="../../js/coffee.js"></script>
+</body>
+</html>
