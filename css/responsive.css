@@ -282,30 +282,25 @@
     }
 
     .menu-item {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-        gap: 1.5rem;
-        padding: 1.25rem;
+        padding: 0.8rem;
+        gap: 1rem;
     }
 
     .menu-item__image {
-        width: 100px;
-        height: 100px;
-        border-radius: 16px;
-    }
-
-    .menu-item__info {
-        padding-top: 0;
+        width: 100% !important;
+        height: 180px !important;
+        border-radius: 20px 20px 0 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #fcfaf5;
     }
 
     .menu-item__title {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
     }
 
     .menu-item__price {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .category {
@@ -368,7 +363,10 @@
         position: sticky;
         top: 0;
         z-index: 900;
-        background: rgba(28, 18, 10, 0.98);
+        background: rgba(247, 243, 233, 0.7);
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
+        border-bottom: 1px solid rgba(139, 94, 60, 0.1);
     }
 
     .menu-subnav__link {

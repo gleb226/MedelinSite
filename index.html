@@ -31,6 +31,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
 <header class="header">
@@ -46,7 +47,7 @@
                 <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Головна</a></li>
                 <li class="nav__item"><a href="pages/menu/menu.html" class="nav__link">Меню</a></li>
                 <li class="nav__item"><a href="pages/coffee/beans.html" class="nav__link">Кава в зернах</a></li>
-                <li class="nav__item"><a href="pages/contact/contact.html" class="nav__link">Заклади</a></li>
+                <li class="nav__item"><a href="pages/contact/contact.html" class="nav__link">Контакти</a></li>
             </ul>
         </nav>
     </div>
@@ -57,7 +58,12 @@
         <div class="hero__content">
             <h1 class="hero__title">Medelin Coffee</h1>
             <p class="hero__subtitle">Смак Ужгорода в кожній чашці</p>
-            <a href="https://t.me/MedelnBot" target="_blank" class="btn hero__cta">Вже обрали щось? — Бот ☕</a>
+            <div class="hero__decoration">
+                <span class="hero__line"></span>
+                <i class="fas fa-coffee hero__icon"></i>
+                <span class="hero__line"></span>
+            </div>
+            <p class="hero__scroll-text">Гортайте вниз, щоб дізнатися більше</p>
         </div>
     </section>
 
@@ -78,10 +84,9 @@
     <section class="promo promo--contact">
         <div class="promo-card promo-card--stack-image-first">
             <div class="promo-card__content">
-                <h2 class="promo-card__title">Обрали щось для замовлення?</h2>
-                <p class="promo-card__text">Ми завжди раді бачити вас у наших затишних кав'ярнях по всьому Ужгороду.
-                    Знайдіть найближчу локацію, перегляньте графік роботи або забронюйте столик через наш бот.</p>
-                <a href="https://t.me/MedelnBot" target="_blank" class="btn">Наш Telegram-бот →</a>
+                <h2 class="promo-card__title">Плануєте візит?</h2>
+                <p class="promo-card__text">Ми завжди раді бачити вас у наших затишних кав'ярнях по всьому Ужгороду. Перегляньте графік роботи та миттєво забронюйте столик онлайн.</p>
+                <a href="pages/contact/contact.html" class="btn">Забронювати столик →</a>
             </div>
             <div class="promo-card__image"
                  style="background-image: url('https://images.pexels.com/photos/2199190/pexels-photo-2199190.jpeg?auto=compress&cs=tinysrgb&w=800');"
@@ -147,7 +152,7 @@
             <a href="index.html" class="footer__link">Головна</a>
             <a href="pages/menu/menu.html" class="footer__link">Меню</a>
             <a href="pages/coffee/beans.html" class="footer__link">Кава в зернах</a>
-            <a href="pages/contact/contact.html" class="footer__link">Заклади</a>
+            <a href="pages/contact/contact.html" class="footer__link">Контакти</a>
         </div>
         <div class="footer__section">
             <h3 class="footer__title">Соцмережі</h3>

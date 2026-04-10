@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
         .loading, .no-data, .error-msg {
             text-align: center;
@@ -25,6 +26,99 @@
             color: #5d4037;
             grid-column: 1 / -1;
         }
+
+        .pin-droplet {
+            width: 40px; height: 40px; background: #5d4037;
+            border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+            border: 2px solid white;
+        }
+        .pin-icon { transform: rotate(45deg); font-size: 20px; margin-top: -2px; margin-left: 2px; }
+
+        /* --- Premium Social Icons --- */
+        .contact-social-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 20px;
+            width: 100%;
+        }
+        .social-icon--premium {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(93, 64, 55, 0.1);
+            color: #5d4037;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .social-icon--premium i {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            transition: transform 0.4s ease;
+        }
+        .social-icon__label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #5d4037;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .social-icon--premium:hover {
+            background: #5d4037;
+            border-color: #5d4037;
+            color: #fff;
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(93, 64, 55, 0.25);
+        }
+        .social-icon--premium:hover i {
+            transform: scale(1.15) rotate(-5deg);
+        }
+        .social-icon--premium:hover .social-icon__label {
+            color: #fff;
+            opacity: 1;
+        }
+        /* Shine Animation */
+        .social-icon--premium::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+        .social-icon--premium:hover::before {
+            left: 150%;
+        }
+        /* --- End Premium Social Icons --- */
+
+        .amenities-tags {
+            display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0;
+        }
+        .tag {
+            background: #f7f3ec; color: #5d4037; padding: 5px 12px;
+            border-radius: 20px; font-size: 0.85rem; font-weight: 600;
+        }
+        .popup__info--full-details { text-align: left; }
+        .popup__info--full-details .separator { margin: 15px 0; border: none; border-top: 1px solid #ddd; }
+        .popup__info--full-details p { margin: 10px 0; font-size: 0.95rem; }
+        .popup__info--full-details i { color: #5d4037; width: 20px; text-align: center; margin-right: 8px; }
+        .btn--full-width { display: block; width: 100%; text-align: center; margin-top: 20px; padding: 12px; border-radius: 8px;}
     </style>
 </head>
 <body>
@@ -51,8 +145,8 @@
     <section class="booking-hero">
         <div class="booking-hero__card">
             <h2 class="booking-hero__title">Бажаєте забронювати столик?</h2>
-            <p class="booking-hero__text">Скористайтеся нашим зручним Telegram-ботом для миттєвого бронювання столика в будь-якому з наших закладів.</p>
-            <a href="https://t.me/MedelnBot" target="_blank" class="btn btn--booking">Забронювати через бот</a>
+            <p class="booking-hero__text">Забронюйте столик онлайн у нашому закладі за пару кліків без жодних дзвінків. Швидко та зручно!</p>
+            <a href="#" onclick="window.openBookingWizard(event)" class="btn btn--booking">Забронювати онлайн</a>
         </div>
     </section>
 
@@ -66,8 +160,14 @@
             <div class="contact-split__social">
                 <div class="contact__social">
                     <h4 class="contact__location-name">Зв'яжіться з нами</h4>
-                    <div id="socials-list" class="contact-card contact-card--full-height">
-                        <div class="loading">Завантаження контактів...</div>
+                    <div id="socials-list" class="contact-card contact-card--full-height" style="justify-content: center;">
+                        <div class="contact-social-icons">
+                            <a href="mailto:medelin.social@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+380503775906" class="social-icon" title="Телефон"><i class="fas fa-phone-alt"></i></a>
+                            <a href="https://www.instagram.com/medelin_com/" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/medelin.uzh/" target="_blank" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://github.com/gleb226/MedelineSite" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
